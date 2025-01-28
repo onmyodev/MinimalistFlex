@@ -5,7 +5,6 @@ if ( !defined( 'WPINC' ) ) {
 
 function minimalistflex_add_supports() {
 	add_theme_support( 'custom-background', Array(
-		'default-image' => get_template_directory_uri() . '/defaults/bg.png',
 		'default-position-x' => 'center',
 		'default-position-y' => 'center',
 		'default-size' => 'cover',
