@@ -40,17 +40,21 @@ $mf_default_image_location = get_theme_mod( 'minimalistflex_default_featured_ima
             </div>
         <?php endif; ?>
         <div class="singular-main">
-            <h1 class="panel-title"><?php the_title(); ?></h1>
-            <?php get_template_part( 'templates/publisher' ) ?>
-            <div class="panel-main">
-                <?php the_content(); ?>
-                <?php wp_link_pages( Array(
-                    'before' => '<p class="panel post-nav-links"><span class="post-nav-links-indicator">' . __( 'Pages: ', 'minimalistflex' ) . '</span>'
-                ) ); ?>
+            <div class="singular-post">
+                <h1 class="panel-title"><?php the_title(); ?></h1>
+                <?php get_template_part( 'templates/publisher' ) ?>
+                <div class="panel-main">
+                    <?php the_content(); ?>
+                    <?php wp_link_pages( Array(
+                        'before' => '<p class="panel post-nav-links"><span class="post-nav-links-indicator">' . __( 'Pages: ', 'minimalistflex' ) . '</span>'
+                    ) ); ?>
+                </div>
             </div>
             <?php get_sidebar( 'below-content' ) ?>
-            <?php get_template_part( 'templates/author' ) ?>
-            <?php get_template_part( 'templates/metadata' ) ?>
+            <div class="singular-card">
+                <?php get_template_part( 'templates/author' ) ?>
+                <?php get_template_part( 'templates/metadata' ) ?>
+            </div>
         </div>
         <?php if ( comments_open() || get_comments_number() ) :
 	        comments_template();

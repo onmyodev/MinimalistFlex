@@ -49,35 +49,19 @@ $mf_default_image_location = get_theme_mod( 'minimalistflex_default_featured_ima
             </a>
         <?php endif; ?>
         <div class="panel-content">
-            <?php if ( get_theme_mod( 'minimalistflex_interface_comment_count', 'yes' ) === 'yes' ): ?>
-                <div class="panel-comment-count">
-                    <?php
-                        printf(
-                            /* translators: %d: Number of comments. */
-                            esc_html( _nx(
-                                '%d Comment',
-                                '%d Comments',
-                                get_comments_number(),
-                                'comment count',
-                                'minimalistflex'
-                            ) ),
-                            esc_html( number_format_i18n( get_comments_number() ) )
-                        );
-                    ?>
-                </div>
-            <?php endif; ?>
-            <h1 class="panel-title"><?php the_title(); ?></h1>
+            <h2 class="panel-title"><?php the_title(); ?></h2>
             <div class="panel-main">
                 <?php the_excerpt(); ?>
-                <?php wp_link_pages( Array(
-                    'before' => '<p class="panel post-nav-links"><span class="post-nav-links-indicator">' . esc_html__('Pages: ', 'minimalistflex') . '</span></p>'
-                ) ); ?>
             </div>
+            <?php wp_link_pages( Array(
+                'before' => '<div class="panel post-nav-links"><span class="post-nav-links-indicator">' . esc_html__('Pages: ', 'minimalistflex') . '</span>',
+                'after' => '</div>'
+            ) ); ?>
             <div class="panel-meta">
                 <?php if ( get_theme_mod( 'minimalistflex_interface_publisher', 'yes' ) === 'yes' ): ?>
                     <a class="panel-author" href="<?php echo esc_url( get_author_posts_url($mf_id) ) ?>">
                         <span aria-hidden="true"><?php echo get_avatar( $mf_id, 80 ) ?></span>
-                        <?php the_author() ?>
+                        <span><?php the_author() ?></span>
                     </a>
                 <?php endif; ?>
                 <?php $mf_datemode = get_theme_mod( 'minimalistflex_interface_date', 'modify' ); ?>
@@ -98,6 +82,27 @@ $mf_default_image_location = get_theme_mod( 'minimalistflex_default_featured_ima
                         <?php endif; ?>
                     </div>
                 <?php endif; ?>
+                <?php if ( get_theme_mod( 'minimalistflex_interface_comment_count', 'yes' ) === 'yes' ): ?>
+                <div class="panel-comment-count">
+                    <a href="<?php echo get_comments_link() ?>">
+                        <?php
+                            printf(
+                                /* translators: %d: Number of comments. */
+                                esc_html( _nx(
+                                    '%d Comment',
+                                    '%d Comments',
+                                    get_comments_number(),
+                                    'comment count',
+                                    'minimalistflex'
+                                ) ),
+                                esc_html( number_format_i18n( get_comments_number() ) )
+                            );
+                        ?>
+                    </a>
+                </div>
+            <?php endif; ?>
+            </div>
+            <div class="panel-link-container">
                 <a class="panel panel-link" href="<?php the_permalink(); ?>" aria-label="<?php
                         printf(
                             /* translators: %s: Post title. */

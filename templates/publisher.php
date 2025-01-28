@@ -4,10 +4,12 @@ if ( !defined( 'WPINC' ) ) {
 }
 ?>
 
+<?php $mf_id = get_the_author_meta( 'ID' ); ?>
+
 <div class="publisher">
 
-<a class="publisher-link" href="<?php echo esc_url( get_author_posts_url($id) ) ?>">
-    <?php echo get_avatar( $id, 32 ) ?>
+<a class="publisher-link" href="<?php echo esc_url( get_author_posts_url($mf_id) ) ?>">
+    <?php echo get_avatar( $mf_id, 32 ) ?>
     <span><?php the_author() ?></span>
 </a>
 <div class="publisher-datetime">
