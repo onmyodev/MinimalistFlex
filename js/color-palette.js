@@ -42,8 +42,8 @@ jQuery(document).ready(function($){
         wp.customize("minimalistflex_color_tint-contrast").set("#00281d")
         wp.customize("minimalistflex_color_contrast").set("#000000")
         wp.customize("minimalistflex_color_contrast-dark").set("#ffffff")
-        wp.customize("minimalistflex_color_footer-text").set("#ffffff")
-        wp.customize("minimalistflex_color_footer-bg").set("#333333")
+        wp.customize("minimalistflex_color_footer-text").set("#000000")
+        wp.customize("minimalistflex_color_footer-bg").set("#ffffff")
     })
     $("#minimalistflex-palette-dark").click(function(e){
         e.preventDefault()

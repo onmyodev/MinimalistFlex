@@ -20,8 +20,8 @@ $colors = Array(
     'tint-contrast' => '#00281d',
     'contrast' => '#000000',
     'contrast-dark' => '#ffffff',
-    'footer-text' => '#ffffff',
-    'footer-bg' => '#333333'
+    'footer-text' => '#000000',
+    'footer-bg' => '#ffffff'
 );
 
 $labels = Array(
