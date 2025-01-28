@@ -6,7 +6,7 @@ if ( !defined( 'WPINC' ) ) {
 
 <?php if ( is_active_sidebar( 'below-content' ) ): ?>
     <ul class="below-content-widgets">
-        <?php dynamic_sidebar( 'above-content' ); ?>
+        <?php dynamic_sidebar( 'below-content' ); ?>
     </ul>
 <?php elseif ( user_can( get_current_user_id(), 'edit_theme_options' ) ): ?>
     <ul class="below-content-widgets">
