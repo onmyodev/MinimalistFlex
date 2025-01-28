@@ -5,8 +5,7 @@ if ( !defined( 'WPINC' ) ) {
 ?>
 
 <?php
-    require_once 'color-definitions.php';
-    global $colors;
+    require 'color-definitions.php';
 ?>
 
 <style id="minimalistflex-color-css">

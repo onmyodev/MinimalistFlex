@@ -3,6 +3,14 @@ if ( !defined( 'WPINC' ) ) {
     die;
 }
 
+function minimalistflex_load_textdomain() {
+	load_theme_textdomain( 'minimalistflex', get_template_directory() . '/languages' );
+}
+
+add_action( 'init', 'minimalistflex_load_textdomain' );
+
+require_once 'includes/customizer.php';
+
 function minimalistflex_add_supports() {
 	add_theme_support( 'custom-background', Array(
 		'default-position-x' => 'center',
@@ -15,7 +23,9 @@ function minimalistflex_add_supports() {
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( "align-wide" );
 	add_theme_support( "post-thumbnails" );
-	add_theme_support( 'html5', Array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script', 'navigation-widgets' ) );
+	if ( !(function_exists( 'classicpress_version' ) && version_compare( classicpress_version(), '2.0.0', '>=' )) ) {
+		add_theme_support( 'html5', Array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script', 'navigation-widgets' ) );
+	}
 	add_theme_support( 'custom-logo', Array(
 		'width' => '80',
 		'height' => '80'
@@ -129,15 +139,12 @@ function minimalistflex_register_menus() {
 add_action( 'init', 'minimalistflex_register_menus' );
 
 function minimalistflex_dynamic_css() {
+	require_once 'includes/color-definitions.php';
 	require_once 'includes/colors.php';
 	require_once 'includes/languages.php';
 }
 
 add_action( 'wp_footer', 'minimalistflex_dynamic_css' );
-
-load_theme_textdomain( 'minimalistflex', get_template_directory() . '/languages' );
-
-require_once 'includes/customizer.php';
 
 function minimalistflex_custom_excerpt_length() {
 	return intval( get_theme_mod( 'minimalistflex_interface_excerpt', '55' ) );
