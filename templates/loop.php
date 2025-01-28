@@ -84,7 +84,7 @@ $mf_default_image_location = get_theme_mod( 'minimalistflex_default_featured_ima
                 <?php endif; ?>
                 <?php if ( get_theme_mod( 'minimalistflex_interface_comment_count', 'yes' ) === 'yes' ): ?>
                 <div class="panel-comment-count">
-                    <a href="<?php echo get_comments_link() ?>">
+                    <a href="<?php echo esc_url( get_comments_link() ) ?>">
                         <?php
                             printf(
                                 /* translators: %d: Number of comments. */
