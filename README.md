@@ -42,6 +42,9 @@ As a bonus, we have 4 pre-built color palettes for you.
 
 ## Changelog
 
+### 1.1.1
+* How would I forget the CodeSniffer checks? Anyways, fixed a security issue.
+
 ### 1.1
 * A little bit new design, as well as fixed some visual issues.
 * Fixed a bug where the "Below Content" widget area don't display properly.
