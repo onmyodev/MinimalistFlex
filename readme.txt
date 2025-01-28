@@ -51,6 +51,10 @@ As a bonus, we have 4 pre-built color palettes for you.
 
 == Changelog ==
 
+= 1.1 =
+* A little bit new design, as well as fixed some visual issues.
+* Fixed a bug where the "Below Content" widget area don't display properly.
+
 = 1.0.5 =
 * Addressed a menu styling issue.
 * Fixed footer credit not being properly displayed.
