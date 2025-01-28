@@ -1,7 +1,7 @@
 /**
  * Theme Name:        MinimalistFlex
  * Description:       MinimalistFlex is an elegant, easy to use theme that aims to provide a smooth user experience. As a classic theme, we try to provide as many options as possible, while not being overwhelming. With full support of flexible header images, custom colors and layout, multiple widget areas, you can still customize your site in a lot of ways. Compatibility is also an important affair: MinimalistFlex is tested on many versions with a minimum of WordPress 4.9 and PHP 5.6, ensuring that almost everyone can enjoy the theme without worrying to upgrade. Mobile users are also considered well: MinimalistFlex is fully responsive on its own, and works well even on very small screen sizes!
- * Version:           1.0.6
+ * Version:           1.1
  * Theme URI:         https://github.com/onmyodev/MinimalistFlex/
  * Author:            Frank419
  * Author URI:        https://onmyodev.com/
@@ -78,7 +78,7 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.minimalistflex-master h1,
+/* .minimalistflex-master h1,
 .minimalistflex-master h2,
 .minimalistflex-master h3,
 .minimalistflex-master h4,
@@ -95,10 +95,11 @@
 .minimalistflex-master address,
 .minimalistflex-master div {
         color: var(--minimalistflex-default);
-}
+} */
 
 html {
     scroll-behavior: smooth;
+    color: var(--minimalistflex-default);
 }
 
 body {
@@ -115,7 +116,7 @@ body.loading * {
 body.custom-background .minimalistflex-content {
     background-color: color-mix(
         in srgb,
-        var(--minimalistflex-level1),
+        var(--minimalistflex-level2),
         transparent 50%
     );
 }
@@ -123,7 +124,7 @@ body.custom-background .minimalistflex-content {
 body.custom-background .minimalistflex-sidebar {
     background-color: color-mix(
         in srgb,
-        var(--minimalistflex-level2),
+        var(--minimalistflex-level1),
         transparent 25%
     );
     box-shadow: none;
@@ -179,7 +180,7 @@ button:focus {
 .minimalistflex-master kbd,
 .minimalistflex-master code,
 .minimalistflex-master pre {
-    font-family: Hack, 'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace;
     background-color: #111111;
     color: #ffffff;
     border-radius: 2px;
@@ -477,7 +478,7 @@ button:focus {
 
 .minimalistflex-content {
     width: 67%;
-    background-color: var(--minimalistflex-level1);
+    background-color: var(--minimalistflex-level2);
 }
 
 .minimalistflex-master.minimalistflex-sidebar-layout-no .minimalistflex-content {
@@ -486,8 +487,8 @@ button:focus {
 
 .minimalistflex-sidebar {
     width: 33%;
-    background-color: var(--minimalistflex-level2);
-    box-shadow: var(--minimalistflex-inset-shadow-light);
+    background-color: var(--minimalistflex-level1);
+    box-shadow: var(--minimalistflex-card-shadow);
 }
 
 .page-numbers,
@@ -496,11 +497,12 @@ button:focus {
     margin: 10%;
     display: flex;
     flex-direction: column;
+    border-radius: 2px;
 }
 
 .panel.sticky {
     border-top: solid 3px var(--minimalistflex-tint);
-    padding-top: 2em;
+    padding-top: 0;
 }
 
 .panel.sticky:has(.panel-image) {
@@ -510,7 +512,7 @@ button:focus {
 .panel.sticky::before {
     content: var(--minimalistflex-featured);
     position: absolute;
-    top: 0;
+    top: calc(-2em - 6px);
     right: 1em;
     padding: 0.5em 1em;
     color: var(--minimalistflex-contrast);
@@ -539,34 +541,36 @@ button:focus {
 }
 
 .panel-content {
-    padding: 1em;
     position: relative;
+    background-color: var(--minimalistflex-level1);
+    box-shadow: var(--minimalistflex-card-shadow);
 }
 
-.panel-comment-count {
-    position: absolute;
-    right: 1em;
-    top: 1em;
-    font-size: 12px;
-    color: var(--minimalistflex-level3-dark);
+.panel-content > * {
+    padding: 1em;
 }
 
 .panel-title {
-    padding: 0;
+    padding: 16px;
     margin: 0;
     font-size: 32px;
     font-weight: normal;
-}
-
-.panel-main {
-    border-bottom: solid 1px var(--minimalistflex-shadow);
 }
 
 .panel-meta {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: left;
+    background-color: var(--minimalistflex-level2);
+    line-height: 0;
+    border-top: solid 1px var(--minimalistflex-shadow);
+    border-bottom: solid 1px var(--minimalistflex-shadow);
+    font-size: 12px;
+}
+
+.panel-meta > * {
+    margin-right: 1em;
 }
 
 .panel-author {
@@ -583,11 +587,28 @@ a.panel-author:focus {
 }
 
 .panel-meta .avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 20px;
-    margin: 1em;
+    width: 2em;
+    height: 2em;
+    border-radius: 2px;
+    margin: 0;
+    margin-right: 1em;
     box-shadow: var(--minimalistflex-card-shadow);
+}
+
+.panel-meta span {
+    color: var(--minimalistflex-link);
+}
+
+.panel-comment-count a {
+    color: var(--minimalistflex-link);
+}
+
+.panel-comment-count a:hover {
+    color: var(--minimalistflex-link-hover);
+}
+
+.panel-link-container {
+    text-align: right;
 }
 
 .panel-link {
@@ -595,9 +616,9 @@ a.panel-author:focus {
     display: inline-block;
     margin: 0;
     color: var(--minimalistflex-default);
-    padding: 1em;
     text-decoration: none;
     text-align: center;
+    padding-right: 1em;
 }
 
 .panel-link:hover,
@@ -638,7 +659,6 @@ a.panel-author:focus {
 .post-nav-links {
     flex-direction: row;
     margin: 0;
-    margin-bottom: 1em;
     padding: 0;
 }
 
@@ -740,12 +760,12 @@ a.panel-author:focus {
     top: calc(50% - 75px);
     width: 150px;
     height: 150px;
-    border-radius: 75px;
+    border-radius: 2px;
 }
 
 .author-page-avatar img {
     margin: 0;
-    border-radius: 75px;
+    border-radius: 2px;
     box-shadow: var(--minimalistflex-card-shadow);
 }
 
@@ -759,7 +779,7 @@ a.panel-author:focus {
     position: absolute;
     bottom: 0;
     right: 0;
-    border-radius: 16px;
+    border-radius: 2px;
     padding: 0 1em;
     display: flex;
     justify-content: center;
@@ -784,12 +804,12 @@ a.panel-author:focus {
 
 .singular-image {
     display: block;
-    width: 70%;
+    width: 80%;
     height: var(--minimalistflex-max-height);
-    margin: 2em;
     box-shadow: var(--minimalistflex-card-shadow);
     border-radius: 2px;
     overflow: hidden;
+    line-height: 0;
 }
 
 .singular-image > img {
@@ -799,17 +819,31 @@ a.panel-author:focus {
 }
 
 .singular-main {
-    width: 50%;
-    padding: 2em;
+    margin: 10%;
+    width: 80%;
     line-height: 2em;
+}
+
+.singular-post {
+    padding: 0;
+    box-shadow: var(--minimalistflex-card-shadow);
+}
+
+.singular-post > * {
+    padding: 2em;
+    background-color: var(--minimalistflex-level1);
 }
 
 .publisher {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: left;
     align-items: center;
     padding: 1em;
+    background-color: var(--minimalistflex-level2);
+    border-top: solid 1px var(--minimalistflex-shadow);
+    border-bottom: solid 1px var(--minimalistflex-shadow);
+    font-size: 12px;
 }
 
 .publisher-link {
@@ -818,21 +852,31 @@ a.panel-author:focus {
     align-items: center;
 }
 
+.publisher > * {
+    margin-right: 1em;
+}
+
 .publisher-link img {
     height: 2em;
     width: 2em;
-    border-radius: 50%;
+    border-radius: 2px;
     box-shadow: var(--minimalistflex-card-shadow);
-    margin-right: 1em;
+    margin: 0 1em 0 0 !important;
 }
 
 .publisher-datetime {
     color: var(--minimalistflex-level3-dark);
 }
 
+.singular-card {
+    box-shadow: var(--minimalistflex-card-shadow);
+}
+
 .singular-author {
     padding: 1em;
     clear: both;
+    background-color: var(--minimalistflex-level2);
+    border-bottom: solid 1px var(--minimalistflex-shadow);
 }
 
 .author-card {
@@ -843,7 +887,7 @@ a.panel-author:focus {
 }
 
 .author-avatar img {
-    border-radius: 50%;
+    border-radius: 2px;
     box-shadow: var(--minimalistflex-card-shadow);
 }
 
@@ -867,6 +911,7 @@ a.author-link {
 
 .singular-meta {
     padding: 1em;
+    background-color: var(--minimalistflex-level1);
 }
 
 .singular-categories {
@@ -905,8 +950,14 @@ a.author-link {
 }
 
 .comments-area {
-    width: 70%;
+    width: 80%;
     margin-bottom: 4em;
+}
+
+.comment-respond {
+    background-color: var(--minimalistflex-level1);
+    box-shadow: var(--minimalistflex-card-shadow);
+    padding: 2em;
 }
 
 .comment-list {
@@ -923,6 +974,29 @@ a.author-link {
 
 .comment {
     position: relative;
+    background-color: var(--minimalistflex-level1);
+    box-shadow: var(--minimalistflex-card-shadow);
+    margin: 1em 0 1em 4em;
+}
+
+.comment-list .children .comment {
+    margin: 0 2em;
+    box-shadow: none;
+}
+
+.comment-list .children .children {
+    margin-left: -4.5em;
+}
+
+.comment .comment-respond {
+    box-shadow: none;
+    background-color: var(--minimalistflex-level2);
+}
+
+.comment .children .comment-respond {
+    margin-left: -5.5em;
+    margin-bottom: 2em;
+    width: calc(100% + 7.5em);
 }
 
 .comment.bypostauthor {
@@ -958,6 +1032,19 @@ a.author-link {
     text-decoration: none;
 }
 
+.comment-edit-link {
+    position: relative;
+    padding-left: 1em;
+}
+
+.comment-edit-link::before {
+    position: absolute;
+    content: "\f464";
+    font-family: "Dashicons";
+    top: 1px;
+    left: 0;
+}
+
 .comment-body {
     margin: 0;
     padding: 2em;
@@ -966,10 +1053,12 @@ a.author-link {
 
 .comment-author > .avatar {
     position: absolute;
-    top: -20px;
-    left: -20px;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    top: 0;
+    left: -4em;
+    margin: 0;
+    border-radius: 2px;
+    box-shadow: var(--minimalistflex-card-shadow);
+    background-color: var(--minimalistflex-level1);
 }
 
 .comment-form {
@@ -1072,8 +1161,9 @@ p[class*=comment-form-] {
     clear: both;
 }
 
-.panel.widget {
-    padding: 1em;
+.below-content-widgets {
+    background-color: transparent;
+    box-shadow: none;
 }
 
 .widget > * {
