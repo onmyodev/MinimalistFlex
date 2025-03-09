@@ -1,15 +1,15 @@
-# Copyright (C) 2024 Frank419
+# Copyright (C) 2025 Frank419
 # This file is distributed under the GNU General Public License v3.0 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: MinimalistFlex 1.0.5\n"
+"Project-Id-Version: MinimalistFlex 1.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/minimalistflex\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-09-14T13:34:32+00:00\n"
+"POT-Creation-Date: 2025-03-09T13:55:07+08:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: minimalistflex\n"
@@ -60,12 +60,12 @@ msgid "User description"
 msgstr ""
 
 #: author.php:26
-#: includes/customizer.php:136
+#: includes/customizer.php:135
 msgid "Registration time"
 msgstr ""
 
 #: author.php:27
-#: includes/customizer.php:137
+#: includes/customizer.php:136
 msgid "Website"
 msgstr ""
 
@@ -99,7 +99,7 @@ msgid "Newer Comments &rarr;"
 msgstr ""
 
 #: comments.php:51
-#: singular.php:58
+#: singular.php:82
 msgid "Comments are closed."
 msgstr ""
 
@@ -112,69 +112,69 @@ msgstr ""
 msgid "Theme <a href=\"%s\">MinimalistFlex</a>."
 msgstr ""
 
-#: functions.php:37
+#: functions.php:46
 msgid "An abstract default header image."
 msgstr ""
 
-#: functions.php:42
+#: functions.php:51
 msgid "A default header image that contains three lines."
-msgstr ""
-
-#: functions.php:67
-msgctxt "sidebar name"
-msgid "Main Sidebar"
-msgstr ""
-
-#: functions.php:69
-msgid "Widgets in this area will be shown on all posts and pages."
 msgstr ""
 
 #: functions.php:76
 msgctxt "sidebar name"
-msgid "Above Content"
+msgid "Main Sidebar"
 msgstr ""
 
 #: functions.php:78
-msgid "Widgets in this area will be shown above the main content."
+msgid "Widgets in this area will be shown on all posts and pages."
 msgstr ""
 
 #: functions.php:85
 msgctxt "sidebar name"
-msgid "Below Content"
+msgid "Above Content"
 msgstr ""
 
 #: functions.php:87
-msgid "Widgets in this area will be shown below the main content."
+msgid "Widgets in this area will be shown above the main content."
 msgstr ""
 
 #: functions.php:94
 msgctxt "sidebar name"
-msgid "Footer"
+msgid "Below Content"
 msgstr ""
 
 #: functions.php:96
-msgid "Widgets in this area will be shown in the footer. Always shows."
+msgid "Widgets in this area will be shown below the main content."
 msgstr ""
 
 #: functions.php:103
 msgctxt "sidebar name"
-msgid "Footer 2"
+msgid "Footer"
 msgstr ""
 
 #: functions.php:105
-msgid "Widgets in this area will be shown in the footer to construct a multi column footer. Only shows when the footer is set to display it. Also twice as wide as other footer widget areas."
+msgid "Widgets in this area will be shown in the footer. Always shows."
 msgstr ""
 
 #: functions.php:112
 msgctxt "sidebar name"
-msgid "Footer 3"
+msgid "Footer 2"
 msgstr ""
 
 #: functions.php:114
+msgid "Widgets in this area will be shown in the footer to construct a multi column footer. Only shows when the footer is set to display it. Also twice as wide as other footer widget areas."
+msgstr ""
+
+#: functions.php:121
+msgctxt "sidebar name"
+msgid "Footer 3"
+msgstr ""
+
+#: functions.php:123
 msgid "Widgets in this area will be shown in the footer to construct a multi column footer. Only shows when the footer is set to display it."
 msgstr ""
 
-#: functions.php:126
+#: functions.php:135
 msgid "Main Menu"
 msgstr ""
 
@@ -441,451 +441,451 @@ msgid "The theme can also retrieve the first image in a post if possible. When n
 msgstr ""
 
 #: includes/customizer.php:72
-#: includes/customizer.php:125
-#: includes/customizer.php:162
-#: includes/customizer.php:174
-#: includes/customizer.php:517
-#: includes/customizer.php:540
-#: includes/customizer.php:563
-#: includes/customizer.php:574
-#: includes/customizer.php:597
-#: includes/customizer.php:608
-#: includes/customizer.php:619
-#: includes/customizer.php:642
-#: includes/customizer.php:653
-#: includes/customizer.php:664
-#: includes/customizer.php:687
-#: includes/customizer.php:710
-#: includes/customizer.php:721
-#: includes/customizer.php:739
-#: includes/customizer.php:750
-#: includes/customizer.php:761
+#: includes/customizer.php:123
+#: includes/customizer.php:158
+#: includes/customizer.php:170
+#: includes/customizer.php:512
+#: includes/customizer.php:535
+#: includes/customizer.php:558
+#: includes/customizer.php:569
+#: includes/customizer.php:592
+#: includes/customizer.php:603
+#: includes/customizer.php:614
+#: includes/customizer.php:637
+#: includes/customizer.php:648
+#: includes/customizer.php:659
+#: includes/customizer.php:682
+#: includes/customizer.php:705
+#: includes/customizer.php:716
+#: includes/customizer.php:734
+#: includes/customizer.php:745
+#: includes/customizer.php:756
 msgid "Yes"
 msgstr ""
 
 #: includes/customizer.php:73
-#: includes/customizer.php:126
-#: includes/customizer.php:163
-#: includes/customizer.php:175
-#: includes/customizer.php:507
-#: includes/customizer.php:518
-#: includes/customizer.php:530
-#: includes/customizer.php:541
-#: includes/customizer.php:553
-#: includes/customizer.php:564
-#: includes/customizer.php:575
-#: includes/customizer.php:587
-#: includes/customizer.php:598
-#: includes/customizer.php:609
-#: includes/customizer.php:620
-#: includes/customizer.php:632
-#: includes/customizer.php:643
-#: includes/customizer.php:654
-#: includes/customizer.php:665
-#: includes/customizer.php:677
-#: includes/customizer.php:688
-#: includes/customizer.php:700
-#: includes/customizer.php:711
-#: includes/customizer.php:722
-#: includes/customizer.php:740
-#: includes/customizer.php:751
-#: includes/customizer.php:762
-#: includes/customizer.php:774
+#: includes/customizer.php:124
+#: includes/customizer.php:159
+#: includes/customizer.php:171
+#: includes/customizer.php:502
+#: includes/customizer.php:513
+#: includes/customizer.php:525
+#: includes/customizer.php:536
+#: includes/customizer.php:548
+#: includes/customizer.php:559
+#: includes/customizer.php:570
+#: includes/customizer.php:582
+#: includes/customizer.php:593
+#: includes/customizer.php:604
+#: includes/customizer.php:615
+#: includes/customizer.php:627
+#: includes/customizer.php:638
+#: includes/customizer.php:649
+#: includes/customizer.php:660
+#: includes/customizer.php:672
+#: includes/customizer.php:683
+#: includes/customizer.php:695
+#: includes/customizer.php:706
+#: includes/customizer.php:717
+#: includes/customizer.php:735
+#: includes/customizer.php:746
+#: includes/customizer.php:757
+#: includes/customizer.php:769
 msgid "No"
 msgstr ""
 
-#: includes/customizer.php:88
+#: includes/customizer.php:89
 msgid "Color Palettes"
 msgstr ""
 
-#: includes/customizer.php:89
+#: includes/customizer.php:90
 msgid "We had prepared some fine tuned color palettes for you. Select an option and it will automatically apply the palette to your site."
 msgstr ""
 
-#: includes/customizer.php:120
+#: includes/customizer.php:118
 msgid "Disable Shadows"
 msgstr ""
 
-#: includes/customizer.php:121
+#: includes/customizer.php:119
 msgid "This option lets you disable the shadow on the site. It should only affect the shadow created by the theme."
 msgstr ""
 
-#: includes/customizer.php:129
+#: includes/customizer.php:127
 msgid "The default background setting from the WordPress core. If set, it will blend with the content &amp; sidebar background colors set below."
 msgstr ""
 
-#: includes/customizer.php:130
+#: includes/customizer.php:128
 msgid "The default header text setting from the WordPress core. Used on the header and the toggle button."
 msgstr ""
 
 #. translators: This line is special. The part before <br> is the description of the section, while the rest is the option name.
-#: includes/customizer.php:135
+#: includes/customizer.php:134
 msgid "Below are some metadatas that you may configure whether to display or not.<br>Description"
 msgstr ""
 
-#: includes/customizer.php:138
+#: includes/customizer.php:137
 msgid "Email address"
 msgstr ""
 
-#: includes/customizer.php:158
+#: includes/customizer.php:154
 msgid "Metadatas"
 msgstr ""
 
-#: includes/customizer.php:186
+#: includes/customizer.php:181
 msgctxt "customizer panel"
 msgid "Layout"
 msgstr ""
 
-#: includes/customizer.php:187
+#: includes/customizer.php:182
 msgid "Here you may configure how different pages on your site looks like."
 msgstr ""
 
-#: includes/customizer.php:194
+#: includes/customizer.php:189
 msgctxt "customizer section"
 msgid "Blog Page"
 msgstr ""
 
-#: includes/customizer.php:195
+#: includes/customizer.php:190
 msgid "Here you may customize the layout of your blog page."
 msgstr ""
 
-#: includes/customizer.php:201
+#: includes/customizer.php:196
 msgctxt "customizer section"
 msgid "Front Page"
 msgstr ""
 
-#: includes/customizer.php:202
+#: includes/customizer.php:197
 msgid "Here you may customize the layout of your front page. Only takes effect when using a static front page."
 msgstr ""
 
-#: includes/customizer.php:208
+#: includes/customizer.php:203
 msgctxt "customizer section"
 msgid "Archives"
 msgstr ""
 
-#: includes/customizer.php:209
+#: includes/customizer.php:204
 msgid "Here you may customize the layout of your archive pages."
 msgstr ""
 
-#: includes/customizer.php:215
+#: includes/customizer.php:210
 msgctxt "customizer section"
 msgid "Search Results"
 msgstr ""
 
-#: includes/customizer.php:216
+#: includes/customizer.php:211
 msgid "Here you may customize the layout of your search result pages."
 msgstr ""
 
-#: includes/customizer.php:222
+#: includes/customizer.php:217
 msgctxt "customizer section"
 msgid "Author Pages"
 msgstr ""
 
-#: includes/customizer.php:223
+#: includes/customizer.php:218
 msgid "Here you may customize the layout of your author pages."
 msgstr ""
 
-#: includes/customizer.php:229
+#: includes/customizer.php:224
 msgctxt "customizer section"
 msgid "Single Posts"
 msgstr ""
 
-#: includes/customizer.php:230
+#: includes/customizer.php:225
 msgid "Here you may customize the layout of your posts."
 msgstr ""
 
-#: includes/customizer.php:236
+#: includes/customizer.php:231
 msgctxt "customizer section"
 msgid "Pages"
 msgstr ""
 
-#: includes/customizer.php:237
+#: includes/customizer.php:232
 msgid "Here you may customize the layout of your pages."
 msgstr ""
 
-#: includes/customizer.php:243
+#: includes/customizer.php:238
 msgctxt "customizer section"
 msgid "Interface &amp; Elements"
 msgstr ""
 
-#: includes/customizer.php:244
+#: includes/customizer.php:239
 msgid "You may customize your site's interface and the elements displayed here."
 msgstr ""
 
-#: includes/customizer.php:249
+#: includes/customizer.php:244
 msgctxt "customizer section"
 msgid "Footer"
 msgstr ""
 
-#: includes/customizer.php:250
+#: includes/customizer.php:245
 msgid "You may customize how your footer looks like here."
 msgstr ""
 
-#: includes/customizer.php:447
-#: templates/loop.php:108
+#: includes/customizer.php:442
+#: templates/loop.php:113
 msgid "Read More"
 msgstr ""
 
-#: includes/customizer.php:488
+#: includes/customizer.php:483
 msgid "Header Image Link"
 msgstr ""
 
-#: includes/customizer.php:489
+#: includes/customizer.php:484
 msgid "You may link the header image to a URL. Leave blank if you do not want to do so."
 msgstr ""
 
-#: includes/customizer.php:495
+#: includes/customizer.php:490
 msgid "Header Image Label"
 msgstr ""
 
-#: includes/customizer.php:496
+#: includes/customizer.php:491
 msgid "You may provide a description of your header image. Also will become the label of the link if set. Should be set for better accessibility."
 msgstr ""
 
-#: includes/customizer.php:502
-#: includes/customizer.php:525
-#: includes/customizer.php:548
-#: includes/customizer.php:582
-#: includes/customizer.php:627
-#: includes/customizer.php:672
-#: includes/customizer.php:695
+#: includes/customizer.php:497
+#: includes/customizer.php:520
+#: includes/customizer.php:543
+#: includes/customizer.php:577
+#: includes/customizer.php:622
+#: includes/customizer.php:667
+#: includes/customizer.php:690
 msgctxt "layout"
 msgid "Sidebar"
 msgstr ""
 
-#: includes/customizer.php:503
-#: includes/customizer.php:526
-#: includes/customizer.php:549
-#: includes/customizer.php:583
-#: includes/customizer.php:628
-#: includes/customizer.php:673
-#: includes/customizer.php:696
+#: includes/customizer.php:498
+#: includes/customizer.php:521
+#: includes/customizer.php:544
+#: includes/customizer.php:578
+#: includes/customizer.php:623
+#: includes/customizer.php:668
+#: includes/customizer.php:691
 msgid "Select whether to display the sidebar, and its location."
 msgstr ""
 
-#: includes/customizer.php:505
-#: includes/customizer.php:528
-#: includes/customizer.php:551
-#: includes/customizer.php:585
-#: includes/customizer.php:630
-#: includes/customizer.php:675
-#: includes/customizer.php:698
+#: includes/customizer.php:500
+#: includes/customizer.php:523
+#: includes/customizer.php:546
+#: includes/customizer.php:580
+#: includes/customizer.php:625
+#: includes/customizer.php:670
+#: includes/customizer.php:693
 msgid "Left sidebar"
 msgstr ""
 
-#: includes/customizer.php:506
-#: includes/customizer.php:529
-#: includes/customizer.php:552
-#: includes/customizer.php:586
-#: includes/customizer.php:631
-#: includes/customizer.php:676
-#: includes/customizer.php:699
+#: includes/customizer.php:501
+#: includes/customizer.php:524
+#: includes/customizer.php:547
+#: includes/customizer.php:581
+#: includes/customizer.php:626
+#: includes/customizer.php:671
+#: includes/customizer.php:694
 msgid "Right sidebar"
 msgstr ""
 
-#: includes/customizer.php:514
-#: includes/customizer.php:537
-#: includes/customizer.php:560
-#: includes/customizer.php:594
-#: includes/customizer.php:639
-#: includes/customizer.php:684
-#: includes/customizer.php:707
+#: includes/customizer.php:509
+#: includes/customizer.php:532
+#: includes/customizer.php:555
+#: includes/customizer.php:589
+#: includes/customizer.php:634
+#: includes/customizer.php:679
+#: includes/customizer.php:702
 msgctxt "layout"
 msgid "Header Image"
 msgstr ""
 
-#: includes/customizer.php:515
-#: includes/customizer.php:538
-#: includes/customizer.php:561
-#: includes/customizer.php:595
-#: includes/customizer.php:640
-#: includes/customizer.php:685
-#: includes/customizer.php:708
+#: includes/customizer.php:510
+#: includes/customizer.php:533
+#: includes/customizer.php:556
+#: includes/customizer.php:590
+#: includes/customizer.php:635
+#: includes/customizer.php:680
+#: includes/customizer.php:703
 msgid "Select whether to display the header image."
 msgstr ""
 
-#: includes/customizer.php:571
+#: includes/customizer.php:566
 msgctxt "layout"
 msgid "Title"
 msgstr ""
 
-#: includes/customizer.php:572
+#: includes/customizer.php:567
 msgid "Select whether to display the archive title."
 msgstr ""
 
-#: includes/customizer.php:605
+#: includes/customizer.php:600
 msgctxt "layout"
 msgid "Search Query"
 msgstr ""
 
-#: includes/customizer.php:606
+#: includes/customizer.php:601
 msgid "Select whether to display the search query."
 msgstr ""
 
-#: includes/customizer.php:616
+#: includes/customizer.php:611
 msgctxt "layout"
 msgid "Search Form"
 msgstr ""
 
-#: includes/customizer.php:617
+#: includes/customizer.php:612
 msgid "Select whether to also display the search form."
 msgstr ""
 
-#: includes/customizer.php:650
+#: includes/customizer.php:645
 msgctxt "layout"
 msgid "Author Name"
 msgstr ""
 
-#: includes/customizer.php:651
+#: includes/customizer.php:646
 msgid "Select whether to display the author name."
 msgstr ""
 
-#: includes/customizer.php:661
+#: includes/customizer.php:656
 msgctxt "layout"
 msgid "Admin Status"
 msgstr ""
 
-#: includes/customizer.php:662
+#: includes/customizer.php:657
 msgid "Show an indicator in the bottom-right of the avatar if the author is an admin."
 msgstr ""
 
-#: includes/customizer.php:718
+#: includes/customizer.php:713
 msgid "Scroll to top button"
 msgstr ""
 
-#: includes/customizer.php:719
+#: includes/customizer.php:714
 msgid "Whether to display a \"Scroll to top\" button in the bottom-right corner."
 msgstr ""
 
-#: includes/customizer.php:729
+#: includes/customizer.php:724
 msgid "Excerpt Word Count"
 msgstr ""
 
-#: includes/customizer.php:730
+#: includes/customizer.php:725
 msgid "The word count of the excerpts on any archive page and the blog page."
 msgstr ""
 
-#: includes/customizer.php:736
+#: includes/customizer.php:731
 msgid "Auto h2 Label"
 msgstr ""
 
-#: includes/customizer.php:737
+#: includes/customizer.php:732
 msgid "The theme can automatically theme and label the h2 elements in single posts and pages, providing a better visual. May not work well in all circumstances, use with caution."
 msgstr ""
 
-#: includes/customizer.php:747
+#: includes/customizer.php:742
 msgid "Comment Count"
 msgstr ""
 
-#: includes/customizer.php:748
+#: includes/customizer.php:743
 msgid "Whether to display the comment count of the posts listed in an archive page."
 msgstr ""
 
-#: includes/customizer.php:758
+#: includes/customizer.php:753
 msgid "Publisher"
 msgstr ""
 
-#: includes/customizer.php:759
+#: includes/customizer.php:754
 msgid "Whether to display the publisher."
 msgstr ""
 
-#: includes/customizer.php:769
+#: includes/customizer.php:764
 msgid "Publish Date"
 msgstr ""
 
-#: includes/customizer.php:770
+#: includes/customizer.php:765
 msgid "Whether to display the published date."
 msgstr ""
 
-#: includes/customizer.php:772
+#: includes/customizer.php:767
 msgid "Yes, publish time only."
 msgstr ""
 
-#: includes/customizer.php:773
+#: includes/customizer.php:768
 msgid "Yes, and display modified time if possible."
 msgstr ""
 
-#: includes/customizer.php:781
+#: includes/customizer.php:776
 msgid "Read More Link"
 msgstr ""
 
-#: includes/customizer.php:782
+#: includes/customizer.php:777
 msgid "The text for the \"Read More\" links."
 msgstr ""
 
-#: includes/customizer.php:788
+#: includes/customizer.php:783
 msgid "Thumbnail Images Size"
 msgstr ""
 
-#: includes/customizer.php:789
+#: includes/customizer.php:784
 msgid "Select whether to enable flexible height for your thumbnail images, or use a fixed height."
 msgstr ""
 
-#: includes/customizer.php:791
+#: includes/customizer.php:786
 msgid "Fixed"
 msgstr ""
 
-#: includes/customizer.php:792
+#: includes/customizer.php:787
 msgid "Flexible"
 msgstr ""
 
-#: includes/customizer.php:799
+#: includes/customizer.php:794
 msgid "Height"
 msgstr ""
 
-#: includes/customizer.php:800
+#: includes/customizer.php:795
 msgid "Enter your desired height here. Should be in pixels."
 msgstr ""
 
-#: includes/customizer.php:806
+#: includes/customizer.php:801
 msgid "Footer Options"
 msgstr ""
 
-#: includes/customizer.php:807
+#: includes/customizer.php:802
 msgid "Choose what to display in your footer credit section."
 msgstr ""
 
-#: includes/customizer.php:809
+#: includes/customizer.php:804
 msgid "Both MinimalistFlex credits and custom footer text."
 msgstr ""
 
-#: includes/customizer.php:810
+#: includes/customizer.php:805
 msgid "MinimalistFlex credits only."
 msgstr ""
 
-#: includes/customizer.php:811
+#: includes/customizer.php:806
 msgid "Custom footer text only."
 msgstr ""
 
-#: includes/customizer.php:812
+#: includes/customizer.php:807
 msgid "Neither."
 msgstr ""
 
-#: includes/customizer.php:819
+#: includes/customizer.php:814
 msgid "Custom Footer Text"
 msgstr ""
 
-#: includes/customizer.php:820
+#: includes/customizer.php:815
 msgid "Here you may set a custom footer text to be displayed in the footer credits. HTML allowed."
 msgstr ""
 
-#: includes/customizer.php:826
+#: includes/customizer.php:821
 msgid "Footer Widget Layout"
 msgstr ""
 
-#: includes/customizer.php:827
+#: includes/customizer.php:822
 msgid "Choose the layout of the footer widgets."
 msgstr ""
 
-#: includes/customizer.php:829
+#: includes/customizer.php:824
 msgid "One column. Only shows the \"Footer\" widget area."
 msgstr ""
 
-#: includes/customizer.php:830
+#: includes/customizer.php:825
 msgid "Two columns. Also shows the \"Footer 2\" widget area."
 msgstr ""
 
-#: includes/customizer.php:831
+#: includes/customizer.php:826
 msgid "Three columns. Also shows the \"Footer 3\" widget area (aka all areas)."
 msgstr ""
 
@@ -902,8 +902,8 @@ msgid "Admin"
 msgstr ""
 
 #: page.php:24
-#: singular.php:48
-#: templates/loop.php:73
+#: singular.php:49
+#: templates/loop.php:57
 msgid "Pages: "
 msgstr ""
 
@@ -960,6 +960,22 @@ msgstr ""
 msgid "The thumbnail image for %s."
 msgstr ""
 
+#: singular.php:60
+msgid "Previous Post"
+msgstr ""
+
+#: singular.php:65
+msgid "No previous posts"
+msgstr ""
+
+#: singular.php:69
+msgid "Next Post"
+msgstr ""
+
+#: singular.php:74
+msgid "No newer posts"
+msgstr ""
+
 #: templates/empty.php:3
 msgid "Sorry, but nothing was found at this place."
 msgstr ""
@@ -974,28 +990,28 @@ msgstr ""
 msgid "The thhumbnail image link for %s"
 msgstr ""
 
+#. translators: %s: Post publish time.
+#: templates/loop.php:73
+#: templates/publisher.php:21
+msgid "Published on %s"
+msgstr ""
+
+#. translators: %s: Post last modified time.
+#: templates/loop.php:79
+#: templates/publisher.php:27
+msgid "Last modified on %s"
+msgstr ""
+
 #. translators: %d: Number of comments.
-#: templates/loop.php:57
+#: templates/loop.php:91
 msgctxt "comment count"
 msgid "%d Comment"
 msgid_plural "%d Comments"
 msgstr[0] ""
 msgstr[1] ""
 
-#. translators: %s: Post publish time.
-#: templates/loop.php:89
-#: templates/publisher.php:19
-msgid "Published on %s"
-msgstr ""
-
-#. translators: %s: Post last modified time.
-#: templates/loop.php:95
-#: templates/publisher.php:25
-msgid "Last modified on %s"
-msgstr ""
-
 #. translators: %s: Post title.
-#: templates/loop.php:104
+#: templates/loop.php:109
 msgid "Read more of %s"
 msgstr ""
 

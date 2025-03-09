@@ -1,13 +1,13 @@
 /**
  * Theme Name:        MinimalistFlex
  * Description:       MinimalistFlex is an elegant, easy to use theme that aims to provide a smooth user experience. As a classic theme, we try to provide as many options as possible, while not being overwhelming. With full support of flexible header images, custom colors and layout, multiple widget areas, you can still customize your site in a lot of ways. Compatibility is also an important affair: MinimalistFlex is tested on many versions with a minimum of WordPress 4.9 and PHP 5.6, ensuring that almost everyone can enjoy the theme without worrying to upgrade. Mobile users are also considered well: MinimalistFlex is fully responsive on its own, and works well even on very small screen sizes!
- * Version:           1.1.1
+ * Version:           1.2
  * Theme URI:         https://github.com/onmyodev/MinimalistFlex/
  * Author:            Frank419
  * Author URI:        https://onmyodev.com/
  * Tags:              two-columns ,left-sidebar, right-sidebar, custom-colors, custom-logo, custom-menu, editor-style, featured-images, flexible-header, footer-widgets, sticky-post, theme-options, translation-ready, blog
  * Text Domain:       minimalistflex
- * Tested up to:      6.6
+ * Tested up to:      6.7
  * Requires at least: 4.9
  * Requires PHP:      5.6
  * Requires CP:       1.0
@@ -889,6 +889,30 @@ a.author-link {
 .author-link:focus,
 .author-link:hover {
     text-decoration: solid underline;
+}
+
+.singular-adjacent-posts {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.singular-adjacent-post {
+    background-color: var(--minimalistflex-level1);
+    box-shadow: var(--minimalistflex-card-shadow);
+    padding: 2em;
+    width: 45%;
+    margin: 1em 0;
+}
+
+.singular-previous-post {
+    margin-right: 0.5em;
+}
+
+.singular-next-post {
+    margin-left: 0.5em;
 }
 
 .singular-meta {

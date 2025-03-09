@@ -42,6 +42,9 @@ As a bonus, we have 4 pre-built color palettes for you.
 
 ## Changelog
 
+### 1.2
+* Added "Previous Post" and "Next Post" links to posts (singular) pages.
+
 ### 1.1.1
 * How would I forget the CodeSniffer checks? Anyways, fixed a security issue.
 

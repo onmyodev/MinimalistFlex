@@ -987,6 +987,22 @@ msgstr "归档页"
 msgid "The thumbnail image for %s."
 msgstr "%s 的特色图像"
 
+#: singular.php:60
+msgid "Previous Post"
+msgstr "上一篇文章"
+
+#: singular.php:65
+msgid "No previous posts"
+msgstr "无更早文章"
+
+#: singular.php:69
+msgid "Next Post"
+msgstr "下一篇文章"
+
+#: singular.php:74
+msgid "No newer posts"
+msgstr "无更新文章"
+
 #: templates/empty.php:3
 msgid "Sorry, but nothing was found at this place."
 msgstr "抱歉，但是在此区域中没有找到任何小工具。"
