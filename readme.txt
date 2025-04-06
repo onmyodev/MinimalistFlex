@@ -8,8 +8,7 @@ License:           GNU General Public License v3.0 or later
 License URI:       https://www.gnu.org/licenses/gpl-3.0.html
 Copyright:         The MinimalistFlex theme, Copyright Frank419 2024, licensed under GPLv3.
 
-MinimalistFlex is an elegant, easy to use theme that aims to 
-provide a smooth user experience.
+MinimalistFlex is an elegant, resposive, and easy to use theme focused on blogging.
 
 == Description ==
 MinimalistFlex is a well designed theme that provides as 

@@ -1,6 +1,5 @@
 # MinimalistFlex
-MinimalistFlex is an elegant, easy to use theme that aims to 
-provide a smooth user experience.
+MinimalistFlex is an elegant, resposive, and easy to use theme focused on blogging.
 
 ## Description
 MinimalistFlex is a well designed theme that provides as 
