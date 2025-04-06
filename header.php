@@ -81,7 +81,7 @@ $mf_label = get_theme_mod( 'minimalistflex_header_label' );
 
 <header class="minimalistflex-header">
     <?php if ( has_custom_logo() ): ?>
-        <?php echo get_custom_logo() // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+        <?php echo wp_kses_post( get_custom_logo() ) ?>
     <?php endif; ?>
     <?php if ( display_header_text() ): ?>
         <h1 class="blog-title">
