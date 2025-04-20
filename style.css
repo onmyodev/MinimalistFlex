@@ -111,6 +111,11 @@ body.custom-background .minimalistflex-sidebar {
     box-shadow: none;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 textarea,
 input {
     color: var(--minimalistflex-default);
@@ -1585,6 +1590,15 @@ a img.alignwide {
 
     .singular-main {
         width: 80%;
+    }
+
+    [class*=comment-form-] {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    [class*=comment-form-] > label {
+        margin: 1em 0;
     }
 
     .minimalistflex-footer-widgets-container {
