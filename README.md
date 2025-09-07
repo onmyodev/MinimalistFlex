@@ -41,6 +41,9 @@ As a bonus, we have 4 pre-built color palettes for you.
 
 ## Changelog
 
+### 1.2.2
+* Bug fix
+
 ### 1.2.1
 * Fixed a major styling issue on older versions of WordPress.
 * Improved styling of the comment area on smaller screen sizes.
