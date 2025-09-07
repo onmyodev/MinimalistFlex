@@ -42,6 +42,9 @@ if( is_home() ) {
 } elseif ( is_page() ) {
     $mf_sidebar = get_theme_mod( 'minimalistflex_layout_page_sidebar', 'right' );
     $mf_header = get_theme_mod( 'minimalistflex_layout_page_header', 'yes' );
+} else {
+    $mf_sidebar = get_theme_mod( 'minimalistflex_layout_search_sidebar', 'right' );
+    $mf_header = get_theme_mod( 'minimalistflex_layout_search_header', 'yes' );
 }
 
 $mf_link = get_theme_mod( 'minimalistflex_header_link' );
