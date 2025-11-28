@@ -1,12 +1,12 @@
 === MinimalistFlex ===
-Stable tag:        1.2.2
+Stable tag:        1.3
 Contributors:      frank419
 Tags:              two-columns ,left-sidebar, right-sidebar, custom-colors, custom-logo, custom-menu, editor-style, featured-images, flexible-header, footer-widgets, sticky-post, theme-options, translation-ready, blog
 Tested up to:      6.8
 Requires at least: 4.9
 License:           GNU General Public License v3.0 or later
 License URI:       https://www.gnu.org/licenses/gpl-3.0.html
-Copyright:         The MinimalistFlex theme, Copyright Frank419 2024, licensed under GPLv3.
+Copyright:         The MinimalistFlex theme, Copyright Frank419 2024 - 2025, licensed under GPLv3.
 
 MinimalistFlex is an elegant, resposive, and easy to use theme focused on blogging.
 
@@ -49,6 +49,9 @@ changed.
 As a bonus, we have 4 pre-built color palettes for you.
 
 == Changelog ==
+
+= 1.3 =
+* Add functionality to disable the admin warnings.
 
 = 1.2.2 =
 * Bug fix

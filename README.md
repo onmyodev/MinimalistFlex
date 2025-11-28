@@ -41,6 +41,9 @@ As a bonus, we have 4 pre-built color palettes for you.
 
 ## Changelog
 
+### 1.3
+* Add functionality to disable the admin warnings.
+
 ### 1.2.2
 * Bug fix
 
