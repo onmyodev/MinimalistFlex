@@ -474,6 +474,13 @@ function minimalistflex_customize_register( $wp_customize ) {
         'default' => 'one',
         'sanitize_callback' => 'minimalistflex_sanitize_radio_cb'
     ) );
+    $wp_customize -> add_setting( 'minimalistflex_admin_warning', Array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => 'refresh',
+        'default' => 'no',
+        'sanitize_callback' => 'minimalistflex_sanitize_radio_cb'
+    ) );
 
     // Start binding controls (UI).
     $wp_customize -> add_control( 'minimalistflex_header_link', Array(
@@ -824,6 +831,17 @@ function minimalistflex_customize_register( $wp_customize ) {
             'one' => esc_html__( 'One column. Only shows the "Footer" widget area.', 'minimalistflex' ),
             'two' => esc_html__( 'Two columns. Also shows the "Footer 2" widget area.', 'minimalistflex' ),
             'three' => esc_html__( 'Three columns. Also shows the "Footer 3" widget area (aka all areas).', 'minimalistflex' )
+        )
+    ) );
+    $wp_customize -> add_control( 'minimalistflex_admin_warning', Array(
+        'type' => 'radio',
+        'priority' => 100,
+        'section' => 'minimalistflex_interface',
+        'label' => esc_html__( 'Admin Warnings', 'minimalistflex' ),
+        'description' => esc_html__( 'The theme can display a warning when no widgets are set. Select "No" to disable this feature.', 'minimalistflex' ),
+        'choices' => Array(
+            'yes' => esc_html__( 'Yes', 'minimalistflex' ),
+            'no' => esc_html__( 'No', 'minimalistflex' )
         )
     ) );
 
