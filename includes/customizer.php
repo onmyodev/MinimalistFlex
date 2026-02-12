@@ -176,6 +176,16 @@ function minimalistflex_customize_author_elements_register( $wp_customize ) {
 }
 
 function minimalistflex_customize_register( $wp_customize ) {
+    // Dynamic update for colors.
+    $wp_customize -> selective_refresh -> add_partial( 'minimalistflex_color_heading', array(
+        'selector' => "#minimalistflex-color-css",
+        'container_inclusive' => false,
+        'render_callback' => function () {
+            require_once 'color-definitions.php';
+            minimalistflex_render_color_css($colors);
+        }
+    ) );
+
     // Start adding panels.
     $wp_customize -> add_panel( 'minimalistflex_layout', Array(
         'title' => _x( 'Layout', 'customizer panel' , 'minimalistflex' ),
