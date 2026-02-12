@@ -93,6 +93,13 @@ function minimalistflex_customize_color_register( $wp_customize ) {
 
     $color_keys = array_keys( $colors );
     foreach( $color_keys as $color_key ) {
+        $wp_customize -> add_setting( 'minimalistflex_color_' . $color_key, Array(
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'refresh',
+            'default' => $colors[$color_key],
+            'sanitize_callback' => 'minimalistflex_sanitize_color_cb'
+        ) );
         // Dynamic update for colors.
         $wp_customize -> selective_refresh -> add_partial( 'minimalistflex_color_' . $color_key, array(
             'selector' => "#minimalistflex-color-css",
@@ -100,13 +107,6 @@ function minimalistflex_customize_color_register( $wp_customize ) {
             'render_callback' => function($colors) {
                 minimalistflex_render_color_css($colors);
             }
-        ) );
-        $wp_customize -> add_setting( 'minimalistflex_color_' . $color_key, Array(
-            'type' => 'theme_mod',
-            'capability' => 'edit_theme_options',
-            'transport' => 'refresh',
-            'default' => $colors[$color_key],
-            'sanitize_callback' => 'minimalistflex_sanitize_color_cb'
         ) );
         $wp_customize -> add_control( new WP_Customize_Color_Control( $wp_customize, 'minimalistflex_color_' . $color_key, Array(
             'label' => $labels[$color_key],
