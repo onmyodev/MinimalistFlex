@@ -41,6 +41,10 @@ As a bonus, we have 4 pre-built color palettes for you.
 
 ## Changelog
 
+### 1.4
+* Added partial refresh for colors.
+* TODO: Further transforms to postMessage transport for live updating.
+
 ### 1.3
 * Add functionality to disable the admin warnings.
 

@@ -1,8 +1,8 @@
 === MinimalistFlex ===
-Stable tag:        1.3
+Stable tag:        1.4
 Contributors:      frank419
 Tags:              two-columns ,left-sidebar, right-sidebar, custom-colors, custom-logo, custom-menu, editor-style, featured-images, flexible-header, footer-widgets, sticky-post, theme-options, translation-ready, blog
-Tested up to:      6.8
+Tested up to:      6.9.1
 Requires at least: 4.9
 License:           GNU General Public License v3.0 or later
 License URI:       https://www.gnu.org/licenses/gpl-3.0.html
@@ -49,6 +49,10 @@ changed.
 As a bonus, we have 4 pre-built color palettes for you.
 
 == Changelog ==
+
+= 1.4 =
+* Added partial refresh for colors.
+* TODO: Further transforms to postMessage transport for live updating.
 
 = 1.3 =
 * Add functionality to disable the admin warnings.
