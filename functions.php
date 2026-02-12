@@ -53,6 +53,7 @@ function minimalistflex_add_supports() {
 	) );
 
 	add_theme_support( 'editor-styles' );
+	add_theme_support( 'customize-selective-refresh-widgets' );
 	add_editor_style( 'css/editor.css' );
 
 	$content_width = '100%';
