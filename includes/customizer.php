@@ -93,6 +93,14 @@ function minimalistflex_customize_color_register( $wp_customize ) {
 
     $color_keys = array_keys( $colors );
     foreach( $color_keys as $color_key ) {
+        // Dynamic update for colors.
+        $wp_customize -> selective_refresh -> add_partial( 'minimalistflex_color_' . $color_key, array(
+            'selector' => "#minimalistflex-color-css",
+            'container_inclusive' => false,
+            'render_callback' => function($colors) {
+                minimalistflex_render_color_css($colors);
+            }
+        ) );
         $wp_customize -> add_setting( 'minimalistflex_color_' . $color_key, Array(
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
@@ -176,16 +184,6 @@ function minimalistflex_customize_author_elements_register( $wp_customize ) {
 }
 
 function minimalistflex_customize_register( $wp_customize ) {
-    // Dynamic update for colors.
-    $wp_customize -> selective_refresh -> add_partial( 'minimalistflex_color_heading', array(
-        'selector' => "#minimalistflex-color-css",
-        'container_inclusive' => false,
-        'render_callback' => function () {
-            require_once 'color-definitions.php';
-            minimalistflex_render_color_css($colors);
-        }
-    ) );
-
     // Start adding panels.
     $wp_customize -> add_panel( 'minimalistflex_layout', Array(
         'title' => _x( 'Layout', 'customizer panel' , 'minimalistflex' ),
