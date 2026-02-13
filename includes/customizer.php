@@ -77,6 +77,8 @@ function minimalistflex_default_featured_image_register( $wp_customize ) {
 add_action( 'customize_register', 'minimalistflex_default_featured_image_register' );
 
 function minimalistflex_customize_color_register( $wp_customize ) {
+    $wp_customize->get_setting('header_textcolor')->transport = 'postMessage';
+
     require_once 'color-definitions.php';
     require_once 'class-color-palette-control.php';
 
@@ -96,17 +98,9 @@ function minimalistflex_customize_color_register( $wp_customize ) {
         $wp_customize -> add_setting( 'minimalistflex_color_' . $color_key, Array(
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
-            'transport' => 'refresh',
+            'transport' => 'postMessage',
             'default' => $colors[$color_key],
             'sanitize_callback' => 'minimalistflex_sanitize_color_cb'
-        ) );
-        // Dynamic update for colors.
-        $wp_customize -> selective_refresh -> add_partial( 'minimalistflex_color_' . $color_key, array(
-            'selector' => "#minimalistflex-color-css",
-            'container_inclusive' => false,
-            'render_callback' => function($colors) {
-                minimalistflex_render_color_css($colors);
-            }
         ) );
         $wp_customize -> add_control( new WP_Customize_Color_Control( $wp_customize, 'minimalistflex_color_' . $color_key, Array(
             'label' => $labels[$color_key],
@@ -117,7 +111,7 @@ function minimalistflex_customize_color_register( $wp_customize ) {
     $wp_customize -> add_setting( 'minimalistflex_color_disable_shadow', Array(
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
-        'transport' => 'refresh',
+        'transport' => 'postMessage',
         'default' => 'no',
         'sanitize_callback' => 'minimalistflex_sanitize_radio_cb'
     ) );
@@ -138,8 +132,7 @@ function minimalistflex_customize_color_register( $wp_customize ) {
 
 function minimalistflex_customize_author_elements_register( $wp_customize ) {
     $metadatas = Array(
-        /* translators: This line is special. The part before <br> is the description of the section, while the rest is the option name.*/
-        'description' => esc_html__( 'Below are some metadatas that you may configure whether to display or not.<br>Description', 'minimalistflex' ),
+        'description' => esc_html__( 'Description', 'minimalistflex' ),
         'user_registered' => esc_html__( 'Registration time', 'minimalistflex' ),
         'user_url' => esc_html__( 'Website', 'minimalistflex' ),
         'user_email' => esc_html__( 'Email address', 'minimalistflex' )
@@ -159,12 +152,11 @@ function minimalistflex_customize_author_elements_register( $wp_customize ) {
                 'type' => 'radio',
                 'priority' => 45,
                 'capability' => 'edit_theme_options',
-                'label' => esc_html__( 'Metadatas', 'minimalistflex' ),
-                'description' => $metadatas[$metadata_key],
+                'label' => $metadatas[$metadata_key],
                 'section' => 'minimalistflex_layout_author',
                 'choices' => Array(
-                    'yes' => esc_html__( 'Yes', 'minimalistflex' ),
-                    'no' => esc_html__( 'No', 'minimalistflex' )
+                    'yes' => esc_html__( 'Display', 'minimalistflex' ),
+                    'no' => esc_html__( 'Don\'t Display', 'minimalistflex' )
                 )
             ) );   
         } else {
@@ -172,11 +164,11 @@ function minimalistflex_customize_author_elements_register( $wp_customize ) {
                 'type' => 'radio',
                 'priority' => 50,
                 'capability' => 'edit_theme_options',
-                'description' => $metadatas[$metadata_key],
+                'label' => $metadatas[$metadata_key],
                 'section' => 'minimalistflex_layout_author',
                 'choices' => Array(
-                    'yes' => esc_html__( 'Yes', 'minimalistflex' ),
-                    'no' => esc_html__( 'No', 'minimalistflex' )
+                    'yes' => esc_html__( 'Display', 'minimalistflex' ),
+                    'no' => esc_html__( 'Don\'t Display', 'minimalistflex' )
                 )
             ) );
         }
@@ -271,7 +263,7 @@ function minimalistflex_customize_register( $wp_customize ) {
     $wp_customize -> add_setting( 'minimalistflex_layout_home_sidebar', Array(
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
-        'transport' => 'refresh',
+        'transport' => 'postMessage',
         'default' => 'right',
         'sanitize_callback' => 'minimalistflex_sanitize_radio_cb'
     ) );
@@ -285,7 +277,7 @@ function minimalistflex_customize_register( $wp_customize ) {
     $wp_customize -> add_setting( 'minimalistflex_layout_front_sidebar', Array(
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
-        'transport' => 'refresh',
+        'transport' => 'postMessage',
         'default' => 'right',
         'sanitize_callback' => 'minimalistflex_sanitize_radio_cb'
     ) );
@@ -299,7 +291,7 @@ function minimalistflex_customize_register( $wp_customize ) {
     $wp_customize -> add_setting( 'minimalistflex_layout_archive_sidebar', Array(
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
-        'transport' => 'refresh',
+        'transport' => 'postMessage',
         'default' => 'right',
         'sanitize_callback' => 'minimalistflex_sanitize_radio_cb'
     ) );
@@ -320,7 +312,7 @@ function minimalistflex_customize_register( $wp_customize ) {
     $wp_customize -> add_setting( 'minimalistflex_layout_search_sidebar', Array(
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
-        'transport' => 'refresh',
+        'transport' => 'postMessage',
         'default' => 'right',
         'sanitize_callback' => 'minimalistflex_sanitize_radio_cb'
     ) );
@@ -348,7 +340,7 @@ function minimalistflex_customize_register( $wp_customize ) {
     $wp_customize -> add_setting( 'minimalistflex_layout_author_sidebar', Array(
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
-        'transport' => 'refresh',
+        'transport' => 'postMessage',
         'default' => 'right',
         'sanitize_callback' => 'minimalistflex_sanitize_radio_cb'
     ) );
@@ -376,7 +368,7 @@ function minimalistflex_customize_register( $wp_customize ) {
     $wp_customize -> add_setting( 'minimalistflex_layout_singular_sidebar', Array(
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
-        'transport' => 'refresh',
+        'transport' => 'postMessage',
         'default' => 'right',
         'sanitize_callback' => 'minimalistflex_sanitize_radio_cb'
     ) );
@@ -390,7 +382,7 @@ function minimalistflex_customize_register( $wp_customize ) {
     $wp_customize -> add_setting( 'minimalistflex_layout_page_sidebar', Array(
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
-        'transport' => 'refresh',
+        'transport' => 'postMessage',
         'default' => 'right',
         'sanitize_callback' => 'minimalistflex_sanitize_radio_cb'
     ) );

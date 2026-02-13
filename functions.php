@@ -72,6 +72,12 @@ function minimalistflex_enqueue_files() {
 
 add_action( 'wp_head', 'minimalistflex_enqueue_files' );
 
+function minimalistflex_enqueue_preview_files() {
+	wp_enqueue_script( 'minimalistflex-preview-script', get_template_directory_uri() . '/js/preview.js', array('jquery'), null, true);
+}
+
+add_action( 'customize_preview_init', 'minimalistflex_enqueue_preview_files' );
+
 function minimalistflex_widgets_init() {
 	register_sidebar( array(
 		'name'          => _x( 'Main Sidebar', 'sidebar name' , 'minimalistflex' ),
@@ -196,3 +202,21 @@ function minimalistflex_render_color_css($colors) { ?>
     <?php endif; ?>
 	}
 <?php }
+
+function minimalistflex_ensure_hashtag_color( $color ) {
+	if ( preg_match( '/#/', $color ) ) {
+		return esc_html( $color );
+	} else {
+		return esc_html( '#' . $color );
+	}
+}
+
+function minimalistflex_render_color_single( $color, $color_key ) {
+	?>
+<style id="minimalistflex-color-<?php echo esc_attr( $color_key ); ?>">
+	:root {
+		--minimalistflex-<?php echo esc_attr( $color_key ); ?>: <?php echo esc_html( $color ); ?>;
+	}
+</style>
+	<?php
+}

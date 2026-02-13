@@ -465,6 +465,10 @@ button:focus {
     flex-direction: row-reverse;
 }
 
+.minimalistflex-sidebar-layout-no .minimalistflex-sidebar {
+    display: none !important;
+}
+
 .minimalistflex-content {
     width: 67%;
     background-color: var(--minimalistflex-level2);
