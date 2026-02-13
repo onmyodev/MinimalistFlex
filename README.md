@@ -41,6 +41,12 @@ As a bonus, we have 4 pre-built color palettes for you.
 
 ## Changelog
 
+### 1.5
+* True live updating of colors, sidebar layout, thumbnail image height.
+* Add settings for the strength of background color blending.
+* A new secondary menu.
+* CSS fixes.
+
 ### 1.4
 * Added partial refresh for colors.
 * TODO: Further transforms to postMessage transport for live updating.

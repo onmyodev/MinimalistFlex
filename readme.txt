@@ -1,5 +1,5 @@
 === MinimalistFlex ===
-Stable tag:        1.4
+Stable tag:        1.5
 Contributors:      frank419
 Tags:              two-columns ,left-sidebar, right-sidebar, custom-colors, custom-logo, custom-menu, editor-style, featured-images, flexible-header, footer-widgets, sticky-post, theme-options, translation-ready, blog
 Tested up to:      6.9.1
@@ -49,6 +49,12 @@ changed.
 As a bonus, we have 4 pre-built color palettes for you.
 
 == Changelog ==
+
+= 1.5 =
+* True live updating of colors, sidebar layout, thumbnail image height.
+* Add settings for the strength of background color blending.
+* A new secondary menu.
+* CSS fixes.
 
 = 1.4 =
 * Added partial refresh for colors.
