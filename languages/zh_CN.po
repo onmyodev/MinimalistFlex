@@ -9,8 +9,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MinimalistFlex 1.0.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/minimalistflex\n"
-"POT-Creation-Date: 2025-03-09T13:55:07+08:00\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/MinimalistFlex\n"
+"POT-Creation-Date: 2026-02-13T06:31:18+00:00\n"
 "PO-Revision-Date: 2024-09-14 21:35+0800\n"
 "Last-Translator: 枫原万叶 <hufang2007@icloud.com>\n"
 "Language-Team: Chinese <kde-i18n-doc@kde.org>\n"
@@ -35,24 +35,9 @@ msgstr "https://github.com/onmyodev/MinimalistFlex/"
 #. Description of the theme
 #: style.css
 msgid ""
-"MinimalistFlex is an elegant, easy to use theme that aims to provide a "
-"smooth user experience. As a classic theme, we try to provide as many "
-"options as possible, while not being overwhelming. With full support of "
-"flexible header images, custom colors and layout, multiple widget areas, you "
-"can still customize your site in a lot of ways. Compatibility is also an "
-"important affair: MinimalistFlex is tested on many versions with a minimum "
-"of WordPress 4.9 and PHP 5.6, ensuring that almost everyone can enjoy the "
-"theme without worrying to upgrade. Mobile users are also considered well: "
-"MinimalistFlex is fully responsive on its own, and works well even on very "
-"small screen sizes!"
+"MinimalistFlex is an elegant, resposive, and easy to use theme focused on "
+"blogging."
 msgstr ""
-"MinimalistFlex 是一款优雅的，便于使用的主题，其致力于为所有用户提供良好的用户"
-"体验。作为一款经典主题，我们提供了尽可能多的选项，允许您控制您站点的方方面"
-"面，同时也确保选项不会难以理解。主题支持可变大小的页眉图像、自定义颜色、布"
-"局、多个小组件区域等功能。我们同样很重视兼容性：MinimalistFlex 在诸多的 "
-"WordPress 版本上进行测试，其中的最低版本为 WordPress 4.9 和 PHP 5.6，确保大多"
-"数用户无需升级就可以顺利地使用主题。移动用户也不会被遗忘：MinimalistFlex 从设"
-"计之初就确保响应式设计始终可用，就算在很小的屏幕尺寸上也能良好工作！"
 
 #. Author of the theme
 #: style.css
@@ -84,11 +69,11 @@ msgstr "返回上一页"
 msgid "User description"
 msgstr "个性签名"
 
-#: author.php:26 includes/customizer.php:135
+#: author.php:26 includes/customizer.php:175
 msgid "Registration time"
 msgstr "注册时间"
 
-#: author.php:27 includes/customizer.php:136
+#: author.php:27 includes/customizer.php:176
 msgid "Website"
 msgstr "网站"
 
@@ -98,11 +83,13 @@ msgstr "电子邮件地址"
 
 #. translators: %s: The author display name.
 #: author.php:53
+#, php-format
 msgid "All posts by %s"
 msgstr "%s 的所有文章"
 
 #. translators: %1$s: Number of comments. %2$s: Post title.
 #: comments.php:19
+#, php-format
 msgctxt "comments title"
 msgid "%1$s comment on \"%2$s\""
 msgid_plural "%1$s comments on \"%2$s\""
@@ -124,12 +111,13 @@ msgstr "更新的评论 &rarr;"
 msgid "Comments are closed."
 msgstr "评论已关闭。"
 
-#: footer.php:39
+#: footer.php:41
 msgid "Back to top"
 msgstr "返回页首"
 
 #. translators: %s: Link to theme author website.
-#: footer.php:78
+#: footer.php:80
+#, php-format
 msgid "Theme <a href=\"%s\">MinimalistFlex</a>."
 msgstr "<a href=\"%s\">MinimalistFlex</a> 主题。"
 
@@ -141,48 +129,48 @@ msgstr "一个抽象的页眉图片。"
 msgid "A default header image that contains three lines."
 msgstr "一个包含了三条线段的页眉图片。"
 
-#: functions.php:76
+#: functions.php:89
 msgctxt "sidebar name"
 msgid "Main Sidebar"
 msgstr "主要侧栏"
 
-#: functions.php:78
+#: functions.php:91
 msgid "Widgets in this area will be shown on all posts and pages."
 msgstr "在此区域中的小工具将会显示在所有的文章和页面中。"
 
-#: functions.php:85
+#: functions.php:98
 msgctxt "sidebar name"
 msgid "Above Content"
 msgstr "主要内容上方"
 
-#: functions.php:87
+#: functions.php:100
 msgid "Widgets in this area will be shown above the main content."
 msgstr "在此区域中的小工具将会显示在主要内容的上方。"
 
-#: functions.php:94
+#: functions.php:107
 msgctxt "sidebar name"
 msgid "Below Content"
 msgstr "主要内容下方"
 
-#: functions.php:96
+#: functions.php:109
 msgid "Widgets in this area will be shown below the main content."
 msgstr "在此区域中的小工具将会显示在主要内容的下方。"
 
-#: functions.php:103
+#: functions.php:116
 msgctxt "sidebar name"
 msgid "Footer"
 msgstr "页脚"
 
-#: functions.php:105
+#: functions.php:118
 msgid "Widgets in this area will be shown in the footer. Always shows."
 msgstr "在此区域中的小工具将会显示在页脚中。此小工具区域始终显示。"
 
-#: functions.php:112
+#: functions.php:125
 msgctxt "sidebar name"
 msgid "Footer 2"
 msgstr "页脚 2"
 
-#: functions.php:114
+#: functions.php:127
 msgid ""
 "Widgets in this area will be shown in the footer to construct a multi column "
 "footer. Only shows when the footer is set to display it. Also twice as wide "
@@ -191,12 +179,12 @@ msgstr ""
 "在此区域中的小工具将会在页脚中显示，以形成多栏布局。仅当被设置为显示时才会显"
 "示。宽度为其它页脚小工具区域的两倍。"
 
-#: functions.php:121
+#: functions.php:134
 msgctxt "sidebar name"
 msgid "Footer 3"
 msgstr "页脚 3"
 
-#: functions.php:123
+#: functions.php:136
 msgid ""
 "Widgets in this area will be shown in the footer to construct a multi column "
 "footer. Only shows when the footer is set to display it."
@@ -204,36 +192,42 @@ msgstr ""
 "在此区域中的小工具将会在页脚中显示，以形成多栏布局。仅当被设置为显示时才会显"
 "示。"
 
-#: functions.php:135
+#: functions.php:148
 msgid "Main Menu"
 msgstr "主菜单"
 
-#: header.php:52
+#: functions.php:154
+#, fuzzy
+msgid "Secondary Menu"
+msgstr "次级文本"
+
+#: header.php:55
 msgid "Skip to main content"
 msgstr "跳转至主要内容"
 
-#: header.php:61
+#: header.php:64
 msgid "The header image link."
 msgstr "页眉图片链接。"
 
 #. translators: %s: The label of the header image link.
-#: header.php:69
+#: header.php:72
+#, php-format
 msgid "The image of the header image link to \"%s\"."
 msgstr "页眉图片链接，此链接会转至「%s」。"
 
-#: header.php:73
+#: header.php:76
 msgid "The header image."
 msgstr "页眉图片。"
 
-#: header.php:92
+#: header.php:95
 msgid "This element sends you to the last menu item."
 msgstr "此元素将自动转至最后一个菜单项。"
 
-#: header.php:94
+#: header.php:97
 msgid "Toggle navigation dropdown"
 msgstr "展开或收起导航菜单下拉菜单"
 
-#: header.php:101
+#: header.php:104
 msgid "This element sends you back to the close menu button."
 msgstr "此元素将自动转至关闭菜单按钮。"
 
@@ -270,148 +264,168 @@ msgstr "未设置图像"
 msgid "Add Image"
 msgstr "添加图像"
 
-#: includes/color-definitions.php:28
+#: includes/color-definitions.php:30
 msgid "Content Background"
 msgstr "内容区域背景色"
 
-#: includes/color-definitions.php:29
+#: includes/color-definitions.php:31
 msgid "Sidebar Background"
 msgstr "侧边栏背景色"
 
-#: includes/color-definitions.php:30
+#: includes/color-definitions.php:32
 msgid "Secondary Text"
 msgstr "次级文本"
 
-#: includes/color-definitions.php:31
+#: includes/color-definitions.php:33
 msgid "Default"
 msgstr "默认颜色"
 
-#: includes/color-definitions.php:32
+#: includes/color-definitions.php:34
 msgid "Link"
 msgstr "链接"
 
-#: includes/color-definitions.php:33
+#: includes/color-definitions.php:35
 msgid "Link Hover"
 msgstr "悬停链接色"
 
-#: includes/color-definitions.php:34
+#: includes/color-definitions.php:36
 msgid "Tint A"
 msgstr "强调色 A"
 
-#: includes/color-definitions.php:35
+#: includes/color-definitions.php:37
 msgid "Tint A Dark"
 msgstr "强调色 A（暗）"
 
-#: includes/color-definitions.php:36
+#: includes/color-definitions.php:38
 msgid "Tint B"
 msgstr "强调色 B"
 
-#: includes/color-definitions.php:37
+#: includes/color-definitions.php:39
 msgid "Tint C"
 msgstr "强调色 C"
 
-#: includes/color-definitions.php:38
+#: includes/color-definitions.php:40
 msgid "Contrast (Light)"
 msgstr "对比色（浅）"
 
-#: includes/color-definitions.php:39
+#: includes/color-definitions.php:41
 msgid "Contrast (Dark)"
 msgstr "对比色（深）"
 
-#: includes/color-definitions.php:40
+#: includes/color-definitions.php:42
 msgid "Footer Text"
 msgstr "页脚文本色"
 
-#: includes/color-definitions.php:41
+#: includes/color-definitions.php:43
 msgid "Footer Background"
 msgstr "页脚背景色"
 
-#: includes/color-definitions.php:42
+#: includes/color-definitions.php:44
 msgid "Header Background"
 msgstr "页脚背景色"
 
-#: includes/color-definitions.php:43
+#: includes/color-definitions.php:45
 msgid "Navigation Menu Background"
 msgstr "导航菜单背景"
 
-#: includes/color-definitions.php:44
+#: includes/color-definitions.php:46
 msgid "Navigation Menu Submenu Background"
 msgstr "导航菜单子菜单背景"
 
-#: includes/color-definitions.php:45
+#: includes/color-definitions.php:47
 msgid "Navigation Menu"
 msgstr "主菜单"
 
+#: includes/color-definitions.php:48
+#, fuzzy
+msgid "Secondary Menu Background"
+msgstr "导航菜单背景"
+
 #: includes/color-definitions.php:49
+#, fuzzy
+msgid "Secondary Menu Text"
+msgstr "次级文本"
+
+#: includes/color-definitions.php:53
 msgid "The background color of the main content area."
 msgstr "内容区域的背景色（最浅的背景色）。"
 
-#: includes/color-definitions.php:50
+#: includes/color-definitions.php:54
 msgid "The background color of the sidebar."
 msgstr "侧边栏的背景色。"
 
-#: includes/color-definitions.php:51
+#: includes/color-definitions.php:55
 msgid "The secondary text color. Should be lighter than the default color."
 msgstr "次级文本色。通常情况下比默认文本色浅。"
 
-#: includes/color-definitions.php:52
+#: includes/color-definitions.php:56
 msgid "The default text color."
 msgstr "默认文本色。"
 
-#: includes/color-definitions.php:53
+#: includes/color-definitions.php:57
 msgid "The link color."
 msgstr "链接的颜色。"
 
-#: includes/color-definitions.php:54
+#: includes/color-definitions.php:58
 msgid "The link color when hovered."
 msgstr "当悬停在链接上时，链接的颜色。"
 
-#: includes/color-definitions.php:55
+#: includes/color-definitions.php:59
 msgid "Tint color A. Should be a light color."
 msgstr "强调色 A。应当为浅色。"
 
-#: includes/color-definitions.php:56
+#: includes/color-definitions.php:60
 msgid "A darker variant of the tint color A. Only used on the scroll bars."
 msgstr "一个强调色 A 的较深版本。仅在滚动条上使用。"
 
-#: includes/color-definitions.php:57
+#: includes/color-definitions.php:61
 msgid "Tint color B. Should be a dark color."
 msgstr "强调色 B。应当为深色。"
 
-#: includes/color-definitions.php:58
+#: includes/color-definitions.php:62
 msgid "Tint color C. Should be a *even darker* color."
 msgstr "强调色 C。应当为*更深的*深色。"
 
-#: includes/color-definitions.php:59
+#: includes/color-definitions.php:63
 msgid "Text color on a light background. Better keep it as is."
 msgstr "在浅色背景上的对比色。最好保留此设置。"
 
-#: includes/color-definitions.php:60
+#: includes/color-definitions.php:64
 msgid "Text color on a dark background. Better keep it as is."
 msgstr "在深色背景上的对比色。最好保留此设置。"
 
-#: includes/color-definitions.php:61
+#: includes/color-definitions.php:65
 msgid "The footer text color."
 msgstr "页脚文本色。"
 
-#: includes/color-definitions.php:62
+#: includes/color-definitions.php:66
 msgid "The footer background color."
 msgstr "页脚背景色。"
 
-#: includes/color-definitions.php:63
+#: includes/color-definitions.php:67
 msgid "The background color of the header."
 msgstr "页眉背景色。"
 
-#: includes/color-definitions.php:64
+#: includes/color-definitions.php:68
 msgid "The background color of the navigation menu dropdown."
 msgstr "导航菜单下拉菜单的背景色。"
 
-#: includes/color-definitions.php:65
+#: includes/color-definitions.php:69
 msgid "The background color of the submenus of the navigation menu dropdown."
 msgstr "导航菜单下拉菜单的子菜单的背景颜色。"
 
-#: includes/color-definitions.php:66
+#: includes/color-definitions.php:70
 msgid "The text color of the navigation menu dropdown."
+msgstr "导航菜单下拉菜单的文本色。"
+
+#: includes/color-definitions.php:71
+#, fuzzy
+msgid "The background color of the secondary menu."
+msgstr "侧边栏的背景色。"
+
+#: includes/color-definitions.php:72
+#, fuzzy
+msgid "The text color of the secondary menu."
 msgstr "导航菜单下拉菜单的文本色。"
 
 #: includes/customizer.php:19
@@ -485,57 +499,57 @@ msgstr ""
 "主题也可以在可用时，将文章的第一张图像作为特色图像显示。当不存在这样的图像"
 "时，主题仍会显示下方设置的默认图像。"
 
-#: includes/customizer.php:72 includes/customizer.php:123
-#: includes/customizer.php:158 includes/customizer.php:170
-#: includes/customizer.php:512 includes/customizer.php:535
-#: includes/customizer.php:558 includes/customizer.php:569
-#: includes/customizer.php:592 includes/customizer.php:603
-#: includes/customizer.php:614 includes/customizer.php:637
-#: includes/customizer.php:648 includes/customizer.php:659
-#: includes/customizer.php:682 includes/customizer.php:705
-#: includes/customizer.php:716 includes/customizer.php:734
-#: includes/customizer.php:745 includes/customizer.php:756
+#: includes/customizer.php:72 includes/customizer.php:125
+#: includes/customizer.php:560 includes/customizer.php:583
+#: includes/customizer.php:606 includes/customizer.php:617
+#: includes/customizer.php:640 includes/customizer.php:651
+#: includes/customizer.php:662 includes/customizer.php:685
+#: includes/customizer.php:696 includes/customizer.php:707
+#: includes/customizer.php:730 includes/customizer.php:753
+#: includes/customizer.php:764 includes/customizer.php:782
+#: includes/customizer.php:793 includes/customizer.php:804
+#: includes/customizer.php:884
 msgid "Yes"
 msgstr "是"
 
-#: includes/customizer.php:73 includes/customizer.php:124
-#: includes/customizer.php:159 includes/customizer.php:171
-#: includes/customizer.php:502 includes/customizer.php:513
-#: includes/customizer.php:525 includes/customizer.php:536
-#: includes/customizer.php:548 includes/customizer.php:559
-#: includes/customizer.php:570 includes/customizer.php:582
-#: includes/customizer.php:593 includes/customizer.php:604
-#: includes/customizer.php:615 includes/customizer.php:627
-#: includes/customizer.php:638 includes/customizer.php:649
-#: includes/customizer.php:660 includes/customizer.php:672
-#: includes/customizer.php:683 includes/customizer.php:695
-#: includes/customizer.php:706 includes/customizer.php:717
-#: includes/customizer.php:735 includes/customizer.php:746
-#: includes/customizer.php:757 includes/customizer.php:769
+#: includes/customizer.php:73 includes/customizer.php:126
+#: includes/customizer.php:550 includes/customizer.php:561
+#: includes/customizer.php:573 includes/customizer.php:584
+#: includes/customizer.php:596 includes/customizer.php:607
+#: includes/customizer.php:618 includes/customizer.php:630
+#: includes/customizer.php:641 includes/customizer.php:652
+#: includes/customizer.php:663 includes/customizer.php:675
+#: includes/customizer.php:686 includes/customizer.php:697
+#: includes/customizer.php:708 includes/customizer.php:720
+#: includes/customizer.php:731 includes/customizer.php:743
+#: includes/customizer.php:754 includes/customizer.php:765
+#: includes/customizer.php:783 includes/customizer.php:794
+#: includes/customizer.php:805 includes/customizer.php:817
+#: includes/customizer.php:885
 msgid "No"
 msgstr "否"
 
-#: includes/customizer.php:89
+#: includes/customizer.php:91
 msgid "Color Palettes"
 msgstr "调色板"
 
-#: includes/customizer.php:90
+#: includes/customizer.php:92
 msgid ""
 "We had prepared some fine tuned color palettes for you. Select an option and "
 "it will automatically apply the palette to your site."
 msgstr "我们为您准备好了一些调色板。只需单击即可应用到整个站点。"
 
-#: includes/customizer.php:118
+#: includes/customizer.php:120
 msgid "Disable Shadows"
 msgstr "关闭阴影"
 
-#: includes/customizer.php:119
+#: includes/customizer.php:121
 msgid ""
 "This option lets you disable the shadow on the site. It should only affect "
 "the shadow created by the theme."
 msgstr "此选项允许您关闭您站点上的阴影。此选项应当仅影响由主题设置的阴影。"
 
-#: includes/customizer.php:127
+#: includes/customizer.php:129
 msgid ""
 "The default background setting from the WordPress core. If set, it will "
 "blend with the content &amp; sidebar background colors set below."
@@ -543,141 +557,165 @@ msgstr ""
 "由 WordPress 核心创建的默认背景颜色设置。当此选项被设置时，将会与下方的主要内"
 "容和侧边栏背景颜色设置进行混合。"
 
-#: includes/customizer.php:128
+#: includes/customizer.php:130
 msgid ""
 "The default header text setting from the WordPress core. Used on the header "
 "and the toggle button."
 msgstr ""
 "由 WordPress 核心创建的默认页眉颜色设置。在页眉和导航菜单切换按钮上使用。"
 
-#. translators: This line is special. The part before <br> is the description of the section, while the rest is the option name.
-#: includes/customizer.php:134
-msgid ""
-"Below are some metadatas that you may configure whether to display or not."
-"<br>Description"
-msgstr "下面是一些您可以选择显示或隐藏的元数据。<br>描述"
+#: includes/customizer.php:141
+#, fuzzy
+msgid "Content Background Blend"
+msgstr "内容区域背景色"
 
-#: includes/customizer.php:137
+#: includes/customizer.php:142
+msgid ""
+"The theme will blend the background color with the background image when "
+"present. Choose how hard should the blend be."
+msgstr ""
+
+#: includes/customizer.php:160
+#, fuzzy
+msgid "Sidebar Background Blend"
+msgstr "侧边栏背景色"
+
+#: includes/customizer.php:161
+msgid ""
+"The theme will blend the sidebar background color with the background image "
+"when present. Choose how hard should the blend be."
+msgstr ""
+
+#: includes/customizer.php:174
+#, fuzzy
+msgid "Description"
+msgstr "个性签名"
+
+#: includes/customizer.php:177
 msgid "Email address"
 msgstr "电子邮件地址"
 
-#: includes/customizer.php:154
-msgid "Metadatas"
-msgstr "元数据"
+#: includes/customizer.php:197 includes/customizer.php:209
+msgid "Display"
+msgstr ""
 
-#: includes/customizer.php:181
+#: includes/customizer.php:198 includes/customizer.php:210
+msgid "Don't Display"
+msgstr ""
+
+#: includes/customizer.php:220
 msgctxt "customizer panel"
 msgid "Layout"
 msgstr "布局"
 
-#: includes/customizer.php:182
+#: includes/customizer.php:221
 msgid "Here you may configure how different pages on your site looks like."
 msgstr "在这里您可以配置您站点上的不同页面的显示方式。"
 
-#: includes/customizer.php:189
+#: includes/customizer.php:228
 msgctxt "customizer section"
 msgid "Blog Page"
 msgstr "博客页"
 
-#: includes/customizer.php:190
+#: includes/customizer.php:229
 msgid "Here you may customize the layout of your blog page."
 msgstr "在这里您可以配置您站点上的博客页的显示方式。"
 
-#: includes/customizer.php:196
+#: includes/customizer.php:235
 msgctxt "customizer section"
 msgid "Front Page"
 msgstr "首页"
 
-#: includes/customizer.php:197
+#: includes/customizer.php:236
 msgid ""
 "Here you may customize the layout of your front page. Only takes effect when "
 "using a static front page."
 msgstr ""
 "在这里您可以配置您站点上的首页的显示方式。仅当配置了静态首页时才会生效。"
 
-#: includes/customizer.php:203
+#: includes/customizer.php:242
 msgctxt "customizer section"
 msgid "Archives"
 msgstr "归档页"
 
-#: includes/customizer.php:204
+#: includes/customizer.php:243
 msgid "Here you may customize the layout of your archive pages."
 msgstr "在这里您可以配置您站点上的归档页的显示方式。"
 
-#: includes/customizer.php:210
+#: includes/customizer.php:249
 msgctxt "customizer section"
 msgid "Search Results"
 msgstr "搜索结果页"
 
-#: includes/customizer.php:211
+#: includes/customizer.php:250
 msgid "Here you may customize the layout of your search result pages."
 msgstr "在这里您可以配置您站点上的搜索结果页的显示方式。"
 
-#: includes/customizer.php:217
+#: includes/customizer.php:256
 msgctxt "customizer section"
 msgid "Author Pages"
 msgstr "作者页"
 
-#: includes/customizer.php:218
+#: includes/customizer.php:257
 msgid "Here you may customize the layout of your author pages."
 msgstr "在这里您可以配置您站点上的作者页的显示方式。"
 
-#: includes/customizer.php:224
+#: includes/customizer.php:263
 msgctxt "customizer section"
 msgid "Single Posts"
 msgstr "文章"
 
-#: includes/customizer.php:225
+#: includes/customizer.php:264
 msgid "Here you may customize the layout of your posts."
 msgstr "在这里您可以配置您站点上的文章的显示方式。"
 
-#: includes/customizer.php:231
+#: includes/customizer.php:270
 msgctxt "customizer section"
 msgid "Pages"
 msgstr "独立页面"
 
-#: includes/customizer.php:232
+#: includes/customizer.php:271
 msgid "Here you may customize the layout of your pages."
 msgstr "在这里您可以配置您站点上的独立页面的显示方式。"
 
-#: includes/customizer.php:238
+#: includes/customizer.php:277
 msgctxt "customizer section"
 msgid "Interface &amp; Elements"
 msgstr "界面与元素"
 
-#: includes/customizer.php:239
+#: includes/customizer.php:278
 msgid ""
 "You may customize your site's interface and the elements displayed here."
 msgstr "您可以在此配置您站点的界面和要显示的元素。"
 
-#: includes/customizer.php:244
+#: includes/customizer.php:283
 msgctxt "customizer section"
 msgid "Footer"
 msgstr "页脚"
 
-#: includes/customizer.php:245
+#: includes/customizer.php:284
 msgid "You may customize how your footer looks like here."
 msgstr "您可以在此配置您站点的页脚。"
 
-#: includes/customizer.php:442 templates/loop.php:113
+#: includes/customizer.php:481 templates/loop.php:113
 msgid "Read More"
 msgstr "阅读更多"
 
-#: includes/customizer.php:483
+#: includes/customizer.php:531
 msgid "Header Image Link"
 msgstr "页眉图像链接"
 
-#: includes/customizer.php:484
+#: includes/customizer.php:532
 msgid ""
 "You may link the header image to a URL. Leave blank if you do not want to do "
 "so."
 msgstr "您可以将页眉图像链接至一个 URL。如果您不希望这样做，请留空。"
 
-#: includes/customizer.php:490
+#: includes/customizer.php:538
 msgid "Header Image Label"
 msgstr "页眉图像标签"
 
-#: includes/customizer.php:491
+#: includes/customizer.php:539
 msgid ""
 "You may provide a description of your header image. Also will become the "
 "label of the link if set. Should be set for better accessibility."
@@ -685,119 +723,119 @@ msgstr ""
 "您可以在此为您的页眉图像提供一个标签。如果设置了页眉图像链接，则也会在链接中"
 "使用。出于可访问性考虑，建议设置该项。"
 
-#: includes/customizer.php:497 includes/customizer.php:520
-#: includes/customizer.php:543 includes/customizer.php:577
-#: includes/customizer.php:622 includes/customizer.php:667
-#: includes/customizer.php:690
+#: includes/customizer.php:545 includes/customizer.php:568
+#: includes/customizer.php:591 includes/customizer.php:625
+#: includes/customizer.php:670 includes/customizer.php:715
+#: includes/customizer.php:738
 msgctxt "layout"
 msgid "Sidebar"
 msgstr "侧栏"
 
-#: includes/customizer.php:498 includes/customizer.php:521
-#: includes/customizer.php:544 includes/customizer.php:578
-#: includes/customizer.php:623 includes/customizer.php:668
-#: includes/customizer.php:691
+#: includes/customizer.php:546 includes/customizer.php:569
+#: includes/customizer.php:592 includes/customizer.php:626
+#: includes/customizer.php:671 includes/customizer.php:716
+#: includes/customizer.php:739
 msgid "Select whether to display the sidebar, and its location."
 msgstr "选择是否要显示侧栏，以及其位置。"
 
-#: includes/customizer.php:500 includes/customizer.php:523
-#: includes/customizer.php:546 includes/customizer.php:580
-#: includes/customizer.php:625 includes/customizer.php:670
-#: includes/customizer.php:693
+#: includes/customizer.php:548 includes/customizer.php:571
+#: includes/customizer.php:594 includes/customizer.php:628
+#: includes/customizer.php:673 includes/customizer.php:718
+#: includes/customizer.php:741
 msgid "Left sidebar"
 msgstr "侧栏在左"
 
-#: includes/customizer.php:501 includes/customizer.php:524
-#: includes/customizer.php:547 includes/customizer.php:581
-#: includes/customizer.php:626 includes/customizer.php:671
-#: includes/customizer.php:694
+#: includes/customizer.php:549 includes/customizer.php:572
+#: includes/customizer.php:595 includes/customizer.php:629
+#: includes/customizer.php:674 includes/customizer.php:719
+#: includes/customizer.php:742
 msgid "Right sidebar"
 msgstr "侧栏在右"
 
-#: includes/customizer.php:509 includes/customizer.php:532
-#: includes/customizer.php:555 includes/customizer.php:589
-#: includes/customizer.php:634 includes/customizer.php:679
-#: includes/customizer.php:702
+#: includes/customizer.php:557 includes/customizer.php:580
+#: includes/customizer.php:603 includes/customizer.php:637
+#: includes/customizer.php:682 includes/customizer.php:727
+#: includes/customizer.php:750
 msgctxt "layout"
 msgid "Header Image"
 msgstr "页眉图像"
 
-#: includes/customizer.php:510 includes/customizer.php:533
-#: includes/customizer.php:556 includes/customizer.php:590
-#: includes/customizer.php:635 includes/customizer.php:680
-#: includes/customizer.php:703
+#: includes/customizer.php:558 includes/customizer.php:581
+#: includes/customizer.php:604 includes/customizer.php:638
+#: includes/customizer.php:683 includes/customizer.php:728
+#: includes/customizer.php:751
 msgid "Select whether to display the header image."
 msgstr "选择是否要显示页眉图像。"
 
-#: includes/customizer.php:566
+#: includes/customizer.php:614
 msgctxt "layout"
 msgid "Title"
 msgstr "标题"
 
-#: includes/customizer.php:567
+#: includes/customizer.php:615
 msgid "Select whether to display the archive title."
 msgstr "选择是否要显示归档页的标题。"
 
-#: includes/customizer.php:600
+#: includes/customizer.php:648
 msgctxt "layout"
 msgid "Search Query"
 msgstr "搜索词"
 
-#: includes/customizer.php:601
+#: includes/customizer.php:649
 msgid "Select whether to display the search query."
 msgstr "选择是否要显示搜索关键词。"
 
-#: includes/customizer.php:611
+#: includes/customizer.php:659
 msgctxt "layout"
 msgid "Search Form"
 msgstr "搜索框"
 
-#: includes/customizer.php:612
+#: includes/customizer.php:660
 msgid "Select whether to also display the search form."
 msgstr "选择是否要显示搜索框。"
 
-#: includes/customizer.php:645
+#: includes/customizer.php:693
 msgctxt "layout"
 msgid "Author Name"
 msgstr "作者名称"
 
-#: includes/customizer.php:646
+#: includes/customizer.php:694
 msgid "Select whether to display the author name."
 msgstr "选择是否要显示作者名称。"
 
-#: includes/customizer.php:656
+#: includes/customizer.php:704
 msgctxt "layout"
 msgid "Admin Status"
 msgstr "管理员标记"
 
-#: includes/customizer.php:657
+#: includes/customizer.php:705
 msgid ""
 "Show an indicator in the bottom-right of the avatar if the author is an "
 "admin."
 msgstr "当作者为管理员时，在其头像的右下角显示一个标记。"
 
-#: includes/customizer.php:713
+#: includes/customizer.php:761
 msgid "Scroll to top button"
 msgstr "返回页首按钮"
 
-#: includes/customizer.php:714
+#: includes/customizer.php:762
 msgid ""
 "Whether to display a \"Scroll to top\" button in the bottom-right corner."
 msgstr "在页面的右下角显示一个「返回页首」按钮。"
 
-#: includes/customizer.php:724
+#: includes/customizer.php:772
 msgid "Excerpt Word Count"
 msgstr "摘要字数"
 
-#: includes/customizer.php:725
+#: includes/customizer.php:773
 msgid "The word count of the excerpts on any archive page and the blog page."
 msgstr "要使用的摘要字数。"
 
-#: includes/customizer.php:731
+#: includes/customizer.php:779
 msgid "Auto h2 Label"
 msgstr "自动 h2 标记"
 
-#: includes/customizer.php:732
+#: includes/customizer.php:780
 msgid ""
 "The theme can automatically theme and label the h2 elements in single posts "
 "and pages, providing a better visual. May not work well in all "
@@ -806,126 +844,137 @@ msgstr ""
 "此主题可以自动为 h2 元素进行标记，并提供更好的视觉效果。可能无法在所有情况下"
 "正常工作，因此请小心使用。"
 
-#: includes/customizer.php:742
+#: includes/customizer.php:790
 msgid "Comment Count"
 msgstr "评论数目"
 
-#: includes/customizer.php:743
+#: includes/customizer.php:791
 msgid ""
 "Whether to display the comment count of the posts listed in an archive page."
 msgstr "是否要显示评论数目。"
 
-#: includes/customizer.php:753
+#: includes/customizer.php:801
 msgid "Publisher"
 msgstr "作者"
 
-#: includes/customizer.php:754
+#: includes/customizer.php:802
 msgid "Whether to display the publisher."
 msgstr "是否要显示作者。"
 
-#: includes/customizer.php:764
+#: includes/customizer.php:812
 msgid "Publish Date"
 msgstr "发表日期"
 
-#: includes/customizer.php:765
+#: includes/customizer.php:813
 msgid "Whether to display the published date."
 msgstr "是否要显示发表日期。"
 
-#: includes/customizer.php:767
+#: includes/customizer.php:815
 msgid "Yes, publish time only."
 msgstr "是，仅显示发表日期。"
 
-#: includes/customizer.php:768
+#: includes/customizer.php:816
 msgid "Yes, and display modified time if possible."
 msgstr "是，且如果可能，显示修改日期。"
 
-#: includes/customizer.php:776
+#: includes/customizer.php:824
 msgid "Read More Link"
 msgstr "阅读更多链接"
 
-#: includes/customizer.php:777
+#: includes/customizer.php:825
 msgid "The text for the \"Read More\" links."
 msgstr "「阅读更多」链接文本。"
 
-#: includes/customizer.php:783
+#: includes/customizer.php:831
 msgid "Thumbnail Images Size"
 msgstr "特色图像尺寸"
 
-#: includes/customizer.php:784
+#: includes/customizer.php:832
 msgid ""
 "Select whether to enable flexible height for your thumbnail images, or use a "
 "fixed height."
 msgstr "选择是否要使用不定高度的特色图片。"
 
-#: includes/customizer.php:786
+#: includes/customizer.php:834
 msgid "Fixed"
 msgstr "固定高度"
 
-#: includes/customizer.php:787
+#: includes/customizer.php:835
 msgid "Flexible"
 msgstr "不定高度"
 
-#: includes/customizer.php:794
+#: includes/customizer.php:842
 msgid "Height"
 msgstr "高度"
 
-#: includes/customizer.php:795
+#: includes/customizer.php:843
 msgid "Enter your desired height here. Should be in pixels."
 msgstr "输入您希望使用的特色图片高度。单位为像素。"
 
-#: includes/customizer.php:801
+#: includes/customizer.php:849
 msgid "Footer Options"
 msgstr "页脚设置"
 
-#: includes/customizer.php:802
+#: includes/customizer.php:850
 msgid "Choose what to display in your footer credit section."
 msgstr "选择要在页脚的致谢部分中显示什么内容。"
 
-#: includes/customizer.php:804
+#: includes/customizer.php:852
 msgid "Both MinimalistFlex credits and custom footer text."
 msgstr "同时显示 MinimalistFlex 致谢内容和自定义页脚文本。"
 
-#: includes/customizer.php:805
+#: includes/customizer.php:853
 msgid "MinimalistFlex credits only."
 msgstr "仅显示 MinimalistFlex 致谢内容。"
 
-#: includes/customizer.php:806
+#: includes/customizer.php:854
 msgid "Custom footer text only."
 msgstr "仅显示自定义页脚文本。"
 
-#: includes/customizer.php:807
+#: includes/customizer.php:855
 msgid "Neither."
 msgstr "不显示"
 
-#: includes/customizer.php:814
+#: includes/customizer.php:862
 msgid "Custom Footer Text"
 msgstr "自定义页脚文本"
 
-#: includes/customizer.php:815
+#: includes/customizer.php:863
 msgid ""
 "Here you may set a custom footer text to be displayed in the footer credits. "
 "HTML allowed."
 msgstr "您可以在此设置一个要在页脚致谢部分中中显示的自定义文本。允许 HTML。"
 
-#: includes/customizer.php:821
+#: includes/customizer.php:869
 msgid "Footer Widget Layout"
 msgstr "页脚小工具布局"
 
-#: includes/customizer.php:822
+#: includes/customizer.php:870
 msgid "Choose the layout of the footer widgets."
 msgstr "选择页脚小工具的布局。"
 
-#: includes/customizer.php:824
+#: includes/customizer.php:872
 msgid "One column. Only shows the \"Footer\" widget area."
 msgstr "单栏。仅显示「页脚」小工具区域。"
 
-#: includes/customizer.php:825
+#: includes/customizer.php:873
 msgid "Two columns. Also shows the \"Footer 2\" widget area."
 msgstr "双栏。还会显示「页脚 2」小工具区域。"
 
-#: includes/customizer.php:826
+#: includes/customizer.php:874
 msgid "Three columns. Also shows the \"Footer 3\" widget area (aka all areas)."
 msgstr "三栏。还会显示「页脚 3」（即显示所有）小工具区域。"
+
+#: includes/customizer.php:881
+#, fuzzy
+msgid "Admin Warnings"
+msgstr "管理员标记"
+
+#: includes/customizer.php:882
+msgid ""
+"The theme can display a warning when no widgets are set. Select \"No\" to "
+"disable this feature."
+msgstr ""
 
 #: includes/languages.php:10
 msgid "Featured"
@@ -945,6 +994,7 @@ msgstr "页面："
 
 #. translators: %s: The search query.
 #: search.php:16 search.php:40
+#, php-format
 msgid "You have searched for: \"%s\""
 msgstr "您搜索了：「%s」"
 
@@ -968,7 +1018,7 @@ msgstr "抱歉，但是在此区域中没有找到任何小工具。"
 
 #: sidebar-above-content.php:15 sidebar-below-content.php:15
 #: sidebar-footer-2.php:15 sidebar-footer-3.php:15 sidebar-footer.php:15
-#: sidebar.php:18
+#: sidebar.php:16
 msgid "This message is displayed to administrators only."
 msgstr "此消息仅向管理员展示。"
 
@@ -976,16 +1026,9 @@ msgstr "此消息仅向管理员展示。"
 msgid "Sorry, but no widgets were found in this area. "
 msgstr "抱歉，但是在此区域中没有找到任何小工具。 "
 
-#: sidebar.php:16
-msgid "Some default widgets had been displayed instead."
-msgstr "已显示一些默认的小工具。"
-
-#: sidebar.php:26
-msgid "Archives"
-msgstr "归档页"
-
 #. translators: %s: Title of the post.
 #: singular.php:36 templates/loop.php:45
+#, php-format
 msgid "The thumbnail image for %s."
 msgstr "%s 的特色图像"
 
@@ -1011,26 +1054,31 @@ msgstr "抱歉，但是在此区域中没有找到任何小工具。"
 
 #. translators: %s: Post title associated with the thumbnail image.
 #: templates/loop.php:22
+#, php-format
 msgid "Thumbnail image of %s. Also a link that navigates to it."
 msgstr "文章 %s 的特色图片。此图片也将链接到对应的文章。"
 
 #. translators: %s: Post title associated with the thumbnail image.
 #: templates/loop.php:39
+#, php-format
 msgid "The thhumbnail image link for %s"
 msgstr "%s 的特色图片链接"
 
 #. translators: %s: Post publish time.
 #: templates/loop.php:73 templates/publisher.php:21
+#, php-format
 msgid "Published on %s"
 msgstr "发表于 %s"
 
 #. translators: %s: Post last modified time.
 #: templates/loop.php:79 templates/publisher.php:27
+#, php-format
 msgid "Last modified on %s"
 msgstr "最后编辑于 %s"
 
 #. translators: %d: Number of comments.
 #: templates/loop.php:91
+#, php-format
 msgctxt "comment count"
 msgid "%d Comment"
 msgid_plural "%d Comments"
@@ -1038,6 +1086,7 @@ msgstr[0] "%d 条评论"
 
 #. translators: %s: Post title.
 #: templates/loop.php:109
+#, php-format
 msgid "Read more of %s"
 msgstr "阅读 %s 的更多内容"
 
@@ -1098,3 +1147,38 @@ msgstr "MinimalistFlex 暗背景色"
 msgctxt "Color name"
 msgid "MinimalistFlex White"
 msgstr "MinimalistFlex 白色"
+
+#~ msgid ""
+#~ "MinimalistFlex is an elegant, easy to use theme that aims to provide a "
+#~ "smooth user experience. As a classic theme, we try to provide as many "
+#~ "options as possible, while not being overwhelming. With full support of "
+#~ "flexible header images, custom colors and layout, multiple widget areas, "
+#~ "you can still customize your site in a lot of ways. Compatibility is also "
+#~ "an important affair: MinimalistFlex is tested on many versions with a "
+#~ "minimum of WordPress 4.9 and PHP 5.6, ensuring that almost everyone can "
+#~ "enjoy the theme without worrying to upgrade. Mobile users are also "
+#~ "considered well: MinimalistFlex is fully responsive on its own, and works "
+#~ "well even on very small screen sizes!"
+#~ msgstr ""
+#~ "MinimalistFlex 是一款优雅的，便于使用的主题，其致力于为所有用户提供良好的"
+#~ "用户体验。作为一款经典主题，我们提供了尽可能多的选项，允许您控制您站点的方"
+#~ "方面面，同时也确保选项不会难以理解。主题支持可变大小的页眉图像、自定义颜"
+#~ "色、布局、多个小组件区域等功能。我们同样很重视兼容性：MinimalistFlex 在诸"
+#~ "多的 WordPress 版本上进行测试，其中的最低版本为 WordPress 4.9 和 PHP 5.6，"
+#~ "确保大多数用户无需升级就可以顺利地使用主题。移动用户也不会被遗忘："
+#~ "MinimalistFlex 从设计之初就确保响应式设计始终可用，就算在很小的屏幕尺寸上"
+#~ "也能良好工作！"
+
+#~ msgid ""
+#~ "Below are some metadatas that you may configure whether to display or not."
+#~ "<br>Description"
+#~ msgstr "下面是一些您可以选择显示或隐藏的元数据。<br>描述"
+
+#~ msgid "Metadatas"
+#~ msgstr "元数据"
+
+#~ msgid "Some default widgets had been displayed instead."
+#~ msgstr "已显示一些默认的小工具。"
+
+#~ msgid "Archives"
+#~ msgstr "归档页"
