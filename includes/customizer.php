@@ -128,6 +128,45 @@ function minimalistflex_customize_color_register( $wp_customize ) {
     ) );
     $wp_customize -> get_control( 'background_color' ) -> description = esc_html__( 'The default background setting from the WordPress core. If set, it will blend with the content &amp; sidebar background colors set below.', 'minimalistflex' );
     $wp_customize -> get_control( 'header_textcolor' ) -> description = esc_html__( 'The default header text setting from the WordPress core. Used on the header and the toggle button.', 'minimalistflex' );
+
+    $wp_customize->add_setting( 'minimalistflex_content_background_blend', Array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => 'postMessage',
+        'default' => 50,
+        'sanitize_callback' => 'minimalistflex_sanitize_percentage_cb',
+        'active_callback' => 'minimalistflex_is_background_image_present'
+    ) );
+    $wp_customize->add_control( 'minimalistflex_content_background_blend', Array(
+        'type' => 'number',
+        'label' => esc_html__( 'Content Background Blend', 'minimalistflex' ),
+        'description' => esc_html__( 'The theme will blend the background color with the background image when present. Choose how hard should the blend be.', 'minimalistflex' ),
+        'priority' => 30,
+        'section' => 'background_image',
+        'input_attrs' => Array(
+            'min' => 0,
+            'max' => 100
+        )
+    ) );
+    $wp_customize->add_setting( 'minimalistflex_sidebar_background_blend', Array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => 'postMessage',
+        'default' => 50,
+        'sanitize_callback' => 'minimalistflex_sanitize_percentage_cb',
+        'active_callback' => 'minimalistflex_is_background_image_present'
+    ) );
+    $wp_customize->add_control( 'minimalistflex_sidebar_background_blend', Array(
+        'type' => 'number',
+        'label' => esc_html__( 'Sidebar Background Blend', 'minimalistflex' ),
+        'description' => esc_html__( 'The theme will blend the sidebar background color with the sidebar background image when present. Choose how hard should the blend be.', 'minimalistflex' ),
+        'priority' => 40,
+        'section' => 'background_image',
+        'input_attrs' => Array(
+            'min' => 0,
+            'max' => 100
+        )
+    ) );
 }
 
 function minimalistflex_customize_author_elements_register( $wp_customize ) {

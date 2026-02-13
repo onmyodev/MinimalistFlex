@@ -78,6 +78,12 @@ function minimalistflex_enqueue_preview_files() {
 
 add_action( 'customize_preview_init', 'minimalistflex_enqueue_preview_files' );
 
+function minimalistflex_enqueue_customizer_files() {
+	wp_enqueue_script( 'minimalistflex-customizer-script', get_template_directory_uri() . '/js/customizer.js', array('jquery'), null, true);
+}
+
+add_action( 'customize_controls_enqueue_scripts', 'minimalistflex_enqueue_customizer_files' );
+
 function minimalistflex_widgets_init() {
 	register_sidebar( array(
 		'name'          => _x( 'Main Sidebar', 'sidebar name' , 'minimalistflex' ),
@@ -219,4 +225,8 @@ function minimalistflex_render_color_single( $color, $color_key ) {
 	}
 </style>
 	<?php
+}
+
+function minimalistflex_is_background_image_present() {
+	return !empty( get_background_image() );
 }

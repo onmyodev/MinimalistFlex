@@ -108,7 +108,6 @@ body.custom-background .minimalistflex-sidebar {
         var(--minimalistflex-level1),
         transparent 25%
     );
-    box-shadow: none;
 }
 
 img {

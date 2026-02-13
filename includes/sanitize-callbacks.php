@@ -27,3 +27,20 @@ function minimalistflex_sanitize_int_cb( $number, $setting ) {
 		return $setting->default;
 	}
 }
+
+function minimalistflex_sanitize_checkbox_cb( $value ) {
+	if ( $value === 'yes' ) {
+		return 'yes';
+	} else {
+		return 'no';
+	}
+}
+
+function minimalistflex_sanitize_percentage_cb( $value, $setting ) {
+	$value = absint( $value );
+	if ( $value >= 0 && $value <= 100 ) {
+		return $value;
+	} else {
+		return $setting->default;
+	}
+}
