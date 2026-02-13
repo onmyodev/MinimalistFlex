@@ -98,7 +98,7 @@ body.custom-background .minimalistflex-content {
     background-color: color-mix(
         in srgb,
         var(--minimalistflex-level2),
-        transparent 50%
+        transparent var(--minimalistflex-content-blend)
     );
 }
 
@@ -106,7 +106,7 @@ body.custom-background .minimalistflex-sidebar {
     background-color: color-mix(
         in srgb,
         var(--minimalistflex-level1),
-        transparent 25%
+        transparent var(--minimalistflex-sidebar-blend)
     );
 }
 

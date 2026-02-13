@@ -33,4 +33,14 @@ jQuery(document).ready(function($){
             });
         });
     };
+    wp.customize('minimalistflex_content_background_blend', function(value) {
+        value.bind(function(newval) {
+            document.documentElement.style.setProperty('--minimalistflex-content-blend', (100 - newval) + '%');
+        });
+    });
+    wp.customize('minimalistflex_sidebar_background_blend', function(value) {
+        value.bind(function(newval) {
+            document.documentElement.style.setProperty('--minimalistflex-sidebar-blend', (100 - newval) + '%');
+        });
+    });
 });

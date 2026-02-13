@@ -134,8 +134,7 @@ function minimalistflex_customize_color_register( $wp_customize ) {
         'capability' => 'edit_theme_options',
         'transport' => 'postMessage',
         'default' => 50,
-        'sanitize_callback' => 'minimalistflex_sanitize_percentage_cb',
-        'active_callback' => 'minimalistflex_is_background_image_present'
+        'sanitize_callback' => 'minimalistflex_sanitize_percentage_cb'
     ) );
     $wp_customize->add_control( 'minimalistflex_content_background_blend', Array(
         'type' => 'number',
@@ -146,26 +145,27 @@ function minimalistflex_customize_color_register( $wp_customize ) {
         'input_attrs' => Array(
             'min' => 0,
             'max' => 100
-        )
+        ),
+        'active_callback' => 'minimalistflex_is_background_image_present'
     ) );
     $wp_customize->add_setting( 'minimalistflex_sidebar_background_blend', Array(
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
         'transport' => 'postMessage',
-        'default' => 50,
-        'sanitize_callback' => 'minimalistflex_sanitize_percentage_cb',
-        'active_callback' => 'minimalistflex_is_background_image_present'
+        'default' => 25,
+        'sanitize_callback' => 'minimalistflex_sanitize_percentage_cb'
     ) );
     $wp_customize->add_control( 'minimalistflex_sidebar_background_blend', Array(
         'type' => 'number',
         'label' => esc_html__( 'Sidebar Background Blend', 'minimalistflex' ),
-        'description' => esc_html__( 'The theme will blend the sidebar background color with the sidebar background image when present. Choose how hard should the blend be.', 'minimalistflex' ),
+        'description' => esc_html__( 'The theme will blend the sidebar background color with the background image when present. Choose how hard should the blend be.', 'minimalistflex' ),
         'priority' => 40,
         'section' => 'background_image',
         'input_attrs' => Array(
             'min' => 0,
             'max' => 100
-        )
+        ),
+        'active_callback' => 'minimalistflex_is_background_image_present'
     ) );
 }
 

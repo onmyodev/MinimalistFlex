@@ -37,6 +37,8 @@ if ( !defined( 'WPINC' ) ) {
     --minimalistflex-shadow: rgba(0, 0, 0, 0.19);
     --minimalistflex-shadow-light: rgba(0, 0, 0, 0.05);
     <?php endif; ?>
+    --minimalistflex-content-blend: <?php echo esc_html( 100 - get_theme_mod( 'minimalistflex_content_background_blend', 50 ) ) . '%'; ?>;
+    --minimalistflex-sidebar-blend: <?php echo esc_html( 100 - get_theme_mod( 'minimalistflex_sidebar_background_blend', 25 ) ) . '%'; ?>;
 }
 
 </style>

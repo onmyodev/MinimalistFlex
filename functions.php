@@ -79,7 +79,7 @@ function minimalistflex_enqueue_preview_files() {
 add_action( 'customize_preview_init', 'minimalistflex_enqueue_preview_files' );
 
 function minimalistflex_enqueue_customizer_files() {
-	wp_enqueue_script( 'minimalistflex-customizer-script', get_template_directory_uri() . '/js/customizer.js', array('jquery'), null, true);
+	wp_enqueue_script( 'minimalistflex-customizer-script', get_template_directory_uri() . '/js/customizer.js', array('jquery', 'customize-controls'), null, true);
 }
 
 add_action( 'customize_controls_enqueue_scripts', 'minimalistflex_enqueue_customizer_files' );
