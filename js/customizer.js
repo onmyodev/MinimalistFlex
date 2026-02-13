@@ -2,7 +2,6 @@ jQuery(document).ready(function($) {
     wp.customize('background_image', function (setting) {
         function toggleControl( value ) {
             
-            console.log(value);
             wp.customize.control( 'minimalistflex_content_background_blend', function( control ) {
                 if ( !value ) {
                     control.deactivate();
