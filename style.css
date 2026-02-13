@@ -192,6 +192,8 @@ button:focus {
 .minimalistflex-master table {
     border: none;
     border-collapse: collapse;
+    width: 100%;
+	overflow-x: auto;
 }
 
 .minimalistflex-master table thead,
@@ -1591,6 +1593,15 @@ a img.alignwide {
     .singular-main {
         width: 80%;
     }
+
+    .singular-adjacent-posts {
+		flex-wrap: nowrap !important;
+		flex-direction: column !important;
+	}
+	.singular-adjacent-post {
+		margin: 1em 0 !important;
+		width: auto !important;
+	}
 
     [class*=comment-form-] {
         flex-direction: column;
