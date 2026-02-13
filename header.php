@@ -108,6 +108,12 @@ $mf_label = get_theme_mod( 'minimalistflex_header_label' );
     <?php endif; ?>
 </header>
 
+<?php if ( has_nav_menu( 'secondary-menu' ) ): ?>
+    <nav class="minimalistflex-secondary-menu">
+        <?php wp_nav_menu( array( 'theme_location' => 'secondary-menu' ) ); ?>
+    </nav>
+<?php endif; ?>
+
 <main class="minimalistflex-master <?php echo 'minimalistflex-sidebar-layout-' . esc_attr( $mf_sidebar ) ?>">
 
 <article class="minimalistflex-content" id="main-content">

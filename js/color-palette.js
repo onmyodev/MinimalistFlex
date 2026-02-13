@@ -21,6 +21,8 @@ jQuery(document).ready(function($){
         wp.customize("minimalistflex_color_contrast-dark").set("#ffffff")
         wp.customize("minimalistflex_color_footer-text").set("#000000")
         wp.customize("minimalistflex_color_footer-bg").set("#ffffff")
+        wp.customize("minimalistflex_color_secondary-menu-bg").set("#ffffff")
+        wp.customize("minimalistflex_color_secondary-menu-text").set("#000000")
     })
     $("#minimalistflex-palette-light").click(function(e){
         e.preventDefault()
@@ -44,6 +46,8 @@ jQuery(document).ready(function($){
         wp.customize("minimalistflex_color_contrast-dark").set("#ffffff")
         wp.customize("minimalistflex_color_footer-text").set("#000000")
         wp.customize("minimalistflex_color_footer-bg").set("#ffffff")
+        wp.customize("minimalistflex_color_secondary-menu-bg").set("#fcfcfc")
+        wp.customize("minimalistflex_color_secondary-menu-text").set("#000000")
     })
     $("#minimalistflex-palette-dark").click(function(e){
         e.preventDefault()
@@ -67,6 +71,8 @@ jQuery(document).ready(function($){
         wp.customize("minimalistflex_color_contrast-dark").set("#ffffff")
         wp.customize("minimalistflex_color_footer-text").set("#ffffff")
         wp.customize("minimalistflex_color_footer-bg").set("#333333")
+        wp.customize("minimalistflex_color_secondary-menu-bg").set("#070707")
+        wp.customize("minimalistflex_color_secondary-menu-text").set("#ffffff")
     })
     $("#minimalistflex-palette-galatic").click(function(e){
         e.preventDefault()
@@ -90,6 +96,8 @@ jQuery(document).ready(function($){
         wp.customize("minimalistflex_color_contrast-dark").set("#ffffff")
         wp.customize("minimalistflex_color_footer-text").set("#ffffff")
         wp.customize("minimalistflex_color_footer-bg").set("#20152a")
+        wp.customize("minimalistflex_color_secondary-menu-bg").set("#4f2d6f")
+        wp.customize("minimalistflex_color_secondary-menu-text").set("#ffffff")
     })
     $("#minimalistflex-palette-spring").click(function(e){
         e.preventDefault()
@@ -113,5 +121,7 @@ jQuery(document).ready(function($){
         wp.customize("minimalistflex_color_contrast-dark").set("#ffffff")
         wp.customize("minimalistflex_color_footer-text").set("#ffffff")
         wp.customize("minimalistflex_color_footer-bg").set("#004500")
+        wp.customize("minimalistflex_color_secondary-menu-bg").set("#005c00")
+        wp.customize("minimalistflex_color_secondary-menu-text").set("#ffffff")
     })
 })

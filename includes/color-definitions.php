@@ -12,6 +12,8 @@ $colors = Array(
     'header-text' => '#000000',
     'header-menu' => '#f7f7f7',
     'header-sidebar' => '#f0f0f0',
+    'secondary-menu-bg' => '#fcfcfc',
+    'secondary-menu-text' => '#000000',
     'level1' => '#ffffff',
     'level2' => '#f7f7f7',
     'tint' => '#ffd900',
@@ -21,7 +23,7 @@ $colors = Array(
     'contrast' => '#000000',
     'contrast-dark' => '#ffffff',
     'footer-text' => '#000000',
-    'footer-bg' => '#ffffff'
+    'footer-bg' => '#ffffff',
 );
 
 $labels = Array(
@@ -42,7 +44,9 @@ $labels = Array(
     'header-bg' => esc_html__( 'Header Background', 'minimalistflex' ),
     'header-menu' => esc_html__( 'Navigation Menu Background', 'minimalistflex' ),
     'header-sidebar' => esc_html__( 'Navigation Menu Submenu Background', 'minimalistflex' ),
-    'header-text' => esc_html__( 'Navigation Menu', 'minimalistflex' )
+    'header-text' => esc_html__( 'Navigation Menu', 'minimalistflex' ),
+    'secondary-menu-bg' => esc_html__( 'Secondary Menu Background', 'minimalistflex' ),
+    'secondary-menu-text' => esc_html__( 'Secondary Menu Text', 'minimalistflex' )
 );
 
 $desciprtions = Array(
@@ -63,5 +67,7 @@ $desciprtions = Array(
     'header-bg' => esc_html__( 'The background color of the header.', 'minimalistflex' ),
     'header-menu' => esc_html__( 'The background color of the navigation menu dropdown.', 'minimalistflex' ),
     'header-sidebar' => esc_html__( 'The background color of the submenus of the navigation menu dropdown.', 'minimalistflex' ),
-    'header-text' => esc_html__( 'The text color of the navigation menu dropdown.', 'minimalistflex' )
+    'header-text' => esc_html__( 'The text color of the navigation menu dropdown.', 'minimalistflex' ),
+    'secondary-menu-bg' => esc_html__( 'The background color of the secondary menu.', 'minimalistflex' ),
+    'secondary-menu-text' => esc_html__( 'The text color of the secondary menu.', 'minimalistflex' )
 );

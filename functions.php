@@ -148,6 +148,12 @@ function minimalistflex_register_menus() {
             'main-menu' => __( 'Main Menu', 'minimalistflex' ),
         )
     );
+
+	    register_nav_menus(
+        array(
+            'secondary-menu' => __( 'Secondary Menu', 'minimalistflex' ),
+        )
+    );
 }
 add_action( 'init', 'minimalistflex_register_menus' );
 

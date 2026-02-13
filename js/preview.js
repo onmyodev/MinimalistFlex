@@ -1,5 +1,5 @@
 jQuery(document).ready(function($){
-    let colors = ['default', 'level3-dark', 'link', 'link-hover', 'header-bg', 'header-text', 'header-menu', 'header-sidebar', 'level1', 'level2', 'tint', 'tint-dark', 'tint-alt', 'tint-contrast', 'contrast', 'contrast-dark', 'footer-text', 'footer-bg'];
+    let colors = ['default', 'level3-dark', 'link', 'link-hover', 'header-bg', 'header-text', 'header-menu', 'header-sidebar', 'level1', 'level2', 'tint', 'tint-dark', 'tint-alt', 'tint-contrast', 'contrast', 'contrast-dark', 'footer-text', 'footer-bg', 'secondary-menu-bg', 'secondary-menu-text'];
     wp.customize('header_textcolor', function(value) {
         value.bind(function(newval) {
             document.documentElement.style.setProperty('--minimalistflex-header', newval.startsWith('#') ? newval : '#' + newval);

@@ -447,6 +447,35 @@ button:focus {
     display: block;
 }
 
+.minimalistflex-secondary-menu {
+    background-color: var(--minimalistflex-secondary-menu-bg);
+    box-shadow: var(--minimalistflex-card-shadow);
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.minimalistflex-secondary-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.minimalistflex-secondary-menu li {
+    padding: 0.5em 1em;
+    font-size: 0.8em;
+}
+
+.minimalistflex-secondary-menu li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--minimalistflex-secondary-menu-text);
+}
+
 /*
  * Main content styles.
  */
