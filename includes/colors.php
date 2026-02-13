@@ -24,7 +24,7 @@ if ( !defined( 'WPINC' ) ) {
     --minimalistflex-<?php echo esc_html( $color_key ) ?>: <?php echo esc_html( get_theme_mod( 'minimalistflex_color_' . $color_key, $colors[$color_key] ) ); ?>;
     <?php endforeach; ?>
     --minimalistflex-max-height: <?php
-        if ( get_theme_mod( 'minimalistflex_interface_thumbnail_height', 'flexible' ) === 'fixed' ) {
+        if ( get_theme_mod( 'minimalistflex_interface_thumbnail_height', 'auto' ) === 'fixed' ) {
             echo esc_html( get_theme_mod( 'minimalistflex_interface_thumbnail_height_px', 300 ) ) . 'px;';
         } else {
             echo esc_html( 'auto;' );

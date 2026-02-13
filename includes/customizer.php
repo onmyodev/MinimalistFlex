@@ -484,12 +484,14 @@ function minimalistflex_customize_register( $wp_customize ) {
     $wp_customize -> add_setting( 'minimalistflex_interface_thumbnail_height', Array(
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
+        'transport' => 'postMessage',
         'default' => 'auto',
         'sanitize_callback' => 'minimalistflex_sanitize_radio_cb'
     ) );
     $wp_customize -> add_setting( 'minimalistflex_interface_thumbnail_height_px', Array(
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
+        'transport' => 'postMessage',
         'default' => 300,
         'sanitize_callback' => 'minimalistflex_sanitize_int_cb'
     ) );

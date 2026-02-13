@@ -43,4 +43,24 @@ jQuery(document).ready(function($){
             document.documentElement.style.setProperty('--minimalistflex-sidebar-blend', (100 - newval) + '%');
         });
     });
+
+    wp.customize('minimalistflex_interface_thumbnail_height', function(value) {
+        value.bind(function(newval) {
+            if (newval === 'auto') {
+                document.documentElement.style.setProperty('--minimalistflex-max-height', 'auto');
+            } else {
+                let height = wp.customize('minimalistflex_interface_thumbnail_height_px').get();
+                document.documentElement.style.setProperty('--minimalistflex-max-height', height + 'px');
+            }
+        });
+    });
+
+    wp.customize('minimalistflex_interface_thumbnail_height_px', function(value) {
+        let thumbnailHeightSetting = wp.customize('minimalistflex_interface_thumbnail_height').get();
+        if (thumbnailHeightSetting === 'fixed') {
+            value.bind(function(newval) {
+                document.documentElement.style.setProperty('--minimalistflex-max-height', newval + 'px');
+            });
+        }
+    });
 });

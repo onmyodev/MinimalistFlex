@@ -73,7 +73,7 @@ function minimalistflex_enqueue_files() {
 add_action( 'wp_head', 'minimalistflex_enqueue_files' );
 
 function minimalistflex_enqueue_preview_files() {
-	wp_enqueue_script( 'minimalistflex-preview-script', get_template_directory_uri() . '/js/preview.js', array('jquery'), null, true);
+	wp_enqueue_script( 'minimalistflex-preview-script', get_template_directory_uri() . '/js/preview.js', array('jquery', 'customize-preview'), null, true);
 }
 
 add_action( 'customize_preview_init', 'minimalistflex_enqueue_preview_files' );
@@ -229,4 +229,8 @@ function minimalistflex_render_color_single( $color, $color_key ) {
 
 function minimalistflex_is_background_image_present() {
 	return !empty( get_background_image() );
+}
+
+function minimalistflex_is_thumbnail_fixed() {
+	return get_theme_mod( 'minimalistflex_interface_thumbnail_height', 'auto' ) === 'fixed';
 }
