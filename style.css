@@ -1162,9 +1162,10 @@ p[class*=comment-form-] {
  * Search styles.
  */
 
-.search-form {
+.minimalistflex-search-form {
     display: flex;
     flex-wrap: wrap;
+    box-shadow: var(--minimalistflex-card-shadow);
 }
 
 .search-form label {
@@ -1179,16 +1180,17 @@ p[class*=comment-form-] {
     max-width: 100%;
     background-color: var(--minimalistflex-level1);
     color: var(--minimalistflex-default);
-    border: solid 1px var(--minimalistflex-default);
+    border: none;
 }
 
 .search-submit {
-    flex-grow: 1;
+    width: 4em;
+    height: 4em;
     border: none;
     border-radius: 0;
     background-color: var(--minimalistflex-tint);
     color: var(--minimalistflex-contrast);
-    padding: 1em 2em;
+    padding: 1em;
 }
 
 /*
