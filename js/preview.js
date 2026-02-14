@@ -75,4 +75,14 @@ jQuery(document).ready(function($){
             });
         }
     });
+
+    wp.customize('minimalistflex_layout_home_waterfall', function(value) {
+        value.bind(function(newval) {
+            if (newval === 'yes') {
+                $('.minimalistflex-home').addClass('waterfall');
+            } else {
+                $('.minimalistflex-home').removeClass('waterfall');
+            }
+        });
+    });
 });

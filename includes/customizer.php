@@ -299,6 +299,12 @@ function minimalistflex_customize_register( $wp_customize ) {
         'priority' => 140,
         'capability' => 'edit_theme_options'
     ) );
+    $wp_customize -> add_section( 'minimalistflex_advanced', Array(
+        'title' => _x( 'Advanced Settings', 'customizer section' , 'minimalistflex' ),
+        'description' => esc_html__( 'Advanced settings. Should be kept default unless when developing...', 'minimalistflex' ),
+        'priority' => 150,
+        'capability' => 'edit_theme_options'
+    ) );
 
     // Start adding settings.
     $wp_customize -> add_setting( 'minimalistflex_header_link', Array(
@@ -325,6 +331,13 @@ function minimalistflex_customize_register( $wp_customize ) {
         'capability' => 'edit_theme_options',
         'transport' => 'refresh',
         'default' => 'yes',
+        'sanitize_callback' => 'minimalistflex_sanitize_radio_cb'
+    ) );
+    $wp_customize -> add_setting( 'minimalistflex_layout_home_waterfall', Array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => 'postMessage',
+        'default' => 'no',
         'sanitize_callback' => 'minimalistflex_sanitize_radio_cb'
     ) );
     $wp_customize -> add_setting( 'minimalistflex_layout_front_sidebar', Array(
@@ -585,6 +598,13 @@ function minimalistflex_customize_register( $wp_customize ) {
         'default' => 'no',
         'sanitize_callback' => 'minimalistflex_sanitize_radio_cb'
     ) );
+    $wp_customize -> add_setting( 'minimalistflex_beta_feature_enabled', Array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => 'refresh',
+        'default' => 'no',
+        'sanitize_callback' => 'minimalistflex_sanitize_radio_cb'
+    ) );
 
     // Start binding controls (UI).
     $wp_customize -> add_control( 'minimalistflex_header_link', Array(
@@ -623,6 +643,18 @@ function minimalistflex_customize_register( $wp_customize ) {
             'yes' => esc_html__( 'Yes', 'minimalistflex' ),
             'no' => esc_html__( 'No', 'minimalistflex' )
         )
+    ) );
+    $wp_customize -> add_control( 'minimalistflex_layout_home_waterfall', Array(
+        'type' => 'radio',
+        'priority' => 15,
+        'section' => 'minimalistflex_layout_home',
+        'label' => _x( 'Waterfall Layout', 'layout' , 'minimalistflex' ),
+        'description' => esc_html__( 'Select whether to use a two-column waterfall layout.', 'minimalistflex' ),
+        'choices' => Array(
+            'yes' => esc_html__( 'Yes', 'minimalistflex' ),
+            'no' => esc_html__( 'No', 'minimalistflex' )
+        ),
+        'active_callback' => 'minimalistflex_is_beta_feature_enabled'
     ) );
     $wp_customize -> add_control( 'minimalistflex_layout_front_sidebar', Array(
         'type' => 'radio',
@@ -1011,9 +1043,20 @@ function minimalistflex_customize_register( $wp_customize ) {
     $wp_customize -> add_control( 'minimalistflex_admin_warning', Array(
         'type' => 'radio',
         'priority' => 100,
-        'section' => 'minimalistflex_interface',
+        'section' => 'minimalistflex_advanced',
         'label' => esc_html__( 'Admin Warnings', 'minimalistflex' ),
         'description' => esc_html__( 'The theme can display a warning when no widgets are set. Select "No" to disable this feature.', 'minimalistflex' ),
+        'choices' => Array(
+            'yes' => esc_html__( 'Yes', 'minimalistflex' ),
+            'no' => esc_html__( 'No', 'minimalistflex' )
+        )
+    ) );
+    $wp_customize -> add_control( 'minimalistflex_beta_feature_enabled', Array(
+        'type' => 'radio',
+        'priority' => 101,
+        'section' => 'minimalistflex_advanced',
+        'label' => esc_html__( 'Enable Beta Features', 'minimalistflex' ),
+        'description' => esc_html__( 'Enable the beta features of the theme.', 'minimalistflex' ),
         'choices' => Array(
             'yes' => esc_html__( 'Yes', 'minimalistflex' ),
             'no' => esc_html__( 'No', 'minimalistflex' )

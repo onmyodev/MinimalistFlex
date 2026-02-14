@@ -27,4 +27,27 @@ jQuery(document).ready(function($) {
             toggleControl( newval );
         });
     });
+
+    wp.customize('minimalistflex_beta_feature_enabled', function (setting) {
+        function toggleControl( value ) {
+            let betaSettings = ['minimalistflex_layout_home_waterfall'];
+            betaSettings.forEach(function(settingName) {
+                wp.customize.control( settingName, function( control ) {
+                    if ( !value ) {
+                        control.deactivate();
+                    } else {
+                        control.activate();
+                    }
+                });
+            });
+        }
+
+        // 初始执行一次
+        toggleControl( setting.get() );
+
+        // 监听变化
+        setting.bind( function( newval ) {
+            toggleControl( newval );
+        });
+    });
 });

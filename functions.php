@@ -244,3 +244,7 @@ function minimalistflex_is_thumbnail_fixed() {
 function minimalistflex_is_front_page_static() {
 	return get_option( 'show_on_front' ) === 'page';
 }
+
+function minimalistflex_is_beta_feature_enabled() {
+	return get_theme_mod( 'minimalistflex_beta_feature_enabled', 'no' ) === 'yes';
+}
