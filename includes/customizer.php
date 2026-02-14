@@ -12,6 +12,153 @@ require_once 'sanitize-callbacks.php';
 
 add_action( 'customize_controls_enqueue_scripts', 'minimalistflex_customizer_enqueue_scripts' );
 
+function minimalistflex_social_links_register( $wp_customize ) {
+    require_once 'class-description-only.php';
+
+    // Main section.
+    $wp_customize -> add_section( 'minimalistflex_social_links', Array(
+        'title' => esc_html__( 'Social Links', 'minimalistflex' ),
+        'description' => esc_html__( 'Add your social media links here. They will be displayed as icons in the navigation menu.', 'minimalistflex' ),
+        'priority' => 80,
+        'capability' => 'edit_theme_options'
+    ) );
+
+    // Stub setting for the description only "control".
+    $wp_customize -> add_setting( 'minimalistflex_social_links_description', Array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => 'refresh'
+    ) );
+    $wp_customize -> add_control( new MinimalistFlex_Description_Only_Custom_Control( $wp_customize, 'minimalistflex_social_links_description', Array(
+        'priority' => 1,
+        'label' => esc_html__( 'Beta Feature', 'minimalistflex' ),
+        'description' => esc_html__( 'This is a beta feature. To use this feature, enable Advanced Settings > Enable Beta Features.', 'minimalistflex' ),
+        'section' => 'minimalistflex_social_links'
+    ) ) );
+
+    // YouTube.
+    $wp_customize -> add_setting( 'minimalistflex_youtube_link', Array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'esc_url_raw'
+    ) );
+    $wp_customize -> add_control( 'minimalistflex_youtube_link', Array(
+        'type' => 'url',
+        'priority' => 10,
+        'section' => 'minimalistflex_social_links',
+        'label' => esc_html__( 'YouTube', 'minimalistflex' ),
+        'active_callback' => 'minimalistflex_is_beta_feature_enabled'
+    ) );
+
+    // X (formerly Twitter).
+    $wp_customize -> add_setting( 'minimalistflex_x_link', Array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'esc_url_raw'
+    ) );
+    $wp_customize -> add_control( 'minimalistflex_x_link', Array(
+        'type' => 'url',
+        'priority' => 20,
+        'section' => 'minimalistflex_social_links',
+        'label' => esc_html__( 'X (formerly Twitter)', 'minimalistflex' ),
+        'active_callback' => 'minimalistflex_is_beta_feature_enabled'
+    ) );
+
+    // Facebook.
+    $wp_customize -> add_setting( 'minimalistflex_facebook_link', Array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'esc_url_raw'
+    ) );
+    $wp_customize -> add_control( 'minimalistflex_facebook_link', Array(
+        'type' => 'url',
+        'priority' => 30,
+        'section' => 'minimalistflex_social_links',
+        'label' => esc_html__( 'Facebook', 'minimalistflex' ),
+        'active_callback' => 'minimalistflex_is_beta_feature_enabled'
+    ) );
+
+    // Instagram.
+    $wp_customize -> add_setting( 'minimalistflex_instagram_link', Array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'esc_url_raw'
+    ) );
+    $wp_customize -> add_control( 'minimalistflex_instagram_link', Array(
+        'type' => 'url',
+        'priority' => 40,
+        'section' => 'minimalistflex_social_links',
+        'label' => esc_html__( 'Instagram', 'minimalistflex' ),
+        'active_callback' => 'minimalistflex_is_beta_feature_enabled'
+    ) );
+
+    // Mastodon.
+    $wp_customize -> add_setting( 'minimalistflex_mastodon_link', Array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'esc_url_raw'
+    ) );
+    $wp_customize -> add_control( 'minimalistflex_mastodon_link', Array(
+        'type' => 'url',
+        'priority' => 50,
+        'section' => 'minimalistflex_social_links',
+        'label' => esc_html__( 'Mastodon', 'minimalistflex' ),
+        'active_callback' => 'minimalistflex_is_beta_feature_enabled'
+    ) );
+
+    // GitHub.
+    $wp_customize -> add_setting( 'minimalistflex_github_link', Array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'esc_url_raw'
+    ) );
+    $wp_customize -> add_control( 'minimalistflex_github_link', Array(
+        'type' => 'url',
+        'priority' => 60,
+        'section' => 'minimalistflex_social_links',
+        'label' => esc_html__( 'GitHub', 'minimalistflex' ),
+        'active_callback' => 'minimalistflex_is_beta_feature_enabled'
+    ) );
+
+    // Custom (With an additional setting of dashicon icon name).
+    $wp_customize -> add_setting( 'minimalistflex_custom_social_link', Array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'esc_url_raw'
+    ) );
+    $wp_customize -> add_setting( 'minimalistflex_custom_social_icon', Array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => 'refresh',
+        'default' => 'star-filled',
+        'sanitize_callback' => 'sanitize_key'
+    ) );
+    $wp_customize -> add_control( 'minimalistflex_custom_social_link', Array(
+        'type' => 'url',
+        'priority' => 70,
+        'section' => 'minimalistflex_social_links',
+        'label' => esc_html__( 'Custom Link', 'minimalistflex' ),
+        'active_callback' => 'minimalistflex_is_beta_feature_enabled'
+    ) );
+    $wp_customize -> add_control( 'minimalistflex_custom_social_icon', Array(
+        'type' => 'text',
+        'priority' => 80,
+        'section' => 'minimalistflex_social_links',
+        'label' => esc_html__( 'Custom Link Icon (Dashicon Name)', 'minimalistflex' ),
+        'description' => __( 'Enter the name of the dashicon you want to use for the custom link. You can find the list of dashicons and their names <a href="https://developer.wordpress.org/resource/dashicons/#star-filled" target="_blank">here</a>.', 'minimalistflex' ),
+        'active_callback' => 'minimalistflex_is_beta_feature_enabled'
+    ) );
+}
+
+add_action( 'customize_register', 'minimalistflex_social_links_register' );
+
 function minimalistflex_default_featured_image_register( $wp_customize ) {
     require_once 'class-multi-image-control.php';
 
@@ -333,6 +480,20 @@ function minimalistflex_customize_register( $wp_customize ) {
         'default' => 'yes',
         'sanitize_callback' => 'minimalistflex_sanitize_radio_cb'
     ) );
+    $wp_customize -> add_setting( 'minimalistflex_layout_home_excerpt_mode', Array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => 'refresh',
+        'default' => 'excerpt',
+        'sanitize_callback' => 'minimalistflex_sanitize_radio_cb'
+    ) );
+    $wp_customize -> add_setting( 'minimalistflex_layout_home_excerpt_length', Array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => 'refresh',
+        'default' => 55,
+        'sanitize_callback' => 'minimalistflex_sanitize_int_cb'
+    ) );
     $wp_customize -> add_setting( 'minimalistflex_layout_home_waterfall', Array(
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
@@ -515,13 +676,6 @@ function minimalistflex_customize_register( $wp_customize ) {
         'default' => 'yes',
         'sanitize_callback' => 'minimalistflex_sanitize_radio_cb'
     ) );
-    $wp_customize -> add_setting( 'minimalistflex_interface_excerpt', Array(
-        'type' => 'theme_mod',
-        'capability' => 'edit_theme_options',
-        'transport' => 'refresh',
-        'default' => 55,
-        'sanitize_callback' => 'minimalistflex_sanitize_int_cb'
-    ) );
     $wp_customize -> add_setting( 'minimalistflex_interface_autoh2label', Array(
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
@@ -653,6 +807,29 @@ function minimalistflex_customize_register( $wp_customize ) {
         'choices' => Array(
             'yes' => esc_html__( 'Yes', 'minimalistflex' ),
             'no' => esc_html__( 'No', 'minimalistflex' )
+        ),
+        'active_callback' => 'minimalistflex_is_beta_feature_enabled'
+    ) );
+    $wp_customize -> add_control( 'minimalistflex_layout_home_excerpt_mode', Array(
+        'type' => 'radio',
+        'priority' => 20,
+        'section' => 'minimalistflex_layout_home',
+        'label' => esc_html__( 'Blog Display Mode', 'minimalistflex' ),
+        'description' => esc_html__( 'Choose whether to display full posts or excerpts on the blog page.', 'minimalistflex' ),
+        'choices' => Array(
+            'full' => esc_html__( 'Full Posts', 'minimalistflex' ),
+            'excerpt' => esc_html__( 'Excerpts', 'minimalistflex' )
+        ),
+        'active_callback' => 'minimalistflex_is_beta_feature_enabled'
+    ) );
+    $wp_customize -> add_control( 'minimalistflex_layout_home_excerpt_length', Array(
+        'type' => 'number',
+        'priority' => 20,
+        'section' => 'minimalistflex_layout_home',
+        'label' => esc_html__( 'Excerpt Word Count', 'minimalistflex' ),
+        'description' => esc_html__( 'The word count of the excerpts on any archive page and the blog page.', 'minimalistflex' ),
+        'input_attrs' => Array(
+            'min' => 0
         ),
         'active_callback' => 'minimalistflex_is_beta_feature_enabled'
     ) );
@@ -930,13 +1107,6 @@ function minimalistflex_customize_register( $wp_customize ) {
             'yes' => esc_html__( 'Yes', 'minimalistflex' ),
             'no' => esc_html__( 'No', 'minimalistflex' )
         )
-    ) );
-    $wp_customize -> add_control( 'minimalistflex_interface_excerpt', Array(
-        'type' => 'number',
-        'priority' => 20,
-        'section' => 'minimalistflex_interface',
-        'label' => esc_html__( 'Excerpt Word Count', 'minimalistflex' ),
-        'description' => esc_html__( 'The word count of the excerpts on any archive page and the blog page.', 'minimalistflex' )
     ) );
     $wp_customize -> add_control( 'minimalistflex_interface_autoh2label', Array(
         'type' => 'radio',

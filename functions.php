@@ -60,6 +60,22 @@ function minimalistflex_add_supports() {
 }
 add_action( 'after_setup_theme', 'minimalistflex_add_supports' );
 
+// Dirty update hooking
+function minimalistflex_migrate_options() {
+	$current_version = wp_get_theme()->get('Version');
+  	$old_version = get_option( 'minimalistflex_theme_version' );
+
+	if ( $old_version !== $current_version ) {
+		$excerpt_length = get_option( 'minimalistflex_interface_excerpt', '55' );
+		if ( $excerpt_length !== '55' ) {
+			set_theme_mod( 'minimalistflex_layout_home_excerpt_length', $excerpt_length );
+			remove_option( 'minimalistflex_interface_excerpt' );
+		}
+		update_option( 'minimalistflex_theme_version', $current_version );
+	}
+}
+add_action( 'after_setup_theme', 'minimalistflex_migrate_options' );
+
 function minimalistflex_enqueue_files() {
     wp_enqueue_script( 'comment-reply' );
     wp_enqueue_style( 'style', get_stylesheet_uri() );
@@ -166,7 +182,7 @@ function minimalistflex_dynamic_css() {
 add_action( 'wp_footer', 'minimalistflex_dynamic_css' );
 
 function minimalistflex_custom_excerpt_length() {
-	return intval( get_theme_mod( 'minimalistflex_interface_excerpt', '55' ) );
+	return get_theme_mod( 'minimalistflex_layout_home_excerpt_length', 55 );
 }
 add_filter( 'excerpt_length', 'minimalistflex_custom_excerpt_length', 999 );
 

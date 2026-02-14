@@ -30,7 +30,7 @@ jQuery(document).ready(function($) {
 
     wp.customize('minimalistflex_beta_feature_enabled', function (setting) {
         function toggleControl( value ) {
-            let betaSettings = ['minimalistflex_layout_home_waterfall'];
+            let betaSettings = ['minimalistflex_layout_home_waterfall', 'minimalistflex_youtube_link', 'minimalistflex_x_link', 'minimalistflex_facebook_link', 'minimalistflex_instagram_link', 'minimalistflex_mastodon_link', 'minimalistflex_github_link', 'minimalistflex_custom_social_link', 'minimalistflex_custom_social_icon', 'minimalistflex_layout_home_excerpt_mode', 'minimalistflex_layout_home_excerpt_length'];
             betaSettings.forEach(function(settingName) {
                 wp.customize.control( settingName, function( control ) {
                     if ( !value ) {
