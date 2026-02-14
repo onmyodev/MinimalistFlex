@@ -466,8 +466,17 @@ button:focus {
 }
 
 .minimalistflex-secondary-menu li {
-    padding: 0.5em 1em;
-    font-size: 0.8em;
+    margin: 0.5em 1em;
+    font-size: 12px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.minimalistflex-secondary-menu .sub-menu li {
+    margin: 0;
+    margin-left: 2em;
 }
 
 .minimalistflex-secondary-menu li a {
@@ -903,6 +912,7 @@ a.panel-author:focus {
 
 .singular-card {
     box-shadow: var(--minimalistflex-card-shadow);
+    clear: both;
 }
 
 .singular-author {
@@ -956,6 +966,10 @@ a.author-link {
     padding: 2em;
     width: 45%;
     margin: 1em 0;
+}
+
+.singular-adjacent-post h3 {
+    margin: 0;
 }
 
 .singular-previous-post {
