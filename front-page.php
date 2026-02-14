@@ -6,6 +6,17 @@ if ( !defined( 'WPINC' ) ) {
 
 <?php get_header(); ?>
 
+<?php if ( get_option( 'show_on_front' )  == 'posts' ) : ?>
+
+<?php if ( have_posts() ) : ?>
+    <div class="minimalistflex-home">
+        <?php get_template_part( 'templates/loop' ); ?>
+    </div>
+    <?php the_posts_pagination(); ?>
+<?php endif; ?>
+
+<?php else : ?>
+
 <?php if ( have_posts() ) :
         the_post();
         $mf_id = get_the_ID();
@@ -26,6 +37,8 @@ if ( !defined( 'WPINC' ) ) {
             </div>
         </div>
     </div>
+<?php endif; ?>
+
 <?php endif; ?>
 
 <?php get_footer(); ?>
