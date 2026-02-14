@@ -273,6 +273,20 @@ function minimalistflex_customize_register( $wp_customize ) {
         'priority' => 30,
         'capability' => 'edit_theme_options'
     ) );
+    $wp_customize -> add_section( 'minimalistflex_layout_error', Array(
+        'title' => _x( 'Error Pages', 'customizer section' , 'minimalistflex' ),
+        'description' => esc_html__( 'Here you may customize the layout of error pages.', 'minimalistflex' ),
+        'panel' => 'minimalistflex_layout',
+        'priority' => 35,
+        'capability' => 'edit_theme_options'
+    ) );
+    $wp_customize -> add_section( 'minimalistflex_layout_default', Array(
+        'title' => _x( 'Default Layout', 'customizer section' , 'minimalistflex' ),
+        'description' => esc_html__( 'Here you may customize the fallback layout of other pages.', 'minimalistflex' ),
+        'panel' => 'minimalistflex_layout',
+        'priority' => 35,
+        'capability' => 'edit_theme_options'
+    ) );
     $wp_customize -> add_section( 'minimalistflex_interface', Array(
         'title' => _x( 'Interface &amp; Elements', 'customizer section' , 'minimalistflex' ),
         'description' => esc_html__( 'You may customize your site\'s interface and the elements displayed here.', 'minimalistflex' ),
@@ -419,6 +433,55 @@ function minimalistflex_customize_register( $wp_customize ) {
         'sanitize_callback' => 'minimalistflex_sanitize_radio_cb'
     ) );
     $wp_customize -> add_setting( 'minimalistflex_layout_page_sidebar', Array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => 'postMessage',
+        'default' => 'right',
+        'sanitize_callback' => 'minimalistflex_sanitize_radio_cb'
+    ) );
+    $wp_customize -> add_setting( 'minimalistflex_layout_error_sidebar', Array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => 'postMessage',
+        'default' => 'right',
+        'sanitize_callback' => 'minimalistflex_sanitize_radio_cb'
+    ) );
+    $wp_customize -> add_setting( 'minimalistflex_layout_error_header', Array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => 'refresh',
+        'default' => 'yes',
+        'sanitize_callback' => 'minimalistflex_sanitize_radio_cb'
+    ) );
+    $wp_customize -> add_setting( 'minimalistflex_layout_error_title', Array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => 'postMessage',
+        'default' => '',
+        'sanitize_callback' => 'esc_html'
+    ) );
+    $wp_customize -> add_setting( 'minimalistflex_layout_error_message', Array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => 'postMessage',
+        'default' => '',
+        'sanitize_callback' => 'esc_html'
+    ) );
+    $wp_customize -> add_setting( 'minimalistflex_layout_error_form', Array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => 'refresh',
+        'default' => 'yes',
+        'sanitize_callback' => 'minimalistflex_sanitize_radio_cb'
+    ) );
+    $wp_customize -> add_setting( 'minimalistflex_layout_default_header', Array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => 'refresh',
+        'default' => 'yes',
+        'sanitize_callback' => 'minimalistflex_sanitize_radio_cb'
+    ) );
+    $wp_customize -> add_setting( 'minimalistflex_layout_default_sidebar', Array(
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
         'transport' => 'postMessage',
@@ -747,6 +810,77 @@ function minimalistflex_customize_register( $wp_customize ) {
         'type' => 'radio',
         'priority' => 15,
         'section' => 'minimalistflex_layout_page',
+        'label' => _x( 'Header Image', 'layout' , 'minimalistflex' ),
+        'description' => esc_html__( 'Select whether to display the header image.', 'minimalistflex' ),
+        'choices' => Array(
+            'yes' => esc_html__( 'Yes', 'minimalistflex' ),
+            'no' => esc_html__( 'No', 'minimalistflex' )
+        )
+    ) );
+        $wp_customize -> add_control( 'minimalistflex_layout_error_sidebar', Array(
+        'type' => 'radio',
+        'priority' => 10,
+        'section' => 'minimalistflex_layout_error',
+        'label' => _x( 'Sidebar', 'layout' , 'minimalistflex' ),
+        'description' => esc_html__( 'Select whether to display the sidebar, and its location.', 'minimalistflex' ),
+        'choices' => Array(
+            'left' => esc_html__( 'Left sidebar', 'minimalistflex' ),
+            'right' => esc_html__( 'Right sidebar', 'minimalistflex' ),
+            'no' => esc_html__( 'No', 'minimalistflex' )
+        )
+    ) );
+    $wp_customize -> add_control( 'minimalistflex_layout_error_header', Array(
+        'type' => 'radio',
+        'priority' => 15,
+        'section' => 'minimalistflex_layout_error',
+        'label' => _x( 'Header Image', 'layout' , 'minimalistflex' ),
+        'description' => esc_html__( 'Select whether to display the header image.', 'minimalistflex' ),
+        'choices' => Array(
+            'yes' => esc_html__( 'Yes', 'minimalistflex' ),
+            'no' => esc_html__( 'No', 'minimalistflex' )
+        )
+    ) );
+    $wp_customize -> add_control( 'minimalistflex_layout_error_title', Array(
+        'type' => 'text',
+        'priority' => 20,
+        'section' => 'minimalistflex_layout_error',
+        'label' => _x( 'Error Page Title', 'layout' , 'minimalistflex' ),
+        'description' => esc_html__( 'Choose what title to display on the error page.', 'minimalistflex' )
+    ) );
+    $wp_customize -> add_control( 'minimalistflex_layout_error_message', Array(
+        'type' => 'text',
+        'priority' => 25,
+        'section' => 'minimalistflex_layout_error',
+        'label' => _x( 'Error Page Message', 'layout' , 'minimalistflex' ),
+        'description' => esc_html__( 'Choose what message to display on the error page. The message will be displayed below the title.', 'minimalistflex' )
+    ) );
+    $wp_customize -> add_control( 'minimalistflex_layout_error_form', Array(
+        'type' => 'radio',
+        'priority' => 30,
+        'section' => 'minimalistflex_layout_error',
+        'label' => _x( 'Search Form', 'layout' , 'minimalistflex' ),
+        'description' => esc_html__( 'Select whether to also display the search form on the error page.', 'minimalistflex' ),
+        'choices' => Array(
+            'yes' => esc_html__( 'Yes', 'minimalistflex' ),
+            'no' => esc_html__( 'No', 'minimalistflex' )
+        )
+    ) );
+    $wp_customize -> add_control( 'minimalistflex_layout_default_sidebar', Array(
+        'type' => 'radio',
+        'priority' => 10,
+        'section' => 'minimalistflex_layout_default',
+        'label' => _x( 'Sidebar', 'layout' , 'minimalistflex' ),
+        'description' => esc_html__( 'Select whether to display the sidebar, and its location.', 'minimalistflex' ),
+        'choices' => Array(
+            'left' => esc_html__( 'Left sidebar', 'minimalistflex' ),
+            'right' => esc_html__( 'Right sidebar', 'minimalistflex' ),
+            'no' => esc_html__( 'No', 'minimalistflex' )
+        )
+    ) );
+    $wp_customize -> add_control( 'minimalistflex_layout_default_header', Array(
+        'type' => 'radio',
+        'priority' => 15,
+        'section' => 'minimalistflex_layout_default',
         'label' => _x( 'Header Image', 'layout' , 'minimalistflex' ),
         'description' => esc_html__( 'Select whether to display the header image.', 'minimalistflex' ),
         'choices' => Array(

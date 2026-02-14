@@ -24,27 +24,39 @@ if ( function_exists( 'wp_body_open' ) ) {
 if( is_home() ) {
     $mf_sidebar = get_theme_mod( 'minimalistflex_layout_home_sidebar', 'right' );
     $mf_header = get_theme_mod( 'minimalistflex_layout_home_header', 'yes' );
+    $mf_type = 'home';
 } elseif ( is_front_page() ) {
     $mf_sidebar = get_theme_mod( 'minimalistflex_layout_front_sidebar', 'right' );
     $mf_header = get_theme_mod( 'minimalistflex_layout_front_header', 'yes' );
-} elseif ( is_search() ) {
-    $mf_sidebar = get_theme_mod( 'minimalistflex_layout_search_sidebar', 'right' );
-    $mf_header = get_theme_mod( 'minimalistflex_layout_search_header', 'yes' );
+    $mf_type = 'front';
 } elseif ( is_author() ) {
     $mf_sidebar = get_theme_mod( 'minimalistflex_layout_author_sidebar', 'right' );
     $mf_header = get_theme_mod( 'minimalistflex_layout_author_header', 'yes' );
+    $mf_type = 'author';
 } elseif ( is_archive() ) {
     $mf_sidebar = get_theme_mod( 'minimalistflex_layout_archive_sidebar', 'right' );
     $mf_header = get_theme_mod( 'minimalistflex_layout_archive_header', 'yes' );
+    $mf_type = 'archive';
 } elseif ( is_single() ) {
     $mf_sidebar = get_theme_mod( 'minimalistflex_layout_singular_sidebar', 'right' );
     $mf_header = get_theme_mod( 'minimalistflex_layout_singular_header', 'yes' );
+    $mf_type = 'singular';
 } elseif ( is_page() ) {
     $mf_sidebar = get_theme_mod( 'minimalistflex_layout_page_sidebar', 'right' );
     $mf_header = get_theme_mod( 'minimalistflex_layout_page_header', 'yes' );
-} else {
+    $mf_type = 'page';
+} elseif ( is_search() ) {
     $mf_sidebar = get_theme_mod( 'minimalistflex_layout_search_sidebar', 'right' );
     $mf_header = get_theme_mod( 'minimalistflex_layout_search_header', 'yes' );
+    $mf_type = 'search';
+} elseif ( is_404() ) {
+    $mf_sidebar = get_theme_mod( 'minimalistflex_layout_error_sidebar', 'right' );
+    $mf_header = get_theme_mod( 'minimalistflex_layout_error_header', 'yes' );
+    $mf_type = 'error';
+} else {
+    $mf_sidebar = get_theme_mod( 'minimalistflex_layout_default_sidebar', 'right' );
+    $mf_header = get_theme_mod( 'minimalistflex_layout_default_header', 'yes' );
+    $mf_type = 'default';
 }
 
 $mf_link = get_theme_mod( 'minimalistflex_header_link' );
@@ -114,7 +126,7 @@ $mf_label = get_theme_mod( 'minimalistflex_header_label' );
     </nav>
 <?php endif; ?>
 
-<main class="minimalistflex-master <?php echo 'minimalistflex-sidebar-layout-' . esc_attr( $mf_sidebar ) ?>">
+<main class="minimalistflex-master <?php echo 'minimalistflex-sidebar-layout-' . esc_attr( $mf_sidebar ) . ' minimalistflex-master-' . esc_attr( $mf_type ) ?>">
 
 <article class="minimalistflex-content" id="main-content">
 

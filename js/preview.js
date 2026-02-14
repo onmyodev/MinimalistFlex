@@ -24,15 +24,27 @@ jQuery(document).ready(function($){
             }
         });
     });
-    let sidebars = ['home', 'front', 'archive', 'search', 'author', 'singular', 'page'];
+    let sidebars = ['home', 'front', 'archive', 'search', 'author', 'singular', 'page', 'error', 'default'];
     for (let i = 0; i < sidebars.length; i++) {
         let sidebar = sidebars[i];
         wp.customize('minimalistflex_layout_' + sidebar + '_sidebar', function(value) {
             value.bind(function(newval) {
-                $('.minimalistflex-master').removeClass('minimalistflex-sidebar-layout-no minimalistflex-sidebar-layout-left minimalistflex-sidebar-layout-right').addClass('minimalistflex-sidebar-layout-' + newval);
+                $('.minimalistflex-master-' + sidebar).removeClass('minimalistflex-sidebar-layout-no minimalistflex-sidebar-layout-left minimalistflex-sidebar-layout-right').addClass('minimalistflex-sidebar-layout-' + newval);
             });
         });
     };
+
+    wp.customize( 'minimalistflex_layout_error_title', function(value) {
+        value.bind(function(newval) {
+            $('.minimalistflex-404-message h1').text(newval);
+        });
+    });
+    wp.customize( 'minimalistflex_layout_error_message', function(value) {
+        value.bind(function(newval) {
+            $('.minimalistflex-404-message p').first().text(newval);
+        });
+    });
+
     wp.customize('minimalistflex_content_background_blend', function(value) {
         value.bind(function(newval) {
             document.documentElement.style.setProperty('--minimalistflex-content-blend', (100 - newval) + '%');
