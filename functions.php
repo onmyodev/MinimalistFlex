@@ -68,9 +68,6 @@ function minimalistflex_enqueue_files() {
 	if ( get_theme_mod( 'minimalistflex_interface_autoh2label', 'no' ) == 'yes' ) {
 		wp_enqueue_style( 'minimalistflex-autoh2label-style', get_template_directory_uri() . '/css/autoh2label.css' );
 	}
-	if ( get_theme_mod( 'minimalistflex_layout_home_waterfall', 'no' ) === 'yes' ) {
-		wp_enqueue_script( 'minimalistflex-waterfall-script', get_template_directory_uri() . '/js/waterfall.js', [], null, true);
-	}
 }
 
 add_action( 'wp_head', 'minimalistflex_enqueue_files' );

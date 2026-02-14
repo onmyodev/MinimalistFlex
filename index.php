@@ -7,7 +7,7 @@ if ( !defined( 'WPINC' ) ) {
 <?php get_header(); ?>
 
 <?php if ( have_posts() ) : ?>
-    <div class="minimalistflex-home <?php if ( get_theme_mod( 'minimalistflex_layout_home_waterfall', 'no' ) === 'yes' ) { echo 'waterfall'; } ?>">
+    <div class="minimalistflex-home">
         <?php get_template_part( 'templates/loop' ); ?>
     </div>
     <?php the_posts_pagination(); ?>
