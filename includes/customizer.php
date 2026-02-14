@@ -313,6 +313,13 @@ function minimalistflex_customize_register( $wp_customize ) {
         'default' => 'yes',
         'sanitize_callback' => 'minimalistflex_sanitize_radio_cb'
     ) );
+    $wp_customize->add_setting( 'minimalistflex_layout_home_waterfall', Array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => 'postMessage',
+        'default' => 'no',
+        'sanitize_callback' => 'minimalistflex_sanitize_radio_cb'
+    ) );
     $wp_customize -> add_setting( 'minimalistflex_layout_front_sidebar', Array(
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
@@ -556,6 +563,17 @@ function minimalistflex_customize_register( $wp_customize ) {
         'section' => 'minimalistflex_layout_home',
         'label' => _x( 'Header Image', 'layout' , 'minimalistflex' ),
         'description' => esc_html__( 'Select whether to display the header image.', 'minimalistflex' ),
+        'choices' => Array(
+            'yes' => esc_html__( 'Yes', 'minimalistflex' ),
+            'no' => esc_html__( 'No', 'minimalistflex' )
+        )
+    ) );
+    $wp_customize -> add_control( 'minimalistflex_layout_home_waterfall', Array(
+        'type' => 'radio',
+        'priority' => 20,
+        'section' => 'minimalistflex_layout_home',
+        'label' => _x( 'Waterfall', 'layout' , 'minimalistflex' ),
+        'description' => esc_html__( 'Use a two column waterfall styled page instead of one column.', 'minimalistflex' ),
         'choices' => Array(
             'yes' => esc_html__( 'Yes', 'minimalistflex' ),
             'no' => esc_html__( 'No', 'minimalistflex' )

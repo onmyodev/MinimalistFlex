@@ -506,6 +506,17 @@ button:focus {
     width: 100%;
 }
 
+.minimalistflex-home.waterfall {
+    column-count: 2;
+    column-gap: 1em;
+    margin: 2em;
+}
+
+.waterfall .panel {
+    break-inside: avoid;
+    margin: 1em;
+}
+
 .minimalistflex-sidebar {
     width: 33%;
     background-color: var(--minimalistflex-level1);
@@ -533,7 +544,7 @@ button:focus {
 .panel.sticky::before {
     content: var(--minimalistflex-featured);
     position: absolute;
-    top: calc(-2em - 6px);
+    top: calc(-2em - 5px);
     right: 1em;
     padding: 0.5em 1em;
     color: var(--minimalistflex-contrast);
@@ -1393,6 +1404,7 @@ p[class*=comment-form-] {
     padding: 1.5em;
     background-color: var(--minimalistflex-footer-bg);
     position: relative;
+    box-shadow: var(--minimalistflex-card-shadow);
 }
 
 .minimalistflex-footer * {
@@ -1522,8 +1534,13 @@ p[class*=comment-form-] {
 }
 
 .alignwide {
-    margin-left: -15%;
-    width: 130%;
+    margin-left: -1em;
+    width: calc(100% + 2em);
+}
+
+.alignfull {
+    margin-left: -2em;
+    width: calc(100% + 4em);
 }
 
 @media only screen and (max-width:480px){
@@ -1612,6 +1629,10 @@ a img.alignwide {
     .minimalistflex-content,
     .minimalistflex-sidebar {
         width: 100%;
+    }
+
+    .waterfall {
+        column-count: 1;
     }
 
     .publisher,
