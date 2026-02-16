@@ -23,110 +23,64 @@ function minimalistflex_social_links_register( $wp_customize ) {
         'capability' => 'edit_theme_options'
     ) );
 
-    // Stub setting for the description only "control".
-    $wp_customize -> add_setting( 'minimalistflex_social_links_description', Array(
+    // Enabled?
+    $wp_customize -> add_setting( 'minimalistflex_social_links_enabled', Array(
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
+        'default' => 'no',
         'transport' => 'refresh'
     ) );
-    $wp_customize -> add_control( new MinimalistFlex_Description_Only_Custom_Control( $wp_customize, 'minimalistflex_social_links_description', Array(
+    $wp_customize -> add_control( 'minimalistflex_social_links_enabled', Array(
+        'type' => 'radio',
         'priority' => 1,
-        'label' => esc_html__( 'Beta Feature', 'minimalistflex' ),
-        'description' => esc_html__( 'This is a beta feature. To use this feature, enable Advanced Settings > Enable Beta Features.', 'minimalistflex' ),
-        'section' => 'minimalistflex_social_links'
-    ) ) );
-
-    // YouTube.
-    $wp_customize -> add_setting( 'minimalistflex_youtube_link', Array(
-        'type' => 'theme_mod',
-        'capability' => 'edit_theme_options',
-        'transport' => 'refresh',
-        'sanitize_callback' => 'esc_url_raw'
-    ) );
-    $wp_customize -> add_control( 'minimalistflex_youtube_link', Array(
-        'type' => 'url',
-        'priority' => 10,
         'section' => 'minimalistflex_social_links',
-        'label' => esc_html__( 'YouTube', 'minimalistflex' ),
-        'active_callback' => 'minimalistflex_is_beta_feature_enabled'
+        'label' => esc_html__( 'Enable Social Links', 'minimalistflex' ),
+        'choices' => Array(
+            'yes' => esc_html__( 'Yes', 'minimalistflex' ),
+            'no' => esc_html__( 'No', 'minimalistflex' )
+        )
     ) );
 
-    // X (formerly Twitter).
-    $wp_customize -> add_setting( 'minimalistflex_x_link', Array(
-        'type' => 'theme_mod',
-        'capability' => 'edit_theme_options',
-        'transport' => 'refresh',
-        'sanitize_callback' => 'esc_url_raw'
-    ) );
-    $wp_customize -> add_control( 'minimalistflex_x_link', Array(
-        'type' => 'url',
-        'priority' => 20,
-        'section' => 'minimalistflex_social_links',
-        'label' => esc_html__( 'X (formerly Twitter)', 'minimalistflex' ),
-        'active_callback' => 'minimalistflex_is_beta_feature_enabled'
-    ) );
+    require_once 'social-definitions.php';
 
-    // Facebook.
-    $wp_customize -> add_setting( 'minimalistflex_facebook_link', Array(
-        'type' => 'theme_mod',
-        'capability' => 'edit_theme_options',
-        'transport' => 'refresh',
-        'sanitize_callback' => 'esc_url_raw'
-    ) );
-    $wp_customize -> add_control( 'minimalistflex_facebook_link', Array(
-        'type' => 'url',
-        'priority' => 30,
-        'section' => 'minimalistflex_social_links',
-        'label' => esc_html__( 'Facebook', 'minimalistflex' ),
-        'active_callback' => 'minimalistflex_is_beta_feature_enabled'
-    ) );
+    foreach ( $social_platforms as $key => $label ) {
+        $wp_customize -> add_setting( 'minimalistflex_' . $key . '_link', Array(
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'refresh',
+            'sanitize_callback' => 'esc_url_raw'
+        ) );
+        $wp_customize -> add_control( 'minimalistflex_' . $key . '_link', Array(
+            'type' => 'url',
+            'priority' => 10,
+            'section' => 'minimalistflex_social_links',
+            'label' => sprintf( esc_html__( '%s', 'minimalistflex' ), $label ),
+        ) );
+    }
 
-    // Instagram.
-    $wp_customize -> add_setting( 'minimalistflex_instagram_link', Array(
-        'type' => 'theme_mod',
-        'capability' => 'edit_theme_options',
-        'transport' => 'refresh',
-        'sanitize_callback' => 'esc_url_raw'
-    ) );
-    $wp_customize -> add_control( 'minimalistflex_instagram_link', Array(
-        'type' => 'url',
-        'priority' => 40,
-        'section' => 'minimalistflex_social_links',
-        'label' => esc_html__( 'Instagram', 'minimalistflex' ),
-        'active_callback' => 'minimalistflex_is_beta_feature_enabled'
-    ) );
+    foreach ( $social_platforms_special as $key => $label ) {
+        $wp_customize -> add_setting( 'minimalistflex_' . $key . '_qr', Array(
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'refresh',
+            'sanitize_callback' => 'sanitize_key'
+        ) );
+        $wp_customize -> add_control( new WP_Customize_Media_Control(
+            $wp_customize,
+            'minimalistflex_' . $key . '_qr',
+            Array(
+                'type' => 'media',
+                'mime_type' => 'image',
+                'priority' => 10,
+                'section' => 'minimalistflex_social_links',
+                'label' => sprintf( esc_html__( '%s', 'minimalistflex' ), $label ),
+                // translators: %s: The name of the social media platform.
+                'description' => sprintf( esc_html__( 'Upload the QR code image for %s.', 'minimalistflex' ), $label ),
+            )
+        ) );
+     }
 
-    // Mastodon.
-    $wp_customize -> add_setting( 'minimalistflex_mastodon_link', Array(
-        'type' => 'theme_mod',
-        'capability' => 'edit_theme_options',
-        'transport' => 'refresh',
-        'sanitize_callback' => 'esc_url_raw'
-    ) );
-    $wp_customize -> add_control( 'minimalistflex_mastodon_link', Array(
-        'type' => 'url',
-        'priority' => 50,
-        'section' => 'minimalistflex_social_links',
-        'label' => esc_html__( 'Mastodon', 'minimalistflex' ),
-        'active_callback' => 'minimalistflex_is_beta_feature_enabled'
-    ) );
-
-    // GitHub.
-    $wp_customize -> add_setting( 'minimalistflex_github_link', Array(
-        'type' => 'theme_mod',
-        'capability' => 'edit_theme_options',
-        'transport' => 'refresh',
-        'sanitize_callback' => 'esc_url_raw'
-    ) );
-    $wp_customize -> add_control( 'minimalistflex_github_link', Array(
-        'type' => 'url',
-        'priority' => 60,
-        'section' => 'minimalistflex_social_links',
-        'label' => esc_html__( 'GitHub', 'minimalistflex' ),
-        'active_callback' => 'minimalistflex_is_beta_feature_enabled'
-    ) );
-
-    // Custom (With an additional setting of dashicon icon name).
+    // Custom.
     $wp_customize -> add_setting( 'minimalistflex_custom_social_link', Array(
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
@@ -137,7 +91,6 @@ function minimalistflex_social_links_register( $wp_customize ) {
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
         'transport' => 'refresh',
-        'default' => 'star-filled',
         'sanitize_callback' => 'sanitize_key'
     ) );
     $wp_customize -> add_control( 'minimalistflex_custom_social_link', Array(
@@ -147,13 +100,18 @@ function minimalistflex_social_links_register( $wp_customize ) {
         'label' => esc_html__( 'Custom Link', 'minimalistflex' ),
         'active_callback' => 'minimalistflex_is_beta_feature_enabled'
     ) );
-    $wp_customize -> add_control( 'minimalistflex_custom_social_icon', Array(
-        'type' => 'text',
-        'priority' => 80,
-        'section' => 'minimalistflex_social_links',
-        'label' => esc_html__( 'Custom Link Icon (Dashicon Name)', 'minimalistflex' ),
-        'description' => __( 'Enter the name of the dashicon you want to use for the custom link. You can find the list of dashicons and their names <a href="https://developer.wordpress.org/resource/dashicons/#star-filled" target="_blank">here</a>.', 'minimalistflex' ),
-        'active_callback' => 'minimalistflex_is_beta_feature_enabled'
+    $wp_customize -> add_control( new WP_Customize_Media_Control(
+        $wp_customize,
+        'minimalistflex_custom_social_icon',
+        Array(
+            'type' => 'media',
+            'mime_type' => 'image',
+            'priority' => 80,
+            'section' => 'minimalistflex_social_links',
+            'label' => esc_html__( 'Custom Icon', 'minimalistflex' ),
+            'description' => esc_html__( 'Upload a custom icon for the custom link. Due to WordPress limitations you must use a plugin if you wish to use SVG.', 'minimalistflex' ),
+            'active_callback' => 'minimalistflex_is_beta_feature_enabled'
+        )
     ) );
 }
 

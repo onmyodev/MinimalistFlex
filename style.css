@@ -453,6 +453,7 @@ button:focus {
     display: flex;
     flex-direction: row;
     position: relative;
+    align-items: center;
 }
 
 .minimalistflex-secondary-menu ul {
@@ -472,6 +473,65 @@ button:focus {
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
+}
+
+.minimalistflex-social-links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.minimalistflex-social-link {
+    margin: 0.5em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    text-decoration: none;
+    color: var(--minimalistflex-secondary-menu-text);
+    position: relative;
+}
+
+.minimalistflex-social-link > img {
+    width: 1em;
+    height: 1em;
+}
+
+.minimalistflex-social-link-qr {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    z-index: 1000;
+    width: max-content;
+    background: var(--minimalistflex-level1);
+    padding: 10px;
+    box-shadow: var(--minimalistflex-card-shadow);
+    border-radius: 4px;
+}
+
+.minimalistflex-social-link-qr::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    right: 0.5em;
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent var(--minimalistflex-level1) transparent;
+}
+
+.minimalistflex-social-link-hoverable:hover .minimalistflex-social-link-qr,
+.minimalistflex-social-link-hoverable:focus-within .minimalistflex-social-link-qr {
+    display: block;
+    overflow: visible;
+}
+
+.minimalistflex-social-link .minimalistflex-social-link-qr img {
+    display: block;
+    width: 200px;
+    height: auto;
+    max-width: none;
 }
 
 .minimalistflex-secondary-menu .sub-menu li {
@@ -1768,7 +1828,10 @@ a img.alignwide {
         top: 22px;
         transform: rotate(-135deg);
     }
-
+    
+    .minimalistflex-secondary-menu {
+        display: none;
+    }
 }
 
 @media screen and ( max-width: 600px ) {

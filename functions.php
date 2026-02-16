@@ -83,6 +83,7 @@ function minimalistflex_enqueue_files() {
     wp_enqueue_script( 'comment-reply' );
     wp_enqueue_style( 'style', get_stylesheet_uri() );
 	wp_enqueue_style( 'dashicons' );
+	wp_enqueue_style( 'minimalistflex-remixicon', get_template_directory_uri() . '/css/remixicon/remixicon.css' );
     wp_enqueue_script( 'minimalistflex-script', get_template_directory_uri() . '/js/menu.js', array('jquery'), null, true);
 	if ( get_theme_mod( 'minimalistflex_interface_autoh2label', 'no' ) == 'yes' ) {
 		wp_enqueue_style( 'minimalistflex-autoh2label-style', get_template_directory_uri() . '/css/autoh2label.css' );

@@ -120,9 +120,62 @@ $mf_label = get_theme_mod( 'minimalistflex_header_label' );
     <?php endif; ?>
 </header>
 
-<?php if ( has_nav_menu( 'secondary-menu' ) ): ?>
+<?php if ( has_nav_menu( 'secondary-menu' ) || get_theme_mod( 'minimalistflex_social_links_enabled', 'no' ) === 'yes' ): ?>
     <nav class="minimalistflex-secondary-menu">
-        <?php wp_nav_menu( array( 'theme_location' => 'secondary-menu' ) ); ?>
+        <?php if ( has_nav_menu( 'secondary-menu' ) ): ?>
+            <?php wp_nav_menu( array( 'theme_location' => 'secondary-menu' ) ); ?>
+        <?php endif;?>
+        <div class="spacer"></div>
+        <?php if ( get_theme_mod( 'minimalistflex_social_links_enabled', 'no' ) === 'yes' ): ?>
+            <div class="minimalistflex-social-links">
+                <?php require_once 'includes/social-definitions.php'; ?>
+                <?php foreach ( $social_platforms as $key => $label ): ?>
+                    <?php $link = get_theme_mod( 'minimalistflex_' . $key . '_link' ); ?>
+                    <?php if ( strlen( $link ) ): ?>
+                        <a href="<?php echo esc_url( $link ) ?>" class="minimalistflex-social-link minimalistflex-social-link-<?php echo esc_attr( $key ) ?>" aria-label="<?php
+                            printf( esc_attr__( 'The link to the %s profile.', 'minimalistflex' ), esc_attr( $label ) );
+                        ?>">
+                            <?php if ( $key === 'custom' ): ?>
+                                <?php $image_id = get_theme_mod( 'minimalistflex_custom_social_icon' ); ?>
+                                <?php if ( $image_id ): ?>
+                                    <?php echo wp_get_attachment_image($image_id, 'full'); ?>
+                                <?php else: ?>
+                                    <i class="ri-fw ri-link" aria-hidden="true"></i>
+                                <?php endif; ?>
+                            <?php else: ?>
+                                <i class="ri-fw ri-<?php echo esc_attr( $social_platforms_icon_name[$key] ) ?>"></i>
+                            <?php endif; ?>
+                        </a>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+                <?php foreach ( $social_platforms_special as $key => $label ): ?>
+                    <?php $qr = get_theme_mod( 'minimalistflex_' . $key . '_qr' ); ?>
+                    <?php if ( $qr ): ?>
+                        <a class="minimalistflex-social-link minimalistflex-social-link-hoverable minimalistflex-social-link-<?php echo esc_attr( $key ) ?>" aria-label="<?php
+                            printf( esc_attr__( 'The QR code for the %s profile.', 'minimalistflex' ), esc_attr( $label ) );
+                        ?>" href="#" tabindex="0">
+                            <i class="ri-fw ri-<?php echo esc_attr( $social_platforms_icon_name[$key] ) ?>"></i>
+                            <span class="minimalistflex-social-link-qr">
+                                <?php echo wp_get_attachment_image($qr, 'full'); ?>
+                            </span>
+                        </a>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+                <?php $custom_link = get_theme_mod( 'minimalistflex_custom_social_link' ); ?>
+                <?php if ( strlen( $custom_link ) ): ?>
+                    <a href="<?php echo esc_url( $custom_link ) ?>" class="minimalistflex-social-link minimalistflex-social-link-custom" aria-label="<?php
+                        esc_attr_e( 'The link to the custom social profile.', 'minimalistflex' );
+                    ?>">
+                        <?php $image_id = get_theme_mod( 'minimalistflex_custom_social_icon' ); ?>
+                        <?php if ( $image_id ): ?>
+                            <?php echo wp_get_attachment_image($image_id, 'full'); ?>
+                        <?php else: ?>
+                            <i class="ri-fw ri-link" aria-hidden="true"></i>
+                        <?php endif; ?>
+                    </a>
+                <?php endif; ?>
+            </div>
+        <?php endif; ?>
     </nav>
 <?php endif; ?>
 
