@@ -122,9 +122,11 @@ $mf_label = get_theme_mod( 'minimalistflex_header_label' );
 
 <?php if ( has_nav_menu( 'secondary-menu' ) || get_theme_mod( 'minimalistflex_social_links_enabled', 'no' ) === 'yes' ): ?>
     <nav class="minimalistflex-secondary-menu">
-        <?php if ( has_nav_menu( 'secondary-menu' ) ): ?>
-            <?php wp_nav_menu( array( 'theme_location' => 'secondary-menu' ) ); ?>
-        <?php endif;?>
+        <div class="minimalistflex-secondary-menu-container">
+            <?php if ( has_nav_menu( 'secondary-menu' ) ): ?>
+                <?php wp_nav_menu( array( 'theme_location' => 'secondary-menu' ) ); ?>
+            <?php endif;?>
+        </div>
         <div class="spacer"></div>
         <?php if ( get_theme_mod( 'minimalistflex_social_links_enabled', 'no' ) === 'yes' ): ?>
             <div class="minimalistflex-social-links">
@@ -153,7 +155,7 @@ $mf_label = get_theme_mod( 'minimalistflex_header_label' );
                     <?php if ( $qr ): ?>
                         <a class="minimalistflex-social-link minimalistflex-social-link-hoverable minimalistflex-social-link-<?php echo esc_attr( $key ) ?>" aria-label="<?php
                             printf( esc_attr__( 'The QR code for the %s profile.', 'minimalistflex' ), esc_attr( $label ) );
-                        ?>" href="#" tabindex="0">
+                        ?>" href="javascript:void(0)" tabindex="0">
                             <i class="ri-fw ri-<?php echo esc_attr( $social_platforms_icon_name[$key] ) ?>"></i>
                             <span class="minimalistflex-social-link-qr">
                                 <?php echo wp_get_attachment_image($qr, 'full'); ?>

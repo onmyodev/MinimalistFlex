@@ -1829,8 +1829,23 @@ a img.alignwide {
         transform: rotate(-135deg);
     }
     
-    .minimalistflex-secondary-menu {
+    .minimalistflex-secondary-menu-container {
         display: none;
+    }
+
+    .minimalistflex-social-links {
+        flex-wrap: wrap;
+    }
+
+    .minimalistflex-social-link-qr {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+    }
+
+    .minimalistflex-social-link-qr::after {
+        right: 50%;
+        transform: translateX(50%);
     }
 }
 
