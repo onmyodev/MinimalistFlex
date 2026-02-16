@@ -228,6 +228,12 @@ button:focus {
     left: 0;
 }
 
+.debug {
+    position: fixed;
+    left: 2em;
+    bottom: 2em;
+}
+
 /*
  * Header styles.
  */
@@ -971,6 +977,7 @@ a.panel-author:focus {
 }
 
 .singular-card {
+    margin-top: 1em;
     box-shadow: var(--minimalistflex-card-shadow);
     clear: both;
 }
@@ -1230,6 +1237,45 @@ p[class*=comment-form-] {
     border: none;
     background-color: var(--minimalistflex-tint);
     color: var(--minimalistflex-contrast);
+}
+
+/*
+ * Post Format: Status.
+ */
+
+.status-main {
+    display: flex;
+    flex-direction: row;
+}
+
+.status-main > * {
+    margin: 1em;
+}
+
+.status-avatar {
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+}
+
+.status-content {
+    background-color: var(--minimalistflex-level1);
+    box-shadow: var(--minimalistflex-card-shadow);
+    padding: 0 1em;
+    position: relative;
+}
+
+.status-content::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent var(--minimalistflex-level1) transparent transparent;
+    position: absolute;
+    top: 20px;
+    left: -20px;
 }
 
 /*
