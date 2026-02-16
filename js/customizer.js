@@ -30,7 +30,7 @@ jQuery(document).ready(function($) {
 
     wp.customize('minimalistflex_beta_feature_enabled', function (setting) {
         function toggleControl( value ) {
-            let betaSettings = ['minimalistflex_layout_home_waterfall', 'minimalistflex_layout_home_excerpt_mode', 'minimalistflex_layout_home_excerpt_length'];
+            let betaSettings = ['minimalistflex_layout_home_waterfall'];
             betaSettings.forEach(function(settingName) {
                 $("#customize-control-" + settingName).toggleClass('beta-feature', true);
                 wp.customize.control( settingName, function( control ) {

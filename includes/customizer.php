@@ -778,7 +778,6 @@ function minimalistflex_customize_register( $wp_customize ) {
             'full' => esc_html__( 'Full Posts', 'minimalistflex' ),
             'excerpt' => esc_html__( 'Excerpts', 'minimalistflex' )
         ),
-        'active_callback' => 'minimalistflex_is_beta_feature_enabled'
     ) );
     $wp_customize -> add_control( 'minimalistflex_layout_home_excerpt_length', Array(
         'type' => 'number',
@@ -789,7 +788,6 @@ function minimalistflex_customize_register( $wp_customize ) {
         'input_attrs' => Array(
             'min' => 0
         ),
-        'active_callback' => 'minimalistflex_is_beta_feature_enabled'
     ) );
     $wp_customize -> add_control( 'minimalistflex_layout_front_sidebar', Array(
         'type' => 'radio',

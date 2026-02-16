@@ -13,6 +13,7 @@ $mf_default_image_location = get_theme_mod( 'minimalistflex_default_featured_ima
         the_post();
         $mf_id = get_the_author_meta('ID');
         $mf_post_id = get_the_ID();
+        $mf_excerpt_mode = get_theme_mod( 'minimalistflex_layout_home_excerpt_mode', 'excerpt' );
     ?>
     <div <?php post_class("panel"); ?>>
         <?php if ( has_post_thumbnail() ): ?>
@@ -51,7 +52,11 @@ $mf_default_image_location = get_theme_mod( 'minimalistflex_default_featured_ima
         <div class="panel-content">
             <h2 class="panel-title"><?php the_title(); ?></h2>
             <div class="panel-main">
-                <?php the_excerpt(); ?>
+                <?php if ( $mf_excerpt_mode === 'excerpt' ): ?>
+                    <?php the_excerpt(); ?>
+                <?php else: ?>
+                    <?php the_content(); ?>
+                <?php endif; ?>
             </div>
             <?php wp_link_pages( Array(
                 'before' => '<div class="panel post-nav-links"><span class="post-nav-links-indicator">' . esc_html__('Pages: ', 'minimalistflex') . '</span>',
