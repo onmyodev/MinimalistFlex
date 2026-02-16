@@ -18,7 +18,7 @@ function minimalistflex_social_links_register( $wp_customize ) {
     // Main section.
     $wp_customize -> add_section( 'minimalistflex_social_links', Array(
         'title' => esc_html__( 'Social Links', 'minimalistflex' ),
-        'description' => esc_html__( 'Add your social media links here. They will be displayed as icons in the navigation menu.', 'minimalistflex' ),
+        'description' => esc_html__( 'Add your social media links here. They will be displayed as icons in the secondary navigation menu.', 'minimalistflex' ),
         'priority' => 80,
         'capability' => 'edit_theme_options'
     ) );
