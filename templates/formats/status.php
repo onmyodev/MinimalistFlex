@@ -6,8 +6,9 @@ $mf_id = get_the_author_meta( 'ID' );
 
 <div <?php post_class( "status" ) ?>>
     <div class="singular-main status-main">
-            <div class="author-avatar status-avatar"><?php echo get_avatar( $mf_id, 120 ); ?></div>
-            <div class="status-content">
+        <div class="author-avatar status-avatar"><?php echo get_avatar( $mf_id, 120 ); ?></div>
+        <div class="status-content">
+            <div>
                 <p class="status-author"><a class="author-link" href="<?php echo esc_url( get_author_posts_url($mf_id) ) ?>"><?php the_author() ?></a>&nbsp;|&nbsp;<?php get_template_part( 'templates/datetime' ) ?></p>
                 <h1 class="status-title"><?php the_title(); ?></h1>
                 <?php the_content(); ?>
@@ -17,7 +18,7 @@ $mf_id = get_the_author_meta( 'ID' );
             ) ); ?>
         </div>
         <?php get_sidebar( 'below-content' ) ?>
-        <div class="singular-adjacent-posts">
+        <div class="status-adjacent-posts singular-adjacent-posts">
             <div class="singular-adjacent-post singular-previous-post panel">
                 <h3><?php esc_html_e( 'Previous Post', 'minimalistflex' ) ?></h3>
                 <?php $mf_previous_post = get_previous_post(); ?>
@@ -38,9 +39,11 @@ $mf_id = get_the_author_meta( 'ID' );
             </div>
         </div>
     </div>
-    <?php if ( comments_open() || get_comments_number() ) :
-        comments_template();
-    else: ?>
-        <p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'minimalistflex' ); ?></p>
-    <?php endif; ?>
+    <div class="status-comments">
+        <?php if ( comments_open() || get_comments_number() ) :
+            comments_template();
+        else: ?>
+            <p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'minimalistflex' ); ?></p>
+        <?php endif; ?>
+    </div>
 </div>

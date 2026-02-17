@@ -10,7 +10,6 @@ if ( !defined( 'WPINC' ) ) {
         the_post();
         $mf_id = get_the_author_meta( 'ID' );
     ?>
-    <div class="debug warning"><p>Post Format: <?php echo get_post_format(); ?></p></div>
     <?php $supported_formats = get_theme_support( 'post-formats' ); ?>
     <?php $format = get_post_format() ? get_post_format() : 'standard'; ?>
     <?php if ( in_array( $format, $supported_formats[0] ) ): ?>
@@ -21,5 +20,7 @@ if ( !defined( 'WPINC' ) ) {
 <?php else: ?>
     <?php get_template_part( 'templates/empty' ); ?>
 <?php endif; ?>
+
+<div class="debug warning"><p>Post Format: <?php echo get_post_format(); ?></p></div>
 
 <?php get_footer(); ?>

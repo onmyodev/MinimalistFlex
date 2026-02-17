@@ -209,6 +209,17 @@ button:focus {
     )
 }
 
+blockquote cite {
+    display: block;
+    font-size: 0.8em;
+    color: var(--minimalistflex-secondary);
+    text-align: right;
+}
+
+blockquote cite::before {
+    content: "— ";
+}
+
 .gallery-caption {
     text-align: center;
 }
@@ -232,6 +243,7 @@ button:focus {
     position: fixed;
     left: 2em;
     bottom: 2em;
+    z-index: 1000;
 }
 
 /*
@@ -767,6 +779,7 @@ a.panel-author:focus {
     flex-direction: row;
     margin: 0;
     padding: 0;
+    clear: both;
 }
 
 .post-nav-links-indicator,
@@ -907,7 +920,6 @@ a.panel-author:focus {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 4em;
 }
 
 .singular-image {
@@ -1243,9 +1255,15 @@ p[class*=comment-form-] {
  * Post Format: Status.
  */
 
+.status {
+    margin: 0 10%;
+}
+
 .status-main {
     display: flex;
     flex-direction: row;
+    margin: 0;
+    width: 100%;
 }
 
 .status-main > * {
@@ -1263,6 +1281,7 @@ p[class*=comment-form-] {
     box-shadow: var(--minimalistflex-card-shadow);
     padding: 0 1em;
     position: relative;
+    flex-grow: 1;
 }
 
 .status-content::after {
@@ -1276,6 +1295,60 @@ p[class*=comment-form-] {
     position: absolute;
     top: 20px;
     left: -20px;
+}
+
+.status-comments {
+    position: relative;
+    margin: 10%;
+}
+
+.status-comments .comments-area {
+    width: 100%;
+}
+
+/*
+ * Post Format: Quote.
+ */
+
+.quote {
+    margin: 0 10%;
+}
+
+.quote-main {
+    margin: 0;
+    width: 100%;
+}
+
+.quote-title {
+    font-size: 24px;
+    padding: 1em;
+    margin: 0;
+}
+
+.quote-comments {
+    position: relative;
+    margin: 10%;
+}
+
+.quote-comments .comments-area {
+    width: 100%;
+}
+
+.quote-title {
+    padding: 0;
+}
+
+/*
+ * Post Format: Image.
+ */
+
+.image-comments {
+    position: relative;
+    margin: 10%;
+}
+
+.image-comments .comments-area {
+    width: 100%;
 }
 
 /*
@@ -1343,6 +1416,11 @@ p[class*=comment-form-] {
 .below-content-widgets {
     background-color: transparent;
     box-shadow: none;
+}
+
+.below-content-widgets li {
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .widget > * {
