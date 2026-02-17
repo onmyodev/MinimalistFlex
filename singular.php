@@ -12,7 +12,7 @@ if ( !defined( 'WPINC' ) ) {
     ?>
     <?php $supported_formats = get_theme_support( 'post-formats' ); ?>
     <?php $format = get_post_format() ? get_post_format() : 'standard'; ?>
-    <?php if ( in_array( $format, $supported_formats[0] ) ): ?>
+    <?php if ( minimalistflex_is_beta_feature_enabled() && in_array( $format, $supported_formats[0] ) ): ?>
         <?php get_template_part( 'templates/formats/' . $format ); ?>
     <?php else: ?>
         <?php get_template_part( 'templates/formats/standard' ); ?>
