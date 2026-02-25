@@ -9,7 +9,6 @@ $mf_id = get_the_author_meta( 'ID' );
         <div class="author-avatar status-avatar"><?php echo get_avatar( $mf_id, 120 ); ?></div>
         <div class="status-content">
             <p class="status-author"><a class="author-link" href="<?php echo esc_url( get_author_posts_url($mf_id) ) ?>"><?php the_author() ?></a>&nbsp;|&nbsp;<?php get_template_part( 'templates/datetime' ) ?></p>
-            <h1 class="status-title"><?php the_title(); ?></h1>
             <?php the_content(); ?>
             <?php wp_link_pages( Array(
                 'before' => '<p class="panel post-nav-links"><span class="post-nav-links-indicator">' . __( 'Pages: ', 'minimalistflex' ) . '</span>'

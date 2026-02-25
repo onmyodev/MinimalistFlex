@@ -10,13 +10,9 @@ if ( !defined( 'WPINC' ) ) {
         the_post();
         $mf_id = get_the_author_meta( 'ID' );
     ?>
-    <?php $supported_formats = get_theme_support( 'post-formats' ); ?>
     <?php $format = get_post_format() ? get_post_format() : 'standard'; ?>
-    <?php if ( minimalistflex_is_beta_feature_enabled() && in_array( $format, $supported_formats[0] ) ): ?>
-        <?php get_template_part( 'templates/formats/' . $format ); ?>
-    <?php else: ?>
-        <?php get_template_part( 'templates/formats/standard' ); ?>
-    <?php endif; ?>
+    <?php $template_name = minimalistflex_get_template_name( $format ); ?>
+    <?php get_template_part( 'templates/formats/' . $template_name ); ?>
 <?php else: ?>
     <?php get_template_part( 'templates/empty' ); ?>
 <?php endif; ?>

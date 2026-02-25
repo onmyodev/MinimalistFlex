@@ -55,7 +55,7 @@ function minimalistflex_add_supports() {
 	add_theme_support( 'editor-styles' );
 	add_theme_support( 'customize-selective-refresh-widgets' );
 	if ( minimalistflex_is_beta_feature_enabled() ) {
-		add_theme_support( 'post-formats', Array( 'image', 'quote', 'status', 'link' ) );
+		add_theme_support( 'post-formats', Array( 'image', 'quote', 'status', 'link', 'aside' ) );
 	}
 	add_editor_style( 'css/editor.css' );
 
@@ -268,4 +268,19 @@ function minimalistflex_is_front_page_static() {
 
 function minimalistflex_is_beta_feature_enabled() {
 	return get_theme_mod( 'minimalistflex_beta_feature_enabled', 'no' ) === 'yes';
+}
+
+function minimalistflex_get_template_name( $post_format ) {
+	$reused = [
+		'quote' => 'status',
+		'image' => 'status',
+	];
+	$supported_formats = get_theme_support( 'post-formats' );
+	if ( array_key_exists( $post_format, $reused ) ) {
+		return $reused[$post_format];
+	} elseif ( in_array( $post_format, $supported_formats[0] ) ) {
+		return $post_format;
+	} else {
+		return 'standard';
+	}
 }
