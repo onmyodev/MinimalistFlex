@@ -54,9 +54,7 @@ function minimalistflex_add_supports() {
 
 	add_theme_support( 'editor-styles' );
 	add_theme_support( 'customize-selective-refresh-widgets' );
-	if ( minimalistflex_is_beta_feature_enabled() ) {
-		add_theme_support( 'post-formats', Array( 'image', 'quote', 'status', 'link', 'aside' ) );
-	}
+	add_theme_support( 'post-formats', Array( 'image', 'quote', 'status', 'link', 'aside' ) );
 	add_editor_style( 'css/editor.css' );
 
 	$content_width = '100%';

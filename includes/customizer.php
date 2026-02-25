@@ -98,7 +98,6 @@ function minimalistflex_social_links_register( $wp_customize ) {
         'priority' => 70,
         'section' => 'minimalistflex_social_links',
         'label' => esc_html__( 'Custom Link', 'minimalistflex' ),
-        'active_callback' => 'minimalistflex_is_beta_feature_enabled'
     ) );
     $wp_customize -> add_control( new WP_Customize_Media_Control(
         $wp_customize,
@@ -110,7 +109,6 @@ function minimalistflex_social_links_register( $wp_customize ) {
             'section' => 'minimalistflex_social_links',
             'label' => esc_html__( 'Custom Icon', 'minimalistflex' ),
             'description' => esc_html__( 'Upload a custom icon for the custom link. Due to WordPress limitations you must use a plugin if you wish to use SVG.', 'minimalistflex' ),
-            'active_callback' => 'minimalistflex_is_beta_feature_enabled'
         )
     ) );
 
