@@ -8,10 +8,13 @@ if ( !defined( 'WPINC' ) ) {
 
 <div class="publisher">
 
+<?php if ( get_theme_mod( 'minimalistflex_interface_publisher', 'yes' ) === 'yes' ): ?>
 <a class="publisher-link" href="<?php echo esc_url( get_author_posts_url($mf_id) ) ?>">
     <?php echo get_avatar( $mf_id, 32 ) ?>
     <span><?php the_author() ?></span>
 </a>
+<?php endif; ?>
+
 <div class="publisher-datetime">
     <?php $datemode = get_theme_mod( 'minimalistflex_interface_date', 'modify' ); ?>
     <?php if ( $datemode <> 'no' ): ?>

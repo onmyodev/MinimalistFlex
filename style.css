@@ -959,6 +959,7 @@ a.panel-author:focus {
     flex-direction: row;
     justify-content: left;
     align-items: center;
+    line-height: 0;
     padding: 1em;
     background-color: var(--minimalistflex-level2);
     border-top: solid 1px var(--minimalistflex-shadow);
@@ -974,6 +975,7 @@ a.panel-author:focus {
 
 .publisher > * {
     margin-right: 1em;
+    padding: 0;
 }
 
 .publisher-link img {

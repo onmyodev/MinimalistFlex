@@ -133,7 +133,6 @@ function minimalistflex_social_links_register( $wp_customize ) {
         )
     ) );
 }
-
 add_action( 'customize_register', 'minimalistflex_social_links_register' );
 
 function minimalistflex_default_featured_image_register( $wp_customize ) {
