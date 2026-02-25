@@ -113,6 +113,25 @@ function minimalistflex_social_links_register( $wp_customize ) {
             'active_callback' => 'minimalistflex_is_beta_feature_enabled'
         )
     ) );
+
+    // RSS
+    $wp_customize -> add_setting( 'minimalistflex_rss_enabled', Array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => 'refresh',
+        'default' => 'no',
+        'sanitize_callback' => 'minimalistflex_sanitize_radio_cb',
+    ) );
+    $wp_customize -> add_control( 'minimalistflex_rss_enabled', Array(
+        'type' => 'radio',
+        'priority' => 90,
+        'section' => 'minimalistflex_social_links',
+        'label' => esc_html__( 'Enable RSS Link', 'minimalistflex' ),
+        'choices' => Array(
+            'yes' => esc_html__( 'Yes', 'minimalistflex' ),
+            'no' => esc_html__( 'No', 'minimalistflex' )
+        )
+    ) );
 }
 
 add_action( 'customize_register', 'minimalistflex_social_links_register' );

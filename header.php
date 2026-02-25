@@ -176,6 +176,14 @@ $mf_label = get_theme_mod( 'minimalistflex_header_label' );
                         <?php endif; ?>
                     </a>
                 <?php endif; ?>
+                <?php $rss_enaled = get_theme_mod( 'minimalistflex_rss_enabled', 'no' ); ?>
+                <?php if ( $rss_enaled === 'yes' ): ?>
+                    <a href="<?php echo esc_url( get_feed_link() ) ?>" class="minimalistflex-social-link minimalistflex-social-link-rss" aria-label="<?php
+                        esc_attr_e( 'The link to the RSS feed.', 'minimalistflex' );
+                    ?>">
+                        <i class="ri-fw ri-rss-fill" aria-hidden="true"></i>
+                    </a>
+                <?php endif; ?>
             </div>
         <?php endif; ?>
     </nav>
