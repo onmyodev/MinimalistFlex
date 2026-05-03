@@ -99,9 +99,9 @@ $mf_label = get_theme_mod( 'minimalistflex_header_label' );
         <?php echo wp_kses_post( get_custom_logo() ) ?>
     <?php endif; ?>
     <?php if ( display_header_text() ): ?>
-        <h1 class="blog-title">
+        <div class="blog-title">
             <a href="<?php echo esc_url( home_url() ); ?>" class="blog-title-link"><?php echo wp_kses_data( get_bloginfo( 'name' ) ) ?></a>
-        </h1>
+        </div>
     <?php endif; ?>
     <div class="spacer"></div>
     <a id="minimalistflex-menu-focus-hack-2" href="#minimalistflex-menu-focus-hack-2" aria-label="<?php esc_attr_e( 'This element sends you to the last menu item.', 'minimalistflex' ) ?>"></a>
