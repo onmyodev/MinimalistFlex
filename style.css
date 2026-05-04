@@ -292,6 +292,7 @@ blockquote cite::before {
     font-size: 1em;
     margin: 0;
     padding: 1em;
+    font-weight: bold;
 }
 
 .blog-title-link {
