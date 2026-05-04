@@ -298,6 +298,7 @@ blockquote cite::before {
 .blog-title-link {
     color: var(--minimalistflex-header);
     text-decoration: none;
+    font-weight: bold;
 }
 
 .blog-title-link:hover {
