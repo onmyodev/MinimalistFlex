@@ -657,6 +657,13 @@ function minimalistflex_customize_register( $wp_customize ) {
         'default' => 'no',
         'sanitize_callback' => 'minimalistflex_sanitize_radio_cb'
     ) );
+    $wp_customize -> add_setting( 'minimalistflex_interface_autoh2label_underline', Array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => 'refresh',
+        'default' => 'no',
+        'sanitize_callback' => 'esc_html'
+    ) );
     $wp_customize -> add_setting( 'minimalistflex_interface_comment_count', Array(
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
@@ -1091,6 +1098,17 @@ function minimalistflex_customize_register( $wp_customize ) {
             'no' => esc_html__( 'No', 'minimalistflex' )
         )
     ) );
+    $wp_customize -> add_control( 'minimalistflex_interface_autoh2label_underline', Array(
+        'type' => 'radio',
+        'priority' => 26,
+        'section' => 'minimalistflex_interface',
+        'label' => esc_html__( 'Auto h2 Label Underline', 'minimalistflex' ),
+        'description' => esc_html__( 'Optionally the theme can display an underline for auto-labeled h2 elements. Tend to break layout more than just the label.', 'minimalistflex' ),
+        'choices' => Array(
+            'yes' => esc_html__( 'Yes', 'minimalistflex' ),
+            'no' => esc_html__( 'No', 'minimalistflex' )
+        )
+    ) );
     $wp_customize -> add_control( 'minimalistflex_interface_comment_count', Array(
         'type' => 'radio',
         'priority' => 30,
@@ -1188,17 +1206,6 @@ function minimalistflex_customize_register( $wp_customize ) {
         'section' => 'minimalistflex_advanced',
         'label' => esc_html__( 'Admin Warnings', 'minimalistflex' ),
         'description' => esc_html__( 'The theme can display a warning when no widgets are set. Select "No" to disable this feature.', 'minimalistflex' ),
-        'choices' => Array(
-            'yes' => esc_html__( 'Yes', 'minimalistflex' ),
-            'no' => esc_html__( 'No', 'minimalistflex' )
-        )
-    ) );
-    $wp_customize -> add_control( 'minimalistflex_beta_feature_enabled', Array(
-        'type' => 'radio',
-        'priority' => 101,
-        'section' => 'minimalistflex_advanced',
-        'label' => esc_html__( 'Enable Beta Features', 'minimalistflex' ),
-        'description' => esc_html__( 'Enable the beta features of the theme.', 'minimalistflex' ),
         'choices' => Array(
             'yes' => esc_html__( 'Yes', 'minimalistflex' ),
             'no' => esc_html__( 'No', 'minimalistflex' )
