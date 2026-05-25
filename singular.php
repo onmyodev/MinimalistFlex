@@ -17,7 +17,7 @@ if ( !defined( 'WPINC' ) ) {
     <?php get_template_part( 'templates/empty' ); ?>
 <?php endif; ?>
 
-<?php if ( user_can( get_current_user_id(), 'edit_theme_options' ) && get_theme_mod( 'minimalistflex_admin_warning', 'no' ) === 'yes' ): ?>
+<?php if ( WP_DEBUG && user_can( get_current_user_id(), 'edit_theme_options' ) && get_theme_mod( 'minimalistflex_admin_warning', 'no' ) === 'yes' ): ?>
     <div class="debug warning"><p>Post Format: <?php echo get_post_format(); ?></p></div>
 <?php endif; ?>
 

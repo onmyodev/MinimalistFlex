@@ -123,6 +123,15 @@ function minimalistflex_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
+		'name'          => _x( 'Before Article', 'sidebar name' , 'minimalistflex' ),
+		'id'            => 'before-article',
+		'description'   => __( 'Widgets in this area will be shown before each article.', 'minimalistflex' ),
+		'before_widget' => '<li id="%1$s" class="before-article-widget %2$s">',
+		'after_widget'  => '</li>',
+		'before_title'  => '<h2 class="before-article-widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
 		'name'          => _x( 'Below Content', 'sidebar name' , 'minimalistflex' ),
 		'id'            => 'below-content',
 		'description'   => __( 'Widgets in this area will be shown below the main content.', 'minimalistflex' ),
