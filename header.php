@@ -189,7 +189,7 @@ $mf_label = get_theme_mod( 'minimalistflex_header_label' );
     </nav>
 <?php endif; ?>
 
-<main class="minimalistflex-master <?php echo 'minimalistflex-sidebar-layout-' . esc_attr( $mf_sidebar ) . ' minimalistflex-master-' . esc_attr( $mf_type ) ?>">
+<main class="minimalistflex-master <?php echo 'minimalistflex-sidebar-layout-' . esc_attr( $mf_sidebar ) . ' minimalistflex-master-' . esc_attr( $mf_type ) ?> <?php if ( get_theme_mod( 'minimalistflex_interface_autoh2label_underline', '' ) === 'yes' ): ?>minimalistflex-autoh2label-underline<?php endif; ?>">
 
 <article class="minimalistflex-content" id="main-content">
 
