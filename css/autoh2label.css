@@ -19,7 +19,7 @@
     margin-right: 12px;
 }
 
-.singular-main h2::after {
+.minimalistflex-autoh2label-underline .singular-main h2::after {
     content: "";
     display: block;
     position: absolute;
