@@ -32,6 +32,7 @@ $mf_default_image_location = get_theme_mod( 'minimalistflex_default_featured_ima
             <h1 class="panel-title"><?php the_title(); ?></h1>
             <?php get_template_part( 'templates/publisher' ) ?>
             <div class="panel-main">
+                <?php dynamic_sidebar( 'before-article' ); ?>
                 <?php the_content(); ?>
                 <?php wp_link_pages( Array(
                     'before' => '<p class="panel post-nav-links"><span class="post-nav-links-indicator">' . __( 'Pages: ', 'minimalistflex' ) . '</span>'
