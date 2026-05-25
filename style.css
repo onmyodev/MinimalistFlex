@@ -1,13 +1,13 @@
 /**
  * Theme Name:        MinimalistFlex
  * Description:       MinimalistFlex is an elegant, resposive, and easy to use theme focused on blogging.
- * Version:           1.6-b4
+ * Version:           1.6
  * Theme URI:         https://github.com/onmyodev/MinimalistFlex/
  * Author:            Frank419
  * Author URI:        https://onmyodev.com/
  * Tags:              two-columns ,left-sidebar, right-sidebar, custom-colors, custom-logo, custom-menu, editor-style, featured-images, flexible-header, footer-widgets, sticky-post, theme-options, translation-ready, blog
  * Text Domain:       minimalistflex
- * Tested up to:      6.9.1
+ * Tested up to:      7.0
  * Requires at least: 4.9
  * Requires PHP:      5.6
  * Requires CP:       1.0
@@ -207,6 +207,11 @@ button:focus {
         var(--minimalistflex-header-sidebar),
         transparent 50%
     )
+}
+
+.minimalistflex-master table thead,
+.minimalistflex-master table tr {
+    background-color: transparent;
 }
 
 blockquote cite {
@@ -1371,7 +1376,7 @@ p[class*=comment-form-] {
 .search-form label {
     display: flex;
     flex-grow: 1;
-    max-width: 100%;
+    max-width: calc(100% - 4em);
 }
 
 .search-field {
@@ -1555,6 +1560,11 @@ p[class*=comment-form-] {
     display: flex;
     justify-content: space-between;
     padding: 1em 0;
+}
+
+.before-article-widgets,
+.before-article-widget {
+    list-style-type: none;
 }
 
 /*
@@ -1856,13 +1866,13 @@ a img.alignwide {
     }
 
     .singular-adjacent-posts {
-		flex-wrap: nowrap !important;
-		flex-direction: column !important;
-	}
-	.singular-adjacent-post {
-		margin: 1em 0 !important;
-		width: auto !important;
-	}
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+    .singular-adjacent-post {
+        margin: 1em 0;
+        width: auto;
+    }
 
     [class*=comment-form-] {
         flex-direction: column;

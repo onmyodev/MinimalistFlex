@@ -1,8 +1,8 @@
 === MinimalistFlex ===
-Stable tag:        1.5
+Stable tag:        1.6
 Contributors:      frank419
 Tags:              two-columns ,left-sidebar, right-sidebar, custom-colors, custom-logo, custom-menu, editor-style, featured-images, flexible-header, footer-widgets, sticky-post, theme-options, translation-ready, blog
-Tested up to:      6.9.1
+Tested up to:      7.0
 Requires at least: 4.9
 License:           GNU General Public License v3.0 or later
 License URI:       https://www.gnu.org/licenses/gpl-3.0.html
@@ -49,6 +49,14 @@ changed.
 As a bonus, we have 4 pre-built color palettes for you.
 
 == Changelog ==
+
+= 1.6 =
+* New widget area
+* Post formats support
+* Social links
+* Hide frontend warnings
+* Customization for the 404 page and the default template
+* CSS fixes
 
 = 1.5 =
 * True live updating of colors, sidebar layout, thumbnail image height.

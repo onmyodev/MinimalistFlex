@@ -41,6 +41,14 @@ As a bonus, we have 4 pre-built color palettes for you.
 
 ## Changelog
 
+### 1.6
+* New widget area
+* Post formats support
+* Social links
+* Hide frontend warnings
+* Customization for the 404 page and the default template
+* CSS fixes
+
 ### 1.5
 * True live updating of colors, sidebar layout, thumbnail image height.
 * Add settings for the strength of background color blending.
